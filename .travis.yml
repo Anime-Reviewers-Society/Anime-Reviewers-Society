@@ -1,11 +1,7 @@
 language: php
-
-env:
-  global:
-  - DOCKER_COMPOSE_VERSION=3
-
 php:
   - 7.2
-
+services:
+  - docker
 script:
-  - phpunit
+  - docker run -v $PWD:/app phpqa/php-cs-fixer fix . --dry-run
