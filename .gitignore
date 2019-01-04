@@ -7,4 +7,5 @@
 /var/
 /vendor/
 /.idea/
+/docker/database
 ###< symfony/framework-bundle ###
