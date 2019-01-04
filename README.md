@@ -1,4 +1,6 @@
 # Anime-Reviewers-Society 
+A website grouping all come out of opinion on Japanese anime
+
 [![Build Status](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society.svg?branch=master)](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society)
 ![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Anime-Reviewers-Society_Anime-Reviewers-Society&metric=alert_status)
 
