@@ -1,15 +1,21 @@
 # Anime-Reviewers-Society 
 [![Build Status](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society.svg?branch=master)](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society)
+![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Anime-Reviewers-Society_Anime-Reviewers-Society&metric=alert_status)
+
+## Pre-requirements
+You will need Docker to build the application, find more informations on the docker installation documentatio
 
 ## Contributing
 To contribute :
-* Clone the project by <br />
-``` git clone https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society.git ```
+```bash
+# Clone the application
+git clone https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society.git
+cd Anime-Reviewers-Society
 
-* Run makefile <br />
-``` make install ```
-
-* Coding ! 😈
+# Build and initialize the project
+make install
+```
+🔥 Coding ! 😈
 
 ## License
 This project is under [MIT License](https://choosealicense.com/licenses/mit/)
