@@ -1,0 +1,7 @@
+organization=anime-reviewers-society
+projectKey=Anime-Reviewers-Society_Anime-Reviewers-Society
+serverUrl=https://sonarcloud.io
+serverVersion=7.6.0.20657
+dashboardUrl=https://sonarcloud.io/dashboard?id=Anime-Reviewers-Society_Anime-Reviewers-Society
+ceTaskId=AWgZPglerFADGLK08-0R
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWgZPglerFADGLK08-0R
