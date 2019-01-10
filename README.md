@@ -6,7 +6,7 @@ A website grouping all come out of opinion on Japanese anime
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b4748e8cdda4996a9c5f0d2cbc1e382)](https://www.codacy.com/app/legars.florian/Anime-Reviewers-Society?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Anime-Reviewers-Society/Anime-Reviewers-Society&amp;utm_campaign=Badge_Grade)
 
 ## Pre-requirements
-You will need Docker to build the application, find more informations on the docker installation documentatio
+You will need Docker to build the application, find more informations on [the docker installation documentation](https://docs.docker.com/install/)
 
 ## Contributing
 To contribute :
