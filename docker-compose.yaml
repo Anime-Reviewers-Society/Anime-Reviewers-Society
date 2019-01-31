@@ -15,11 +15,14 @@ services:
             - '3306:3306'
         volumes:
             - './docker/database:/var/lib/mysql'
+            - './docker/config:/etc/mysql/conf.d'
         environment:
             - MYSQL_DATABASE=ars
             - MYSQL_USER=ars
             - MYSQL_PASSWORD=pass
-            - MYSQL_RANDOM_ROOT_PASSWORD=yes
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes*
+        command:
+            mysqld --innodb-flush-method=littlesync --innodb-use-native-aio=OFF --log_bin=ON
     nginx:
         build: docker/nginx/
         ports:
