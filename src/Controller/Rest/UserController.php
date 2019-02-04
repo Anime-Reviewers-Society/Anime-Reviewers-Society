@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Rest;
 
+use App\Entity\User;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\View\View;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\User;
 use App\Repository\UserRepository;
 
 class UserController extends AbstractFOSRestController
@@ -34,5 +35,25 @@ class UserController extends AbstractFOSRestController
     {
         $user = $userRepository->find($id);
         return View::create($user, Response::HTTP_OK);
+    }
+
+    /**
+     * @param Request $request
+     * @return View
+     *
+     * @Route("/user", methods={"POST"})
+     */
+    public function postUserAction(Request $request):View
+    {
+        $user = new User();
+        $entityManager = $this->getDoctrine()->getManager();
+        $user->setNickname($request->get('nickname'))
+            ->setMail($request->get('mail'))
+            ->setStatus($request->get('status'))
+            ->setAvatar($request->get('avatar'));
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        return View::create($user, Response::HTTP_CREATED);
     }
 }

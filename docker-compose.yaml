@@ -20,7 +20,7 @@ services:
             - MYSQL_DATABASE=ars
             - MYSQL_USER=ars
             - MYSQL_PASSWORD=pass
-            - MYSQL_RANDOM_ROOT_PASSWORD=yes*
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes
         command:
             mysqld --innodb-flush-method=littlesync --innodb-use-native-aio=OFF --log_bin=ON
     nginx:
