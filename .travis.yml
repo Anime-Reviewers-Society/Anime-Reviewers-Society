@@ -4,8 +4,6 @@ php:
 services:
   - docker
 
-before_install:
-  - docker-compose up -d
 script:
   - docker run -v /$PWD:/app phpqa/php-cs-fixer fix . --dry-run
 
