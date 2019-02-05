@@ -3,21 +3,11 @@ php:
   - 7.2
 services:
   - docker
-script:
-  - docker run -v $PWD:/app phpqa/php-cs-fixer fix . --dry-run
 
-after_success:
-  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-  - chmod +x send.sh
-  - ./send.sh success $WEBHOOK_URL
+script:
+  - docker run -v /$PWD:/app phpqa/php-cs-fixer fix .
+
 after_failure:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - ./send.sh failure $WEBHOOK_URL
-#slack notifications : no need for now
-#notifications:
-  #slack:
-    #rooms:
-    #- ipssi-d19-1:3U0tNTwfovSqXR04sBm4G5HQ#travis
-    #on_success: change
-    #on_failure: always
