@@ -1,0 +1,11 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+    {% for u in user %}
+        <ul>
+            <li>{{ u.id }}</li>
+            <li>{{ u.username }}</li>
+            <li>{{ u.roles.0 }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}
