@@ -18,6 +18,9 @@ To contribute :
 git clone https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society.git
 cd Anime-Reviewers-Society
 
+# ⚠️ Windows users only ⚠️
+rm docker-compose.yaml && mv docker-compose.yaml.windows docker-compose.yaml
+
 # Build and initialize the project
 make install
 ```
