@@ -18,6 +18,6 @@ class UserWebController extends AbstractController
     public function userIndex(UserRepository $userRepository)
     {
         $user = $userRepository->findAll();
-        return $this->render('user.index.html.twig', [ 'user' => $user]);
+        return $this->render('user.index.html.twig', ['user' => $user]);
     }
 }

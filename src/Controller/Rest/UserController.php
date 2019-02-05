@@ -3,12 +3,12 @@
 namespace App\Controller\Rest;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\UserRepository;
 
 class UserController extends AbstractFOSRestController
 {
@@ -43,7 +43,7 @@ class UserController extends AbstractFOSRestController
      *
      * @Route("/user", methods={"POST"})
      */
-    public function postUserAction(Request $request):View
+    public function postUserAction(Request $request): View
     {
         $user = new User();
         $entityManager = $this->getDoctrine()->getManager();
