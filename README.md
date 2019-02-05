@@ -4,7 +4,7 @@ A website grouping all come out of opinion on Japanese anime
 [![Build Status](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society.svg?branch=master)](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society)
 ![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Anime-Reviewers-Society_Anime-Reviewers-Society&metric=alert_status)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b4748e8cdda4996a9c5f0d2cbc1e382)](https://www.codacy.com/app/legars.florian/Anime-Reviewers-Society?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Anime-Reviewers-Society/Anime-Reviewers-Society&amp;utm_campaign=Badge_Grade)
-![Discord](https://img.shields.io/discord/530659599301345291.svg?logo=discord)
+[![Discord](https://img.shields.io/discord/530659599301345291.svg?logo=discord)](https://discord.gg/Hk3V7JP)
 
 
 
