@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
 
-class UserController extends AbstractFOSRestController
+class UserRestController extends AbstractFOSRestController
 {
     /**
      * @param UserRepository $userRepository
@@ -47,10 +47,9 @@ class UserController extends AbstractFOSRestController
     {
         $user = new User();
         $entityManager = $this->getDoctrine()->getManager();
-        $user->setNickname($request->get('nickname'))
-            ->setMail($request->get('mail'))
-            ->setStatus($request->get('status'))
-            ->setAvatar($request->get('avatar'));
+        $user->setUsername($request->get('username'))
+            ->setPassword($request->get('password'));
+
         $entityManager->persist($user);
         $entityManager->flush();
 
