@@ -7,6 +7,6 @@
 /var/
 /vendor/
 /.idea/
-/Migrations
+/Migrations/
 /docker/database
 ###< symfony/framework-bundle ###

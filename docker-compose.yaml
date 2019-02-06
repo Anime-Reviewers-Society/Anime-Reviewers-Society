@@ -26,7 +26,7 @@ services:
         volumes:
             - './docker/database:/var/lib/mysql'
         environment:
-            - MYSQL_DATABASE=docker
-            - MYSQL_USER=docker
-            - MYSQL_PASSWORD=s3cr3t
+            - MYSQL_DATABASE=ars
+            - MYSQL_USER=ars
+            - MYSQL_PASSWORD=pass
             - MYSQL_RANDOM_ROOT_PASSWORD=yes
