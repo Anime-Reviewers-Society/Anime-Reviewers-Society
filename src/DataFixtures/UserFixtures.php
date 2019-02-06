@@ -34,11 +34,11 @@ class UserFixtures extends Fixture
                 $user->setUsername('Admin')
                      ->setPassword($this->passwordEncoder->encodePassword($user, 'admin'))
                      ->setRoles(['ROLE_ADMIN']);
-            } else {
-                $user->setUsername('Username #' . $index)
-                     ->setPassword($this->passwordEncoder->encodePassword($user, '$argon2i$v=19$m=1024,t=2,p=2$NHcyYzNaa1VxMEZDS3M1Rw$Me9ZEj4N4EHQ5gRgLxqlu0+txSUk/2cAJuu/Ot5sOv0'))
-                     ->setRoles(['ROLE_USER']);
             }
+            $user->setUsername('Username #' . $index)
+                 ->setPassword($this->passwordEncoder->encodePassword($user, '$argon2i$v=19$m=1024,t=2,p=2$NHcyYzNaa1VxMEZDS3M1Rw$Me9ZEj4N4EHQ5gRgLxqlu0+txSUk/2cAJuu/Ot5sOv0'))
+                 ->setRoles(['ROLE_USER']);
+
             $manager->persist($user);
         }
         $manager->flush();
