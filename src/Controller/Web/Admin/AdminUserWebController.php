@@ -1,24 +1,25 @@
 <?php
 
-namespace App\Controller\Web;
+namespace App\Controller\Web\Admin;
+
 
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class UserWebController extends AbstractController
+class AdminUserWebController extends AbstractController
 {
 
     /**
      * @param UserRepository $userRepository
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * * @Route("/user/{id}", name="user.index")
+     * @Route("/admin/users", name="admin.user.index")
      */
-    public function show(UserRepository $userRepository, int $id): Response
+    public function index(UserRepository $userRepository): Response
     {
-        $user = $userRepository->find($id);
-        return $this->render('users/user.html.twig', [ 'user' => $user]);
+        $user = $userRepository->findAll();
+        return $this->render('admin/users/user.index.html.twig', ['user' => $user]);
     }
 }
