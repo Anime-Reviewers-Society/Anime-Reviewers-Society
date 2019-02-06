@@ -6,3 +6,7 @@ rest_controller:
 web_controller:
     resource: ../../src/Controller/Web
     type: annotation
+
+admin_controller:
+    resource: ../../src/Controller/Web/Admin
+    type: annotation
