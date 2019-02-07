@@ -14,7 +14,7 @@ class UserWebController extends AbstractController
      * @param UserRepository $userRepository
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * * @Route("/user/{id}", name="user.index")
+     * * @Route("/user/{id}", name="user.show")
      */
     public function show(UserRepository $userRepository, int $id): Response
     {

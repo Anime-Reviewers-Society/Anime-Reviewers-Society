@@ -2,6 +2,9 @@
 
 {% block body %}
     <div class="sidebar">
+        <div class="sidebar--logo">
+            <img src="{{ asset('/img/md/logo_md.png') }}">
+        </div>
         <ul>
             <li class="sidebar--item"><a href="{{ path("dashboard") }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
             <li class="sidebar--item"><a href="{{ path("admin.user.index") }}"><i class="fas fa-users"></i> Utilisateurs</a></li>
