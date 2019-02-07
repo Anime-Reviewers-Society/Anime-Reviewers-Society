@@ -10,6 +10,12 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+
+    public function __construct()
+    {
+        $this->roles = array('ROLE_USER');
+    }
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

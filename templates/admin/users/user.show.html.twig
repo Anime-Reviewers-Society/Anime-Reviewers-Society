@@ -1,0 +1,9 @@
+{% extends 'admin/dashboard.html.twig' %}
+
+{% block content %}
+    <div class="user--informations">
+        {{ user.username }}
+        {{ user.mail }}
+        {{ user.status }}
+    </div>
+{% endblock %}

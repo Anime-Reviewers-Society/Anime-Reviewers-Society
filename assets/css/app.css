@@ -1,16 +1,41 @@
 body {
     background-color: #f0f0ff !important;
 }
-
+/** Override Bootstrap **/
+.btn{
+    position: relative;
+    border: none;
+    box-shadow: none;
+    top: 0;
+}
+.btn-primary{
+    border-bottom: 3px solid #63b0e6 !important;
+}
+.btn-danger{
+    border-bottom: 3px solid #ec7e89 !important;
+}
+.btn-success{
+    border-bottom: 3px solid #86d698 !important;
+}
+.btn:active{
+    top: 3px;
+}
+.btn-success:focus, .btn-primary:focus, .btn-danger:focus,
+.btn-success.focus, .btn-primary.focus, .btn-danger.focus,
+.btn.focus{
+    box-shadow: none !important;
+}
 /** Admin **/
 .sidebar{
-    height: 100vh;
+    height: 99vh;
     width: 243px;
     background: #fff;
     box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     transition: all, 0.25s;
     position: fixed;
+    top: 5px;
+    left: 5px;
 }
 .sidebar > ul{
     list-style-type: none;
@@ -46,17 +71,23 @@ body {
 .sidebar--item > a:hover{
     text-decoration: none;
 }
+.sidebar--logo img{
+    width: 100%;
+}
 .content{
     margin-left: 250px;
-    padding: 15px;
-    padding-top: 10px;
+    padding: 5px;
+    padding-top: 5px;
 }
 .content .table{
     box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.5);
     border: none;
     background: #fff;
 }
-.content .table tr:hover{
-    background: #007bff;
-    color: #fff;
+.content .table tr td, .content .table tr th{
+    text-align: center;
+}
+.content .table form{
+    width: 20px;
+    display: inline;
 }
