@@ -2,7 +2,6 @@
 <img src="https://cdn.discordapp.com/attachments/530753204703592459/542471532828557350/Logopit_1549405629063.png" width="200">
 
 <h1 align="center">Anime Reviewers Society</h1>
-<hr />
 <h4 align="center">A website grouping all come out of opinion on Japanese anime</h4>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
