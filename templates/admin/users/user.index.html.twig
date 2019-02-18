@@ -3,14 +3,14 @@
 {% block content %}
     <table class="table">
         <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom d'utilisateur</th>
-            <th scope="col">Email</th>
-            <th scope="col">Rôle</th>
-            <th scope="col">Statut</th>
-            <th scope="col"><a href="{{ path("admin.user.new") }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Ajouter</a></th>
-        </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom d'utilisateur</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rôle</th>
+                <th scope="col">Statut</th>
+                <th scope="col"><a href="{{ path("admin.user.new") }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Ajouter</a></th>
+            </tr>
         </thead>
         <tbody>
         {% for u in user %}
