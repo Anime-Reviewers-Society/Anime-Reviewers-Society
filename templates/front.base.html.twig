@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="sidebar">
+        <div class="sidebar__title">
+            <h2>Anime Reviewers Society</h2>
+        </div>
+        <ul class="sidebar__menu">
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Link 1</a></li>
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Link 2</a></li>
+            <li class="sidebar__item"><a href="#" class="sidebar__link">Link 3</a></li>
+        </ul>
+    </div>
+    <button class="menu__toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    {% block content %}{% endblock %}
+{% endblock %}

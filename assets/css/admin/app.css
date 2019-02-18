@@ -26,7 +26,7 @@ body {
     box-shadow: none !important;
 }
 /** Admin **/
-.sidebar{
+.sidebar_admin{
     height: 99vh;
     width: 243px;
     background: #fff;
@@ -37,14 +37,14 @@ body {
     top: 5px;
     left: 5px;
 }
-.sidebar > ul{
+.sidebar_admin > ul{
     list-style-type: none;
     margin-left: -25px;
 }
-.sidebar ul >li > a > i{
+.sidebar_admin ul >li > a > i{
     margin-right: 10px;
 }
-.sidebar--item{
+.sidebar_admin__item{
     margin-left: -15px;
     padding: 10px;
     margin: 5px;
@@ -53,10 +53,10 @@ body {
     text-transform: uppercase;
     transition: all, 0.25s;
 }
-.sidebar--item:hover{
+.sidebar_admin__item:hover{
     background: #f0f0ff;
 }
-.sidebar--item:after{
+.sidebar_admin__item:after{
     content: "\f054";
     font-family: "Font Awesome 5 Free";
     position: absolute;
@@ -65,16 +65,16 @@ body {
     font-weight: 700;
     transition: all, 0.25s;
 }
-.sidebar--item:hover:after{
+.sidebar_admin__item:hover:after{
     right: 10px;
 }
-.sidebar--item > a:hover{
+.sidebar_admin__item > a:hover{
     text-decoration: none;
 }
-.sidebar--logo img{
+.sidebar_admin__logo img{
     width: 100%;
 }
-.sidebar--logo:after{
+.sidebar_admin__logo:after{
     content: "";
     height: 1px;
     position: absolute;
@@ -116,4 +116,7 @@ body {
 .content .table form{
     width: 20px;
     display: inline;
+}
+.anime--informations h1, .user--informations h1{
+    text-align: center;
 }
