@@ -74,18 +74,44 @@ body {
 .sidebar--logo img{
     width: 100%;
 }
+.sidebar--logo:after{
+    content: "";
+    height: 1px;
+    position: absolute;
+    background: #9aaebd;
+    left: 15px;
+    right: 15px;
+    top: 230px;
+}
 .content{
-    margin-left: 250px;
+    margin-left: 255px;
     padding: 5px;
     padding-top: 5px;
-}
-.content .table{
-    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.5);
-    border: none;
+    margin-top: 5px;
     background: #fff;
+    margin-right: 5px;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.5);
+    height: 99vh;
+    overflow: scroll;
+    border: none;
+}
+.content::-webkit-scrollbar {
+    width: 10px;
+    padding: 3px;
+}
+.content::-webkit-scrollbar-track {
+    background: #fff;
+}
+.content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+    padding: 3px;
 }
 .content .table tr td, .content .table tr th{
     text-align: center;
+}
+.content thead{
+    background: #f1f1f1;
 }
 .content .table form{
     width: 20px;

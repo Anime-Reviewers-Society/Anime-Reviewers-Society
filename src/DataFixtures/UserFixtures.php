@@ -28,7 +28,7 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        for ($index = 0; $index < 10; $index++) {
+        for ($index = 0; $index < 40; $index++) {
             $user = new User();
             if($index == 9) {
                 $user->setUsername('Admin')
