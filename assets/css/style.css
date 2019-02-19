@@ -63,12 +63,6 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     width: 100%;
     font-size: 18px;
 }
-.anime__search_bar .anime__search_bar input[type="text"]:focus{
-
-}
-.anime__search_bar .anime__search_bar input[type="text"]{
-    box-shadow: none !important;
-}
 .anime__search_bar .anime__search_bar input[type="text"]:hover{
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
