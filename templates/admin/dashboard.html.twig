@@ -3,7 +3,9 @@
 {% block body %}
     <div class="sidebar_admin">
         <div class="sidebar_admin__logo">
-            <img src="{{ asset('/img/md/logo_md.png') }}">
+            <a href="{{ path('anime.index') }}">
+                <img src="{{ asset('/img/md/logo_md.png') }}">
+            </a>
         </div>
         <ul>
             <li class="sidebar_admin__item"><a href="{{ path("dashboard") }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>

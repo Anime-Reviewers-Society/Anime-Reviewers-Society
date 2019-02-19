@@ -46,6 +46,16 @@ class Anime
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $releaseDate;
+
+    /**
+     * @ORM\Column(type="text", length=65535, nullable=true)
+     */
+    private $resume;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +129,30 @@ class Anime
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getReleaseDate(): ?\DateTimeInterface
+    {
+        return $this->releaseDate;
+    }
+
+    public function setReleaseDate(?\DateTimeInterface $releaseDate): self
+    {
+        $this->releaseDate = $releaseDate;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(?string $resume): self
+    {
+        $this->resume = $resume;
 
         return $this;
     }

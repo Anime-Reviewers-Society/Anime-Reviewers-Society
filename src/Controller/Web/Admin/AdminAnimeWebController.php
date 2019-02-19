@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
-class AdminAnimeController extends AbstractController
+class AdminAnimeWebController extends AbstractController
 {
     /**
      * @param AnimeRepository $animeRepository
@@ -52,17 +52,13 @@ class AdminAnimeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $anime->getImage();
+            $file = $form->get('image')->getData();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
             try {
-                try {
-                    $file->move(
-                        $this->getParameter('anime_image_directory'),
-                        $fileName
-                    );
-                } catch (FileException $e) {
-                    print_r($e->getMessage());
-                }
+                $file->move(
+                    $this->getParameter('anime_image_directory'),
+                    $fileName
+                );
                 $anime->setImage($fileName);
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($anime);
@@ -84,7 +80,7 @@ class AdminAnimeController extends AbstractController
      * @param Anime $anime
      * @return Response
      *
-     * @Route("/admin/anime/{id}/edit", name="admin.anime.edit")
+     * @Route("/admin/animes/{id}/edit", name="admin.anime.edit")
      */
     public function edit(Request $request, Anime $anime): Response
     {
@@ -119,7 +115,7 @@ class AdminAnimeController extends AbstractController
             $entityManager->remove($anime);
             $entityManager->flush();
         }
-        return $this->redirectToRoute('admin.anime.index');
+        return $this->redirectToRoute('admin.animes.index');
     }
 
     /**

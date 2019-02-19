@@ -1,0 +1,40 @@
+{% extends 'front.base.html.twig' %}
+
+{% block content %}
+    <div class="anime__list">
+        <div class="row">
+            {% for a in anime %}
+                <div class="col-sm-4">
+                    <a href="{{ path('anime.show', { 'id' : a.id }) }}" class="anime__link">
+                        <div class="card anime__card">
+                            <div class="card_img__wrapper">
+                                {% if a.image %}
+                                    <img class="card-img-top" src="{{ asset('uploads/anime_image/' ~ a.image) }}" alt="{{ a.originalTitle }}">
+                                {% else %}
+                                    <img class="card-img-top" src="https://via.placeholder.com/300x150" alt="Replacer">
+                                {% endif %}
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h3>{{ a.originalTitle }}</h3>
+                                        <h4>({{ a.translatedTitle }})</h4>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <span class="release_date__label">
+                                            Date de sortie :
+                                        </span>
+                                        <div class="release_date__date">
+                                            {{ a.releaseDate.date|date("d/m/Y") }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'front.base.html.twig' %}
+
+{% block content %}
+    <div class="anime">
+        <div class="row">
+            <div class="col-sm-4">
+                <div  class="anime__image">
+                    {% if anime.image %}
+                    <img src="{{ asset('uploads/anime_image/' ~ anime.image) }}"  alt="{{ anime.originalTitle }}"/>
+                    {% else %}
+                        <img src="https://via.placeholder.com/300x150" alt="{{ anime.originalTitle }}" />
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div  class="anime__resume">
+                    <p>
+                        {{ anime.resume }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

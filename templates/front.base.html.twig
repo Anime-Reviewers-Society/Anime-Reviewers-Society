@@ -1,18 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="sidebar">
-        <div class="sidebar__title">
-            <h2>Anime Reviewers Society</h2>
+    <div class="anime__search_bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{{ path('anime.index') }}">
+                        <img src="{{ asset('/img/md/logo_md.png') }}">
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Titre d'anime, genre, etc...">
+                </div>
+                <div class="col-sm-4">
+                    {% if  app.user != null%}
+                        <a href="#" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
+                        <a href="#" class="btn btn-primary btn-darker-blue">Inscription</a>
+                    {% else %}
+                        <div class="sidebar">
+                            <div class="sidebar__img">
+                                <img src="{{ asset('/img/md/logo_md.png') }}">
+                            </div>
+                            <ul class="sidebar__menu">
+                                <li class="sidebar__item"><a href="#" class="sidebar__link">Link 1</a></li>
+                                <li class="sidebar__item"><a href="#" class="sidebar__link">Link 2</a></li>
+                                <li class="sidebar__item"><a href="#" class="sidebar__link">Link 3</a></li>
+                            </ul>
+                        </div>
+                        <button class="menu__toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-        <ul class="sidebar__menu">
-            <li class="sidebar__item"><a href="#" class="sidebar__link">Link 1</a></li>
-            <li class="sidebar__item"><a href="#" class="sidebar__link">Link 2</a></li>
-            <li class="sidebar__item"><a href="#" class="sidebar__link">Link 3</a></li>
-        </ul>
     </div>
-    <button class="menu__toggle">
-        <i class="fas fa-bars"></i>
-    </button>
-    {% block content %}{% endblock %}
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="overlay"></div>
 {% endblock %}
