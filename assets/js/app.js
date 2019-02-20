@@ -12,11 +12,11 @@ $(document).ready(function () {
         if($(".sidebar").hasClass("sidebar__toggle")) {
             $(".overlay").css("display", "none");
             $(".sidebar").removeClass("sidebar__toggle");
-            $(this).removeClass("menu__hidden");
+            $("main .container").css("right", "0");
         } else {
             $(".sidebar").addClass("sidebar__toggle");
             $(".overlay").css("display", "block");
-            $(this).addClass("menu__hidden");
+            $("main .container").css("right", "150px");
         }
     });
     $(".sidebar__item").on("click", function () {

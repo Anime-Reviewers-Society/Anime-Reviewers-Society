@@ -2,6 +2,11 @@
 
 {% block content %}
     <div class="anime">
+        <div class="anime__title">
+            <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
+            <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
+        </div>
+        <hr />
         <div class="row">
             <div class="col-sm-4">
                 <div  class="anime__image">

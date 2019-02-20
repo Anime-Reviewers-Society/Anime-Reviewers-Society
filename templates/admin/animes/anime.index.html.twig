@@ -18,8 +18,8 @@
                 <th scope="row">{{ a.id }}</th>
                 <td><a href="{{ path("admin.anime.show", { 'id' : a.id } ) }}">{{ a.translatedTitle }}</a></td>
                 <td>{{ a.originalTitle }}</td>
-                <td>{{ a.type }}</td>
-                <td>{{ a.secondType }}</td>
+                <td>{{ a.target }}</td>
+                <td>{{ a.tag }}</td>
                 <td>
                     <a href="{{ path("admin.anime.show", { 'id' : a.id }) }}" class="btn btn-success"><i class="far fa-eye"></i> Voir</a>
                     <a href="{{ path("admin.anime.edit", { 'id' : a.id } ) }}" class="btn btn-primary"><i class="far fa-edit"></i> Editer</a>
