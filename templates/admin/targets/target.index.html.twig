@@ -1,0 +1,29 @@
+{% extends 'admin/dashboard.html.twig' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Genres</th>
+            <th scope="col"><a href="{{ path("admin.target.new") }}" class="btn btn-primary"><i class="fas fa-user-plus"></i> Ajouter</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for t in target %}
+            <tr>
+                <th scope="row">{{ t.id }}</th>
+                <td>{{ t.label }}</td>
+                <td>
+                    <a href="{{ path("admin.target.edit", { 'id' : t.id } ) }}" class="btn btn-primary"><i class="far fa-edit"></i> Editer</a>
+                    <form method="post" action="{{ path('admin.target.delete', {'id': t.id}) }}" onsubmit="return confirm('Es-tu sûr(e) ?');">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ t.id) }}">
+                        <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
