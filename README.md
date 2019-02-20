@@ -23,11 +23,21 @@ To contribute :
 git clone https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society.git
 cd Anime-Reviewers-Society
 
-# ⚠️ Windows users only ⚠️
-rm docker-compose.yaml && mv docker-compose.yaml.windows docker-compose.yaml
-
 # Build and initialize the project
 make install
+```
+If you don't have make (or don't want to download it)
+```bash
+# Execute in order these commands
+docker-compose up -d
+composer install
+npm install
+yarn install
+yarn encore dev --watch
+php bin/console doctrine:database:drop --force
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --force
+php bin/console doctrine:fixtures:load
 ```
 🔥 Coding ! 😈
 
