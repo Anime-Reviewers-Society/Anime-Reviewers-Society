@@ -217,6 +217,7 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     position: relative;
     bottom: 0;
     transition: all, 0.25s;
+    height: 300px;
 }
 .anime__card:hover{
     bottom: 5px;
@@ -268,9 +269,21 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 .anime__title__translated{
     font-size: 21px;
 }
+.anime__actions{
+    margin: 20px 0;
+}
+.anime__image__wrapper{
+    overflow: hidden;
+}
+.anime__resume, .anime__informations{
+    margin: 20px 0;
+}
+.anime__image{
+    width: 100%;
+}
 .overlay{
     background: rgba(0, 0, 0, 0.75);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;

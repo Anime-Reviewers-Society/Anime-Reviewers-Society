@@ -5,23 +5,43 @@
         <div class="anime__title">
             <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
+            <div class="anime__actions">
+                <a href="#" class="btn btn-primary">Voir l'opening</a>
+                <a href="#" class="btn btn-primary">Donner mon avis !</a>
+            </div>
         </div>
         <hr />
         <div class="row">
-            <div class="col-sm-4">
-                <div  class="anime__image">
+            <div class="col-sm-12">
+                <div  class="anime__image__wrapper">
                     {% if anime.image %}
-                    <img src="{{ asset('uploads/anime_image/' ~ anime.image) }}"  alt="{{ anime.originalTitle }}"/>
+                    <img src="{{ asset('uploads/anime_image/' ~ anime.image) }}"  alt="{{ anime.originalTitle }}" class="anime__image"/>
                     {% else %}
                         <img src="https://via.placeholder.com/300x150" alt="{{ anime.originalTitle }}" />
                     {% endif %}
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-sm-8">
                 <div  class="anime__resume">
                     <p>
                         {{ anime.resume }}
                     </p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="anime__informations">
+                    <div class="row">
+                        <div class="col-sm-12">
+                         <span class="release_date__label">
+                             Date de sortie :
+                         </span>
+                            <div class="release_date__date">
+                                {{ anime.releaseDate.date|date("d/m/Y") }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

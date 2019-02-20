@@ -9,6 +9,7 @@
 /.idea/
 /Migrations/
 /docker/database
+/uploads/
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###
