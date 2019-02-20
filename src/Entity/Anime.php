@@ -28,11 +28,13 @@ class Anime
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Target", mappedBy="label")
      */
     private $target;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Tag")
      */
     private $tag;
 
