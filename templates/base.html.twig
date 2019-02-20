@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('build/app.css') }}">
@@ -10,5 +11,7 @@
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <script type="text/javascript" src="{{ asset('build/app.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('build/runtime.js') }}"></script>
     </body>
 </html>
