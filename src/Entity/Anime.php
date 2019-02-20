@@ -29,12 +29,12 @@ class Anime
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $type;
+    private $target;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $secondType;
+    private $tag;
 
     /**
      * @ORM\Column(type="boolean")
@@ -85,26 +85,26 @@ class Anime
         return $this;
     }
 
-    public function getType(): ?int
+    public function getTarget(): ?int
     {
-        return $this->type;
+        return $this->target;
     }
 
-    public function setType(?int $type): self
+    public function setTarget(?int $target): self
     {
-        $this->type = $type;
+        $this->target = $target;
 
         return $this;
     }
 
-    public function getSecondType(): ?int
+    public function getTag(): ?int
     {
-        return $this->secondType;
+        return $this->tag;
     }
 
-    public function setSecondType(?int $secondType): self
+    public function setTag(?int $tag): self
     {
-        $this->secondType = $secondType;
+        $this->tag = $tag;
 
         return $this;
     }

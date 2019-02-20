@@ -24,6 +24,9 @@ body:after{
 }
 .container{
     width: 1250px;
+    position: relative;
+    right: 0;
+    transition: all, 0.25s;
 }
 /* Btn styles */
 .btn-primary.btn-darker-blue{
@@ -53,7 +56,6 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     box-shadow: 0 0 7px 2px #000000a1;
     transition: all, 0.5s;
     padding: 25px;
-    overflow: hidden;
 }
 .anime__search_bar input[type="text"]{
     padding: 6px 20px;
@@ -80,13 +82,13 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     transition: all, 0.5s;
 }
 .anime__search_bar.anime__search_bar .container .col-sm-4:first-child img {
-    width: 100px;
+    width: 90px;
     position: absolute;
     top: -25px;
     left: 50px;
 }
 .menu__toggle{
-    background: #3737a7;
+    background: #419ae0;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
@@ -96,7 +98,6 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     opacity: 1;
     cursor: pointer;
     margin-left: 15px;
-    margin-top: 5px;
     z-index: 999;
 }
 .menu__hidden{
@@ -104,28 +105,14 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     color: transparent;
     box-shadow: none;
 }
-.menu__hidden:after{
-    content: "\f00d";
-    position: absolute;
-    font-family: "Font Awesome\ 5 Free";
-    font-weight: 900;
-    left: 0;
-    right: 0;
-    top: 5px;
-    bottom: 0;
-    color: #fff;
-    opacity: 1;
-    font-size: 24px;
-    -webkit-text-stroke: 3px rgb(65, 73, 145);
-}
 .menu__hidden:hover:after{
     -webkit-text-stroke: 3px #5454bb;
 }
 .menu__toggle:hover{
-    background: #5454bb;
+    background: #54c7fd;
 }
 .menu__toggle:active{
-    background: #1d1d6b;
+    background: #279cfd;
 }
 .menu__toggle:focus{
     outline: none;
@@ -133,19 +120,22 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 .sidebar{
     font-family: 'Roboto', sans-serif;
     position: absolute;
-    right: -250px;
-    top: 0;
+    right: -500px;
+    top: -25px;
     bottom: 0;
     background: #f0f0ff;
-    width: 300px;
+    width: 100%;
     box-shadow: 2px 0px 6px 2px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: all, 0.25s;
     z-index: 998;
 }
 .sidebar__toggle{
-    left: 0;
+    right: 0;
     opacity: 1;
+    right: -390px;
+    opacity: 1;
+    height: 100vh;
 }
 .sidebar > .sidebar__img{
     text-align: center;
@@ -157,7 +147,8 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     width: 200px;
 }
 .sidebar > ul.sidebar__menu{
-    margin: 40px 0;
+    margin: 20px 0;
+    padding: 20px;
 }
 .sidebar .sidebar__child_menu{
     display: none;
@@ -166,31 +157,36 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     list-style-type: none;
     padding: 15px 0;
     transition: all, 0.25s;
-    margin-left: -40px;
+    border-radius: 4px;
+    text-align: left;
 }
 .sidebar > ul.sidebar__menu > li.sidebar__item:hover{
-    background: rgb(54, 56, 148);
+    background: #a9d9ff;
 }
-.sidebar > ul.sidebar__menu > li.sidebar__item:after{
-    content: "\f054";
+/*.sidebar > ul.sidebar__menu > li.sidebar__item:before{
+    content: "\f053";
     font-family: "Font Awesome\ 5 Free";
     font-weight: 900;
     position: absolute;
-    right: 0;
-    color: #fff;
-    right: 40px;
+    left: 0;
+    color: #419ae0;
     opacity: 0;
     transition: all, 0.25s;
 }
-.sidebar > ul.sidebar__menu > li.sidebar__item:hover:after{
+.sidebar > ul.sidebar__menu > li.sidebar__item:hover:before{
     opacity: 1;
-    right: 20px;
-}
+    left: 30px;
+}*/
 .sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link{
     text-transform: uppercase;
-    color: #fff;
+    color: #2196F3;
     text-decoration: none;
     margin: 0 20px;
+}
+.sidebar > ul.sidebar__menu > li.sidebar__item .sidebar__item__space{
+    width: 30px;
+    position: relative;
+    display: inline-block;
 }
 .social{
     position: absolute;
@@ -262,6 +258,15 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     background: #fff;
     border-radius: 4px;
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.anime__title{
+    text-align: center;
+}
+.anime__title__original{
+    font-size: 34px;
+}
+.anime__title__translated{
+    font-size: 21px;
 }
 .overlay{
     background: rgba(0, 0, 0, 0.75);

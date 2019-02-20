@@ -28,8 +28,8 @@ class AnimeFixtures extends Fixture
                  Fusce laoreet ipsum magna, vel maximus lectus euismod id. Aliquam diam elit, posuere vitae est nec,
                   suscipit viverra dolor.')
                 ->setReleaseDate(new \DateTime('2011-01-01'))
-                ->setType(1)
-                ->setSecondType(4)
+                ->setTarget(1)
+                ->setTag(4)
                 ->setMatureAudience(false);
             $manager->persist($anime);
         }
