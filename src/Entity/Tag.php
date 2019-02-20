@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TargetRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\TagRepository")
  */
-class Target
+class Tag
 {
     /**
      * @ORM\Id()
@@ -18,7 +18,7 @@ class Target
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin", inversedBy="target")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Anime")
      */
     private $label;
 
