@@ -22,6 +22,9 @@ body:after{
     background: linear-gradient(to right, #55caff, #419ae0);
     z-index: -1;
 }
+.hidden{
+    display: none;
+}
 .container{
     width: 1250px;
     position: relative;
@@ -209,6 +212,14 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 .content_exemple > span{
     font-style: italic;
 }
+/* Form */
+.form_register__policies{
+    padding: 15px;
+}
+.form_register__policies ul{
+    list-style-type: none;
+    margin-left: -45px;
+}
 /* Anime List */
 .anime__card{
     margin-bottom: 25px;
@@ -250,11 +261,14 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 .anime__link, .anime__link:hover{
     color: #355e7e;
 }
-.anime__list, .anime{
+.anime__list, .anime, .form_register{
     margin: 150px 0;
 }
+.form_register__actions{
+    text-align: center;
+}
 /* Anime Show */
-.anime{
+.anime, .form_register{
     padding: 20px;
     background: #fff;
     border-radius: 4px;
@@ -274,6 +288,7 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 }
 .anime__image__wrapper{
     overflow: hidden;
+    text-align: center;
 }
 .anime__resume, .anime__informations{
     margin: 20px 0;
