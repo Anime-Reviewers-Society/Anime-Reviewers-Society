@@ -8,14 +8,9 @@ body {
     box-shadow: none;
     top: 0;
 }
-.btn-primary{
-    border-bottom: 3px solid #63b0e6 !important;
-}
-.btn-danger{
-    border-bottom: 3px solid #ec7e89 !important;
-}
-.btn-success{
-    border-bottom: 3px solid #86d698 !important;
+.btn-primary, .btn-success, .btn-danger,
+.btn-primary:focus, .btn-success:focus, .btn-danger:focus{
+    box-shadow: 2px 2px 8px 0 #000000ad;
 }
 .btn:active{
     top: 3px;

@@ -30,19 +30,11 @@ class UserFixtures extends Fixture
     {
         for ($index = 0; $index < 40; $index++) {
             $user = new User();
-            if($index == 9) {
-                $user->setUsername('Admin')
-                     ->setPassword($this->passwordEncoder->encodePassword($user, 'admin'))
-                    ->setMail('admin.mail@test.test')
-                    ->setStatus(false)
-                     ->setRoles(['ROLE_ADMIN']);
-            } else {
-                $user->setUsername('Username #' . $index)
-                    ->setPassword($this->passwordEncoder->encodePassword($user, 'userpass'))
-                    ->setMail('user.mail@test.test')
-                    ->setStatus(true)
-                    ->setRoles(['ROLE_USER']);
-            }
+            $user->setUsername('Username #' . $index)
+                ->setPassword($this->passwordEncoder->encodePassword($user, 'userpass'))
+                ->setMail('user.mail@test.test')
+                ->setStatus(true)
+                ->setRoles(['ROLE_USER']);
             $manager->persist($user);
         }
         $manager->flush();
