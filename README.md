@@ -30,7 +30,7 @@ If you don't have make (or don't want to download it)
 ```bash
 # Execute in order these commands
 docker-compose up -d
-composer install
+docker-compose run composer install
 npm install
 yarn install
 yarn encore dev --watch
