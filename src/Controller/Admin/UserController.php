@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
-class AdminUserWebController extends AbstractController
+class UserController extends AbstractController
 {
 
     /**

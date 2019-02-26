@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AdminTagWebController extends AbstractController
+class TagController extends AbstractController
 {
     /**
      * @param TagRepository $tagRepository

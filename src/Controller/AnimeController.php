@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\AnimeRepository;
 
-class AnimeWebController extends AbstractController
+class AnimeController extends AbstractController
 {
     /**
      * @param AnimeRepository $animeRepository

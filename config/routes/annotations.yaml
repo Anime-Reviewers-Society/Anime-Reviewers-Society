@@ -1,12 +1,3 @@
-rest_controller:
-    resource: ../../src/Controller/Rest
-    type: annotation
-    prefix: /api
-
-web_controller:
-    resource: ../../src/Controller/Web
-    type: annotation
-
 admin_controller:
-    resource: ../../src/Controller/Web/Admin
+    resource: ../../src/Controller/Admin
     type: annotation
