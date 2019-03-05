@@ -1,3 +1,7 @@
 admin_controller:
     resource: ../../src/Controller/Admin
     type: annotation
+
+controller:
+    resource: ../../src/Controller
+    type: annotation

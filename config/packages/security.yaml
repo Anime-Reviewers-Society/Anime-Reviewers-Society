@@ -25,6 +25,9 @@ security:
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
             logout:
                 path:   app_logout
+            guard:
+                authenticators:
+                    - App\Security\SecurityControllerAuthenticator
 
             # form_login: true
             # https://symfony.com/doc/current/security/form_login_setup.html
