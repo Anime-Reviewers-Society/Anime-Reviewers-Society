@@ -38,7 +38,7 @@
                             <i class="fas fa-bars"></i>
                         </button>
                     {% else %}
-                        <a href="#" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
+                        <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
                         <a href="{{ path('app_register') }}" class="btn btn-primary btn-darker-blue">Inscription</a>
                     {% endif %}
                 </div>
