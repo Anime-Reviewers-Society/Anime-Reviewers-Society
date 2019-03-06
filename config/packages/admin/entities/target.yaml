@@ -1,0 +1,4 @@
+easy_admin:
+  entities:
+    Target:
+      class: App\Entity\Target

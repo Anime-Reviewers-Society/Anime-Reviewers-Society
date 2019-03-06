@@ -1,0 +1,11 @@
+easy_admin:
+  design:
+    brand_color: '#1ABC9C'
+    menu:
+    - label: 'Animés'
+      icon: 'newspaper-o'
+      children:
+      - {entity: 'Anime', label: 'Animés', icon: 'newspaper-o'}
+      - {entity: 'Target', label: 'Cible', icon: 'bullseye'}
+      - {entity: 'Tag', label: 'Tags', icon: 'tags'}
+    - {entity: 'User', label: 'Utilisateurs', icon: 'user'}
