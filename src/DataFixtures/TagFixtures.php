@@ -3,9 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Tag;
-use App\Entity\Target;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Faker;
 
 class TagFixtures extends Fixture
 {
@@ -15,10 +15,11 @@ class TagFixtures extends Fixture
      */
     public function load(ObjectManager $manager)
     {
+        $faker = Faker\Factory::create('fr_FR');
         for ($index = 0; $index < 15; $index++) {
 
-            $tag = new  Tag();
-            $tag->setLabel('Tag ' . $index);
+            $tag = new Tag();
+            $tag->setLabel($faker->name);
 
             $manager->persist($tag);
         }
