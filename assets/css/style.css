@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body{
-    background: #fff;
+body {
+    background: url("https://cdn.discordapp.com/attachments/238019433140977665/552881468796567563/108.png") no-repeat fixed center;
 }
-body:before {
+
+/*body:before {
     content: '';
     height: 100vh;
     width: 50%;
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to right, #419ae0, #55caff);
     z-index: -1;
 }
 body:after{
@@ -19,38 +19,43 @@ body:after{
     position: fixed;
     bottom: 0;
     right: 0;
-    background: linear-gradient(to right, #55caff, #419ae0);
     z-index: -1;
-}
-.hidden{
+}*/
+.hidden {
     display: none;
 }
-.container{
+
+.container {
     width: 1250px;
     position: relative;
     right: 0;
     transition: all, 0.25s;
 }
+
 /* Btn styles */
-.btn-primary.btn-darker-blue{
+.btn-primary.btn-darker-blue {
     background-color: #1194d3;
     border-color: #1194d3;
 }
-.btn-primary.btn-darker-blue:hover{
+
+.btn-primary.btn-darker-blue:hover {
     background-color: #099cd3;
     border-color: #099cd3;
 }
-btn-outline-primary.btn-darker-outline-blue{
+
+btn-outline-primary.btn-darker-outline-blue {
     border-color: #1194d3;
     color: #1194d3;
 }
-btn-outline-primary.btn-darker-outline-blue:hover{
+
+btn-outline-primary.btn-darker-outline-blue:hover {
     border-color: #099cd3;
     background-color: #099cd3;
     color: #fff;
 }
+
 /* Top bar */
-.anime__search_bar{
+.anime__search_bar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -60,7 +65,8 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     transition: all, 0.5s;
     padding: 25px;
 }
-.anime__search_bar input[type="text"]{
+
+.anime__search_bar input[type="text"] {
     padding: 6px 20px;
     border-radius: 4px;
     border: none;
@@ -68,29 +74,35 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     width: 100%;
     font-size: 18px;
 }
-.anime__search_bar .anime__search_bar input[type="text"]:hover{
+
+.anime__search_bar .anime__search_bar input[type="text"]:hover {
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
-.anime__search_bar .container .col-sm-4:last-child{
+
+.anime__search_bar .container .col-sm-4:last-child {
     text-align: right;
 }
-.anime__search_bar .container .col-sm-4:first-child{
+
+.anime__search_bar .container .col-sm-4:first-child {
     text-align: left;
 }
-.anime__search_bar .container .col-sm-4:first-child img{
+
+.anime__search_bar .container .col-sm-4:first-child img {
     width: 88px;
     position: absolute;
     top: -22px;
     left: 50px;
     transition: all, 0.5s;
 }
+
 .anime__search_bar.anime__search_bar .container .col-sm-4:first-child img {
     width: 90px;
     position: absolute;
     top: -25px;
     left: 50px;
 }
-.menu__toggle{
+
+.menu__toggle {
     background: #419ae0;
     border: none;
     padding: 10px 15px;
@@ -103,24 +115,30 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     margin-left: 15px;
     z-index: 999;
 }
-.menu__hidden{
+
+.menu__hidden {
     background: transparent;
     color: transparent;
     box-shadow: none;
 }
-.menu__hidden:hover:after{
+
+.menu__hidden:hover:after {
     -webkit-text-stroke: 3px #5454bb;
 }
-.menu__toggle:hover{
+
+.menu__toggle:hover {
     background: #54c7fd;
 }
-.menu__toggle:active{
+
+.menu__toggle:active {
     background: #279cfd;
 }
-.menu__toggle:focus{
+
+.menu__toggle:focus {
     outline: none;
 }
-.sidebar{
+
+.sidebar {
     font-family: 'Roboto', sans-serif;
     position: absolute;
     right: -500px;
@@ -133,37 +151,44 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     transition: all, 0.25s;
     z-index: 998;
 }
-.sidebar__toggle{
+
+.sidebar__toggle {
     right: 0;
     opacity: 1;
     right: -390px;
     opacity: 1;
     height: 100vh;
 }
-.sidebar > .sidebar__img{
+
+.sidebar > .sidebar__img {
     text-align: center;
     width: 100%;
     margin-top: 20px;
 }
-.sidebar > .sidebar__img img{
+
+.sidebar > .sidebar__img img {
     border-radius: 100px;
     width: 200px;
 }
-.sidebar > ul.sidebar__menu{
+
+.sidebar > ul.sidebar__menu {
     margin: 20px 0;
     padding: 20px;
 }
-.sidebar .sidebar__child_menu{
+
+.sidebar .sidebar__child_menu {
     display: none;
 }
-.sidebar > ul.sidebar__menu > li.sidebar__item{
+
+.sidebar > ul.sidebar__menu > li.sidebar__item {
     list-style-type: none;
     padding: 15px 0;
     transition: all, 0.25s;
     border-radius: 4px;
     text-align: left;
 }
-.sidebar > ul.sidebar__menu > li.sidebar__item:hover{
+
+.sidebar > ul.sidebar__menu > li.sidebar__item:hover {
     background: #a9d9ff;
 }
 .sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link{
@@ -172,42 +197,51 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     text-decoration: none;
     margin: 0 20px;
 }
-.sidebar > ul.sidebar__menu > li.sidebar__item .sidebar__item__space{
+
+.sidebar > ul.sidebar__menu > li.sidebar__item .sidebar__item__space {
     width: 30px;
     position: relative;
     display: inline-block;
 }
-.social{
+
+.social {
     position: absolute;
     bottom: 50px;
     left: 0;
     right: 0;
     text-align: center;
 }
-.social > a.social__link{
+
+.social > a.social__link {
     font-size: 42px;
     color: #fff;
 }
-.content_exemple{
+
+.content_exemple {
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
-.content_exemple > h1{
+
+.content_exemple > h1 {
     color: #222263
 }
-.content_exemple > span{
+
+.content_exemple > span {
     font-style: italic;
 }
+
 /* Form */
-.form_register__policies{
+.form_register__policies {
     padding: 15px;
 }
-.form_register__policies ul{
+
+.form_register__policies ul {
     list-style-type: none;
     margin-left: -45px;
 }
+
 /* Anime List */
-.anime__card{
+.anime__card {
     margin-bottom: 25px;
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     border: none;
@@ -216,17 +250,20 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     transition: all, 0.25s;
     height: 300px;
 }
-.anime__card:hover{
+
+.anime__card:hover {
     bottom: 5px;
     box-shadow: 5px 10px 20px 0px rgba(0, 0, 0, 0.5);
     /*transform: rotate(2deg);*/
 }
-.card_img__wrapper{
+
+.card_img__wrapper {
     height: 200px;
     overflow: hidden;
     position: relative;
 }
-.card_img__wrapper img{
+
+.card_img__wrapper img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -234,25 +271,36 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 .card_body h3{
     font-size: 18px;
 }
-.card_body h4{
+.card-body h4 {
     font-size: 14px;
 }
-.release_date__label{
+
+.release_date__label {
     text-decoration: underline;
     font-weight: 600;
 }
-.anime__link:hover{
+
+.anime__link:hover {
     text-decoration: none;
 }
-.anime__link, .anime__link:hover{
+
+.anime__link, .anime__link:hover {
     color: #355e7e;
 }
 .anime__list, .anime, .form_register, .form_login, .user{
+    background: #ffffffc9;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.anime__list, .anime, .form_register, .form_login {
     margin: 150px 0;
 }
-.form_register__actions{
+
+.form_register__actions {
     text-align: center;
 }
+
 /* Anime Show */
 .anime, .form_register, .form_login, .user{
     padding: 20px;
@@ -260,29 +308,37 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     border-radius: 4px;
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
-.anime__title{
+
+.anime__title {
     text-align: center;
 }
-.anime__title__original{
+
+.anime__title__original {
     font-size: 34px;
 }
-.anime__title__translated{
+
+.anime__title__translated {
     font-size: 21px;
 }
-.anime__actions{
+
+.anime__actions {
     margin: 20px 0;
 }
-.anime__image__wrapper{
+
+.anime__image__wrapper {
     overflow: hidden;
     text-align: center;
 }
-.anime__resume, .anime__informations{
+
+.anime__resume, .anime__informations {
     margin: 20px 0;
 }
-.anime__image{
+
+.anime__image {
     width: 100%;
 }
-.overlay{
+
+.overlay {
     background: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
@@ -293,4 +349,72 @@ btn-outline-primary.btn-darker-outline-blue:hover{
     z-index: 0;
     transition: all, 0.25s;
     display: none;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px 0;
+    background: #fff;
+    box-shadow: 0 0 7px 2px #000000a1;
+    color: #355e7e;
+}
+
+.footer__title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.footer.container.raw:last-child {
+    border: none;
+}
+
+.col-sm-3 {
+    border-right: 1px dashed #355e7e47;
+    text-align: center;
+}
+
+.col-sm-3 p a {
+    text-decoration: none;
+}
+
+.col-md-12 {
+    text-align: center;
+}
+
+ul.social-network {
+    padding: 0;
+}
+
+.social-network li {
+    list-style-type: none;
+    display: inline;
+    margin: 5px;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.fa-discord {
+    color: #7289DA;
+}
+
+.fa-github-alt {
+    color: #14191E;
+}
+
+.fa-twitter {
+    color: #1DA1F2;
+}
+
+.icon {
+    transition: all, ease-in-out, 0.25s;
+    background: transparent;
+    color: grey;
+}
+
+.icon:hover {
+    opacity: 0.7;
+}
+
+.container .row .col-sm-3:last-child {
+    border-right: none;
 }
