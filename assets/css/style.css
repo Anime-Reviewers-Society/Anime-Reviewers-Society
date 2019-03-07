@@ -357,6 +357,10 @@ footer {
     background: #fff;
     box-shadow: 0 0 7px 2px #000000a1;
     color: #355e7e;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer__title {
