@@ -191,22 +191,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .sidebar > ul.sidebar__menu > li.sidebar__item:hover {
     background: #a9d9ff;
 }
-
-/*.sidebar > ul.sidebar__menu > li.sidebar__item:before{
-    content: "\f053";
-    font-family: "Font Awesome\ 5 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    color: #419ae0;
-    opacity: 0;
-    transition: all, 0.25s;
-}
-.sidebar > ul.sidebar__menu > li.sidebar__item:hover:before{
-    opacity: 1;
-    left: 30px;
-}*/
-.sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link {
+.sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link{
     text-transform: uppercase;
     color: #2196F3;
     text-decoration: none;
@@ -283,11 +268,9 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     top: 50%;
     transform: translateY(-50%);
 }
-
-.card_img__wrapper h3 {
+.card_body h3{
     font-size: 18px;
 }
-
 .card-body h4 {
     font-size: 14px;
 }

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,18 +29,6 @@ class Anime
     private $originalTitle;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Target", mappedBy="label")
-     */
-    private $target;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Tag")
-     */
-    private $tag;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $matureAudience;
@@ -57,6 +47,21 @@ class Anime
      * @ORM\Column(type="text", length=65535, nullable=true)
      */
     private $resume;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Target", cascade={"persist", "remove"})
+     */
+    private $target;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="animes")
+     */
+    private $tag;
+
+    public function __construct()
+    {
+        $this->tag = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -83,30 +88,6 @@ class Anime
     public function setOriginalTitle(string $originalTitle): self
     {
         $this->originalTitle = $originalTitle;
-
-        return $this;
-    }
-
-    public function getTarget(): ?int
-    {
-        return $this->target;
-    }
-
-    public function setTarget(?int $target): self
-    {
-        $this->target = $target;
-
-        return $this;
-    }
-
-    public function getTag(): ?int
-    {
-        return $this->tag;
-    }
-
-    public function setTag(?int $tag): self
-    {
-        $this->tag = $tag;
 
         return $this;
     }
@@ -157,5 +138,48 @@ class Anime
         $this->resume = $resume;
 
         return $this;
+    }
+
+    public function getTarget(): ?Target
+    {
+        return $this->target;
+    }
+
+    public function setTarget(?Target $target): self
+    {
+        $this->target = $target;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTag(): Collection
+    {
+        return $this->tag;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tag->contains($tag)) {
+            $this->tag[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tag->contains($tag)) {
+            $this->tag->removeElement($tag);
+        }
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->originalTitle;
     }
 }
