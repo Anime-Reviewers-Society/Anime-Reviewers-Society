@@ -28,11 +28,14 @@
                                     </li>
                                 {% endif %}
                                 <li class="sidebar__item">
-                                    <a href="#" class="sidebar__link">
+                                    <a href="{{ path("user.show") }}" class="sidebar__link">
                                         <span class="sidebar__item__space"><i class="fas fa-user"></i></span> Mon compte
                                     </a></li>
                                 <li class="sidebar__item"><a href="#" class="sidebar__link">Link 2</a></li>
                                 <li class="sidebar__item"><a href="#" class="sidebar__link">Link 3</a></li>
+                                <li class="sidebar__item">
+                                    <a href="{{ path("app_logout") }}" class="sidebar__link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                                </li>
                             </ul>
                         </div>
                         <button class="menu__toggle">
