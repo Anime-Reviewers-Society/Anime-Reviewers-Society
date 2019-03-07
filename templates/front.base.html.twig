@@ -13,7 +13,7 @@
                     <input type="text" placeholder="Titre d'anime, genre, etc...">
                 </div>
                 <div class="col-sm-4">
-                    {% if  app.user != null%}
+                    {% if  app.user != null %}
                         <div class="sidebar">
                             <div class="sidebar__img">
                                 <img src="{{ asset('/img/md/logo_md.png') }}">
@@ -22,7 +22,8 @@
                                 {% if app.user.roles.0 == 'ROLE_ADMIN' %}
                                     <li class="sidebar__item">
                                         <a href="{{ path('dashboard') }}" class="sidebar__link">
-                                            <span class="sidebar__item__space"><i class="fas fa-cogs"></i></span> Administration
+                                            <span class="sidebar__item__space"><i class="fas fa-cogs"></i></span>
+                                            Administration
                                         </a>
                                     </li>
                                 {% endif %}
@@ -51,4 +52,39 @@
         </div>
         <div class="overlay"></div>
     </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p class="footer__title">Vous avez des questions ?</p>
+                    <p>Vous trouverez une <a href="#">FAQ</a> complète des questions récurrentes.
+                        Vous pouvez également utiliser notre <a href="#">formulaire de contact</a>.</p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="footer__title">ARS</p>
+                    <p><a href="#"> Qui sommes-nous ?</a></p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="footer__title">Légale</p>
+                    <p><a href="#"> Conditions générales d'utilisation </a></p>
+                    <p><a href="#"> Mentions Légales </a></p>
+                    <p>©2019 ARS</p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="footer__title">Suivez-nous !</p>
+                    <div class="col-md-12">
+                        <ul class="social-network">
+                            <li><a href="https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society"
+                                   class="icon">
+                                    <i class="fab fa-github-alt"></i></a></li>
+                            <li><a href="https://discordapp.com/invite/Hk3V7JP" class="icon">
+                                    <i class="fab fa-discord"></i></a></li>
+                            <li><a href="https://twitter.com/AnimeReviewersS?s=09" class="icon">
+                                    <i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
