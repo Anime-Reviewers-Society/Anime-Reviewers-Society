@@ -247,14 +247,14 @@ btn-outline-primary.btn-darker-outline-blue:hover{
 .anime__link, .anime__link:hover{
     color: #355e7e;
 }
-.anime__list, .anime, .form_register, .form_login{
+.anime__list, .anime, .form_register, .form_login, .user{
     margin: 150px 0;
 }
 .form_register__actions{
     text-align: center;
 }
 /* Anime Show */
-.anime, .form_register, .form_login{
+.anime, .form_register, .form_login, .user{
     padding: 20px;
     background: #fff;
     border-radius: 4px;

@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="user">
-        <pre>
-            {{ dump(user) }}
-        </pre>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
     </div>
 {% endblock %}
