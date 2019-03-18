@@ -48,15 +48,16 @@ class Anime
      */
     private $resume;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Target", cascade={"persist", "remove"})
-     */
-    private $target;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="animes")
      */
     private $tag;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Target", inversedBy="animes")
+     */
+    private $target;
 
     public function __construct()
     {
@@ -140,18 +141,6 @@ class Anime
         return $this;
     }
 
-    public function getTarget(): ?Target
-    {
-        return $this->target;
-    }
-
-    public function setTarget(?Target $target): self
-    {
-        $this->target = $target;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Tag[]
      */
@@ -181,5 +170,17 @@ class Anime
     public function __toString(): string
     {
         return $this->originalTitle;
+    }
+
+    public function getTarget(): ?Target
+    {
+        return $this->target;
+    }
+
+    public function setTarget(?Target $target): self
+    {
+        $this->target = $target;
+
+        return $this;
     }
 }

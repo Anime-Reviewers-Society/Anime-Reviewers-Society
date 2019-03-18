@@ -6,7 +6,6 @@
             <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
             <div class="anime__actions">
-                <a href="#" class="btn btn-primary">Voir l'opening !</a>
                 <a href="#" class="btn btn-primary">Donner mon avis !</a>
             </div>
         </div>
@@ -14,11 +13,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div  class="anime__image__wrapper">
-                    {% if anime.image %}
-                    <img src="{{ asset('uploads/anime_image/' ~ anime.image) }}"  alt="{{ anime.originalTitle }}" class="anime__image"/>
-                    {% else %}
-                        <img src="https://via.placeholder.com/300x150" alt="{{ anime.originalTitle }}" />
-                    {% endif %}
+                    <img src="{{ anime.image }}"  alt="{{ anime.originalTitle }}" class="anime__image"/>
                 </div>
             </div>
         </div>

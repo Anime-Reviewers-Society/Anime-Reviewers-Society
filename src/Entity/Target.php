@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,6 +23,16 @@ class Target
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin", inversedBy="target")
      */
     private $label;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Anime", mappedBy="target")
+     */
+    private $animes;
+
+    public function __construct()
+    {
+        $this->animes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -42,5 +54,36 @@ class Target
     public function __toString(): string
     {
         return $this->label;
+    }
+
+    /**
+     * @return Collection|Anime[]
+     */
+    public function getAnimes(): Collection
+    {
+        return $this->animes;
+    }
+
+    public function addAnime(Anime $anime): self
+    {
+        if (!$this->animes->contains($anime)) {
+            $this->animes[] = $anime;
+            $anime->setTarget($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnime(Anime $anime): self
+    {
+        if ($this->animes->contains($anime)) {
+            $this->animes->removeElement($anime);
+            // set the owning side to null (unless already changed)
+            if ($anime->getTarget() === $this) {
+                $anime->setTarget(null);
+            }
+        }
+
+        return $this;
     }
 }
