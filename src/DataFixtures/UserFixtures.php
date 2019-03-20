@@ -31,12 +31,14 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
-        for ($index = 0; $index < 40; $index++) {
+        for ($index = 0; $index < 10; $index++) {
             $user = new User();
             $user->setUsername($faker->userName)
                 ->setPassword($this->passwordEncoder->encodePassword($user, $faker->password))
                 ->setMail($faker->email)
                 ->setStatus($faker->boolean);
+
+            $this->addReference('user-' . $index, $user);
             $manager->persist($user);
         }
         $manager->flush();

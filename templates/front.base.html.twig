@@ -16,7 +16,7 @@
                     {% if  app.user != null %}
                         <div class="sidebar">
                             <div class="sidebar__img">
-                                <img src="{{ asset('/img/md/logo_md.png') }}">
+                                <img src="{{ app.user.avatar }}">
                             </div>
                             <ul class="sidebar__menu">
                                 {% if app.user.roles.0 == 'ROLE_ADMIN' %}

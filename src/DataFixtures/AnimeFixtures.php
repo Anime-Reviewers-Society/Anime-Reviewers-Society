@@ -25,6 +25,7 @@ class AnimeFixtures extends Fixture
                 ->setResume($faker->text)
                 ->setReleaseDate($faker->dateTime)
                 ->setMatureAudience($faker->boolean);
+            $this->addReference('anime-' . $index, $anime);
             $manager->persist($anime);
         }
         $manager->flush();
