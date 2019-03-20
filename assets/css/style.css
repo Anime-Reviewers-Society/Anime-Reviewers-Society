@@ -246,27 +246,74 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     position: relative;
     bottom: 0;
     transition: all, 0.25s;
-    height: 300px;
+    height: 200px;
+    overflow: hidden;
 }
 
 .card_img__wrapper {
-    height: 200px;
+    height: 100px;
     overflow: hidden;
     position: relative;
+    transition: all, 0.25s;
+    z-index: 1;
+}
+
+.anime__card:hover .card_body {
+    visibility: hidden;
+}
+
+.card_img_overlay {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.card_img_overlay_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+}
+.anime__card:hover .card_img_overlay {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+.anime__card:hover .card_img__wrapper {
+    height: 400px;
 }
 
 .card_img__wrapper img {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    transition: all, 0.25s;
+}
+
+.anime__card:hover .card_img__wrapper img {
+    transform: scale(1.5);
 }
 
 .card__title {
     margin: 10px 0;
 }
 
+.anime__card_title {
+
+}
+
 .card_body {
     padding: 10px;
+    transition: all, 0.2s;
+    height: 95px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
 }
 
 .card_body h3 {
@@ -315,6 +362,13 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .anime__title {
     text-align: center;
 }
+.anime__tag {
+    background: #c7c7c7;
+    padding: 3px;
+    border-radius: 4px;
+    margin: 2px;
+    display: inline;
+}
 
 .anime__title__original {
     font-size: 34px;
@@ -341,11 +395,12 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 100%;
 }
 
-.anime__comment {
+.anime__comment_new, .anime__comment_show {
     background: #f1f1f1;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin: 10px 0;
 }
 
 .overlay {

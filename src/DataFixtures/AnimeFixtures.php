@@ -21,7 +21,7 @@ class AnimeFixtures extends Fixture
             $anime = new Anime();
             $anime->setOriginalTitle($faker->sentence(2, false))
                 ->setTranslatedTitle($faker->sentence(2, false))
-                ->setImage($faker->imageUrl('600', '400', 'abstract'))
+                ->setImage($faker->imageUrl('600', '300', 'abstract'))
                 ->setResume($faker->text)
                 ->setReleaseDate($faker->dateTime)
                 ->setMatureAudience($faker->boolean);

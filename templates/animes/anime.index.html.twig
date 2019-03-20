@@ -8,22 +8,29 @@
                     <a href="{{ path('anime.show', { 'id' : a.id }) }}" class="anime__link">
                         <div class="card anime__card">
                             <div class="card_img__wrapper">
-                                {% if a.image %}
-                                    <img class="card-img-top" src="{{ a.image }}" alt="{{ a.originalTitle }}">
-                                {% else %}
-                                    <img class="card-img-top" src="{{ a.image
-                                    }}" alt="Replacer">
-                                {% endif %}
+                                <img class="card-img-top" src="{{ a.image }}" alt="{{ a.originalTitle }}">
+                                <div class="card_img_overlay">
+                                    <div class="card_img_overlay_content">
+                                        <i class="fas fa-hat-wizard"></i> {{ a.target }}
+                                    </div>
+                                </div>
                             </div>
                             <div class="card_body">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <h3>{{ a.originalTitle }}</h3>
-                                        <h4><em>{{ a.translatedTitle }}</em></h4>
+                                        <div class="anime__card_title">
+                                            <h3>{{ a.originalTitle }}</h3>
+                                            <h4><em>{{ a.translatedTitle }}</em></h4>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <span class="anime__card anime__tag">
-                                            {{ a.target }}
+                                        <span class="anime__card__anime__tag">
+                                            {% for t in a.tag %}
+                                                <div class="anime__tag">
+                                                    {{ t }}
+                                                </div>
+                                            {% endfor %}
+
                                         </span>
                                     </div>
                                 </div>

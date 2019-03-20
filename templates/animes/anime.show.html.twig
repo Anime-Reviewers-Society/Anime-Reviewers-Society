@@ -49,14 +49,21 @@
                 </div>
             </div>
         </div>
-        {% for r in reviews %}
-            {{ r.comment }}
-        {% endfor %}
         <div class="anime__comment" id="comment">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <button class="btn btn-success">Soumettre</button>
-            {{ form_end(form) }}
+            <div class="anime__comment_listing">
+                {% for r in reviews %}
+                    <div class="anime__comment_show">
+                        {{ r.comment }}
+                    </div>
+
+                {% endfor %}
+            </div>
+            <div class="anime__comment_new">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-success">Soumettre</button>
+                {{ form_end(form) }}
+            </div>
         </div>
     </div>
 {% endblock %}
