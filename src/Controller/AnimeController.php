@@ -47,11 +47,12 @@ class AnimeController extends AbstractController
             $review->setDate(new \DateTimeImmutable("now"));
             $review->setComment($form->get("comment")->getData());
             $review->setNote($form->get("note")->getData());
+            $review->setAnime($anime);
 
             $entityManager->persist($review);
             $entityManager->flush();
 
-            return $this->redirectToRoute('anime.index');
+            return $this->redirectToRoute('anime.show', ['id' => $id]);
         }
 
         return $this->render('animes/anime.show.html.twig', [
