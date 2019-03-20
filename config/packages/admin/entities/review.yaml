@@ -1,0 +1,4 @@
+easy_admin:
+  entities:
+    Review:
+      class: App\Entity\Review

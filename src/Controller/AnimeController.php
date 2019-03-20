@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Review;
+use App\Form\ReviewType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\AnimeRepository;
@@ -28,9 +31,34 @@ class AnimeController extends AbstractController
      *
      * @Route("/anime/{id}", name="anime.show")
      */
-    public function show(AnimeRepository $animeRepository, int $id): Response
+    public function show(AnimeRepository $animeRepository, int $id, Request $request): Response
     {
         $anime = $animeRepository->find($id);
-        return $this->render('animes/anime.show.html.twig', ['anime' => $anime]);
+        $reviews = $anime->getReview();
+        $review = new Review();
+        $form = $this->createForm(ReviewType::class);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            //fill values in the form
+            $review->setAuthor($this->getUser());
+            $review->setDate(new \DateTimeImmutable("now"));
+            $review->setComment($form->get("comment")->getData());
+            $review->setNote($form->get("note")->getData());
+
+            $entityManager->persist($review);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('anime.index');
+        }
+
+        return $this->render('animes/anime.show.html.twig', [
+            'anime' => $anime,
+            'form' => $form->createView(),
+            'reviews' => $reviews
+            ]
+        );
     }
 }

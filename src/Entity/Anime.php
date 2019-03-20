@@ -59,9 +59,16 @@ class Anime
      */
     private $target;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Review", mappedBy="anime")
+     */
+    private $review;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
+        $this->reviews = new ArrayCollection();
+        $this->review = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -180,6 +187,37 @@ class Anime
     public function setTarget(?Target $target): self
     {
         $this->target = $target;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Review[]
+     */
+    public function getReview(): Collection
+    {
+        return $this->review;
+    }
+
+    public function addReview(Review $review): self
+    {
+        if (!$this->review->contains($review)) {
+            $this->review[] = $review;
+            $review->setAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Review $review): self
+    {
+        if ($this->review->contains($review)) {
+            $this->review->removeElement($review);
+            // set the owning side to null (unless already changed)
+            if ($review->getAnime() === $this) {
+                $review->setAnime(null);
+            }
+        }
 
         return $this;
     }

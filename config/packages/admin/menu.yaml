@@ -8,4 +8,5 @@ easy_admin:
       - {entity: 'Anime', label: 'Animés', icon: 'newspaper-o'}
       - {entity: 'Target', label: 'Cible', icon: 'bullseye'}
       - {entity: 'Tag', label: 'Tags', icon: 'tags'}
+    - {entity: 'Review', label: 'Reviews', icon: 'comment'}
     - {entity: 'User', label: 'Utilisateurs', icon: 'user'}

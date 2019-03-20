@@ -6,7 +6,7 @@
             <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
             <div class="anime__actions">
-                <a href="#" class="btn btn-primary">Donner mon avis !</a>
+                <a href="#comment" class="btn btn-primary">Donner mon avis !</a>
             </div>
         </div>
         <hr />
@@ -38,7 +38,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="anime__informations">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="anime__informations__tag">
+                                {#{{ anime.tag }}#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        {% for r in reviews %}
+            {{ r.comment }}
+        {% endfor %}
+        <div class="anime__comment" id="comment">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-success">Soumettre</button>
+            {{ form_end(form) }}
         </div>
     </div>
 {% endblock %}

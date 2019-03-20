@@ -3,43 +3,20 @@
 body {
     background: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/7406/dragons-flying-in-the-sky-1920x1080-wallpaper.jpg") no-repeat fixed center;
 }
+
 /** Override Bootstrap **/
-.btn{
+.btn {
     position: relative;
     border: none;
     box-shadow: none;
     top: 0;
 }
-.btn-primary, .btn-success, .btn-danger,
-.btn-primary:focus, .btn-success:focus, .btn-danger:focus{
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
-}
-.btn:active{
+
+.btn:active {
     background: #0e79ad;
     border-color: #0e79ad;
 }
-.btn-success:focus, .btn-primary:focus, .btn-danger:focus,
-.btn-success.focus, .btn-primary.focus, .btn-danger.focus,
-.btn.focus{
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5) !important;
-}
-/*body:before {
-    content: '';
-    height: 100vh;
-    width: 50%;
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
-}
-body:after{
-    content: '';
-    height: 100vh;
-    width: 50%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}*/
+
 .hidden {
     display: none;
 }
@@ -52,9 +29,10 @@ body:after{
 }
 
 /* Btn styles */
-.btn-outline-primary:focus{
+.btn-outline-primary:focus {
     box-shadow: none !important;
 }
+
 .btn-primary.btn-darker-blue {
     background-color: #1194d3;
     border-color: #1194d3;
@@ -75,6 +53,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     background-color: #099cd3;
     color: #fff;
 }
+
 /* Top bar */
 .anime__search_bar {
     position: fixed;
@@ -112,7 +91,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 88px;
     position: absolute;
     top: -22px;
-    left: 50px;
     transition: all, 0.5s;
 }
 
@@ -120,7 +98,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 90px;
     position: absolute;
     top: -25px;
-    left: 50px;
 }
 
 .menu__toggle {
@@ -129,7 +106,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     padding: 10px 15px;
     border-radius: 4px;
     color: #fff;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     transition: all, 0.25s;
     opacity: 1;
     cursor: pointer;
@@ -163,11 +139,10 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     font-family: 'Roboto', sans-serif;
     position: absolute;
     right: -500px;
-    top: -25px;
+    top: 50px;
     bottom: 0;
-    background: #f0f0ff;
+    background: #fff;
     width: 100%;
-    box-shadow: 2px 0px 6px 2px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: all, 0.25s;
     z-index: 998;
@@ -267,16 +242,11 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 /* Anime List */
 .anime__card {
     margin-bottom: 25px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     border: none;
     position: relative;
     bottom: 0;
     transition: all, 0.25s;
     height: 300px;
-}
-
-.anime__card:hover {
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .card_img__wrapper {
@@ -291,11 +261,11 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     transform: translateY(-50%);
 }
 
-.card__title{
+.card__title {
     margin: 10px 0;
 }
 
-.card_body{
+.card_body {
     padding: 10px;
 }
 
@@ -327,7 +297,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 }
 
 .anime__list, .anime, .form_register, .form_login, .user {
-    margin: 150px 0;
+    margin: 150px 0 60px 0;
 }
 
 .form_register__actions {
@@ -371,6 +341,13 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 100%;
 }
 
+.anime__comment {
+    background: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .overlay {
     background: rgba(0, 0, 0, 0.75);
     position: fixed;
@@ -383,14 +360,17 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     transition: all, 0.25s;
     display: none;
 }
+
 /* Register & login forms */
-.form_register__options .btn{
+.form_register__options .btn {
     width: 100%;
     margin: 10px 0;
 }
-.form_register .col-sm-4{
+
+.form_register .col-sm-4 {
     border-left: 1px solid #ccc;
 }
+
 /* User */
 .user__informations {
 
