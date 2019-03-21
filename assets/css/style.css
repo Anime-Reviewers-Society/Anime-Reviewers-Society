@@ -509,7 +509,7 @@ ul.social-network {
     border-radius: 4px;
 }
 
-.faq__title, .gcu__title{
+.faq__title, .gcu__title, .ln__title{
     margin: 10px 0;
     text-align: center;
     color: #355e7e;
@@ -567,14 +567,14 @@ ul.social-network {
     content: "\f068";
 }
 
-.gcu__page{
+.gcu__page, .ln__page{
     margin: 150px 0;
     background: white;
     padding: 20px;
     border-radius: 4px;
 }
 
-.gcu__content {
+.gcu__content, .ln__content {
     margin: 10px 15px 15px;
     color: #355e7e;
     padding: 0 18px;
@@ -594,4 +594,6 @@ ul.social-network {
 .gcu__content p a{
     text-decoration: none;
 }
+
+
 
