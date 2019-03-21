@@ -363,6 +363,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 
 .anime__title {
     text-align: center;
+    position: relative;
 }
 
 .anime__tag {
@@ -471,6 +472,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     margin: 20px 0;
     font-weight: 500;
 }
+
 .user__informations span {
     display: block;
 }
@@ -493,6 +495,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .user__informations_bio {
     text-align: justify;
 }
+
 .user__actions {
     display: inline;
     position: absolute;
@@ -666,5 +669,17 @@ ul.social-network {
     text-decoration: none;
 }
 
+.anime__title__arrow__left {
+    position: absolute;
+    left: 10px;
+    font-size: 21px
+}
+
+.anime__title__arrow__right {
+    position: absolute;
+    right: 10px;
+    font-size: 21px
+
+}
 
 
