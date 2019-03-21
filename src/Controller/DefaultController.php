@@ -12,7 +12,17 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return $this->render('faq/faq.html.twig', [
+        return $this->render('pages/faq.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    /**
+     * @Route("/gcu", name="gcu")
+     */
+    public function GCU()
+    {
+        return $this->render('pages/gcu.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
     }
