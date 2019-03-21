@@ -12,7 +12,36 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return $this->render('faq/faq.html.twig', [
+        return $this->render('pages/pageFaq.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    /**
+     * @Route("/gcu", name="gcu")
+     */
+    public function pageGCU()
+    {
+        return $this->render('pages/pageGcu.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    /**
+     * @Route("/legal-notice", name="legalNotice")
+     */
+    public function pageLegalNotice()
+    {
+        return $this->render('pages/pageLegalNotice.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+    /**
+     * @Route("/ars", name="ars")
+     */
+    public function pageARS()
+    {
+        return $this->render('pages/pageArs.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
     }

@@ -284,10 +284,12 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     font-size: 24px;
     color: #fff;
 }
+
 .anime__card:hover .card_img_overlay {
     background: rgba(0, 0, 0, 0.7);
     opacity: 1;
 }
+
 .anime__card:hover .card_img__wrapper {
     height: 400px;
 }
@@ -362,6 +364,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .anime__title {
     text-align: center;
 }
+
 .anime__tag {
     background: #c7c7c7;
     padding: 3px;
@@ -568,18 +571,21 @@ ul.social-network {
 .container .row .col-sm-3:last-child {
     border-right: none;
 }
-.faq__list{
+
+.faq__list {
     margin: 150px 0;
     background: white;
     padding: 20px;
     border-radius: 4px;
 }
 
-.faq__title{
+.faq__title, .gcu__title, .ln__title, .ars__title {
+    margin: 10px 0;
     text-align: center;
     color: #355e7e;
     width: 100%;
 }
+
 .faq-list {
     background: transparent;
     border: none;
@@ -615,7 +621,6 @@ ul.social-network {
     margin: 5px 5px;
 }
 
-
 .faq-list:after {
     font-family: "Font Awesome 5 Free", serif;
     font-weight: 600;
@@ -631,3 +636,35 @@ ul.social-network {
     font-weight: 600;
     content: "\f068";
 }
+
+.gcu__page, .ln__page, .ars__page {
+    margin: 150px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.gcu__content, .ln__content, .ars__content {
+    margin: 10px 15px 15px;
+    color: #355e7e;
+    padding: 0 18px;
+    width: 100%;
+    text-align: justify;
+}
+
+.gcu__subtitle {
+    text-align: center;
+    font-style: italic;
+}
+
+.gcu__italic {
+    font-style: italic;
+    display: inline;
+}
+
+.gcu__content p a {
+    text-decoration: none;
+}
+
+
+
