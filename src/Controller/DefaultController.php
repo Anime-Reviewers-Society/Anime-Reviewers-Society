@@ -36,4 +36,13 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+    /**
+     * @Route("/ars", name="ars")
+     */
+    public function ars()
+    {
+        return $this->render('pages/ars.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
 }
