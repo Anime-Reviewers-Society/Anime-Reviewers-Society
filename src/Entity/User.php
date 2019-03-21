@@ -66,6 +66,11 @@ class User implements UserInterface
      */
     private $reviews;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $bio;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -209,5 +214,17 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->getUsername();
+    }
+
+    public function getBio(): ?string
+    {
+        return $this->bio;
+    }
+
+    public function setBio(?string $bio): self
+    {
+        $this->bio = $bio;
+
+        return $this;
     }
 }

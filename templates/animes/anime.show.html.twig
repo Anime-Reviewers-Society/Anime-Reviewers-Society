@@ -20,6 +20,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <div  class="anime__resume">
+                    <h2>Synopsis :</h2>
                     <p>
                         {{ anime.resume }}
                     </p>
@@ -42,28 +43,54 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="anime__informations__tag">
-                                {#{{ anime.tag }}#}
+                                {% for tag in anime.tag %}
+                                    <div class="anime__tag">
+                                        {{ tag.label }}
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <hr />
+        <div class="anime__notes">
+            {{ reviews|length }} avis
+        </div>
         <div class="anime__comment" id="comment">
             <div class="anime__comment_listing">
                 {% for r in reviews %}
                     <div class="anime__comment_show">
-                        {{ r.comment }}
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <img src="http://lorempixel.com/75/75/abstract/" class="img-circle">
+                            </div>
+                            <div class="col-sm-11">
+                                <div class="anime__comment_show__content">
+                                    <div class="anime__comment_show__author">
+                                        {{ r.author }}
+                                    </div>
+                                    <div class="anime__comment_show_note">
+                                        {{ r.note }}/10
+                                    </div>
+                                    <div class="anime__comment_show_comment">
+                                        {{ r.comment }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 {% endfor %}
             </div>
-            <div class="anime__comment_new">
-                {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn btn-success">Soumettre</button>
-                {{ form_end(form) }}
-            </div>
+            {% if app.user != null %}
+                <div class="anime__comment_new">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button class="btn btn-success">Soumettre</button>
+                        {{ form_end(form) }}
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

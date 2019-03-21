@@ -35,6 +35,7 @@ class UserFixtures extends Fixture
             $user = new User();
             $user->setUsername($faker->userName)
                 ->setPassword($this->passwordEncoder->encodePassword($user, $faker->password))
+                ->setBio($faker->text)
                 ->setMail($faker->email)
                 ->setStatus($faker->boolean);
 
