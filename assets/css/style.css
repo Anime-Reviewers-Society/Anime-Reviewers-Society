@@ -418,3 +418,9 @@ ul.social-network {
 .container .row .col-sm-3:last-child {
     border-right: none;
 }
+.faq__list{
+    margin: 150px 0;
+    background: #ffffffc9;
+    padding: 20px;
+    border-radius: 4px;
+}
