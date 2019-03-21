@@ -632,3 +632,100 @@ ul.social-network {
 .container .row .col-sm-3:last-child {
     border-right: none;
 }
+
+.faq__list {
+    margin: 150px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.faq__title, .gcu__title, .ln__title, .ars__title {
+    margin: 10px 0;
+    text-align: center;
+    color: #355e7e;
+    width: 100%;
+}
+
+.faq-list {
+    background: transparent;
+    border: none;
+    margin: 10px 15px 0;
+    color: #355e7e;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    border-bottom: 1px solid #355e7e47;
+
+}
+
+.active__faq, .faq-list:hover {
+    opacity: 4;
+}
+
+.faq-list-content {
+    margin: 0 15px 15px;
+    background: #a9dcff57;
+    color: #1e1e1e;
+    padding: 0 18px;
+    width: 100%;
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.faq-list-content p {
+    margin: 5px 5px;
+}
+
+.faq-list:after {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 600;
+    content: '\f067';
+    font-size: 13px;
+    color: #355e7e;
+    float: right;
+    margin-left: 5px;
+}
+
+.active__faq:after {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 600;
+    content: "\f068";
+}
+
+.gcu__page, .ln__page, .ars__page {
+    margin: 150px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.gcu__content, .ln__content, .ars__content {
+    margin: 10px 15px 15px;
+    color: #355e7e;
+    padding: 0 18px;
+    width: 100%;
+    text-align: justify;
+}
+
+.gcu__subtitle {
+    text-align: center;
+    font-style: italic;
+}
+
+.gcu__italic {
+    font-style: italic;
+    display: inline;
+}
+
+.gcu__content p a {
+    text-decoration: none;
+}
+
+
+
