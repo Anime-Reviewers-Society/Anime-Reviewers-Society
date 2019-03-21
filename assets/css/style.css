@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    background: url("https://cdn.discordapp.com/attachments/238019433140977665/552881468796567563/108.png") no-repeat fixed center;
+    background: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/7406/dragons-flying-in-the-sky-1920x1080-wallpaper.jpg") no-repeat fixed center;
 }
 
-/*body:before {
-    content: '';
-    height: 100vh;
-    width: 50%;
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
+/** Override Bootstrap **/
+.btn {
+    position: relative;
+    border: none;
+    box-shadow: none;
+    top: 0;
 }
-body:after{
-    content: '';
-    height: 100vh;
-    width: 50%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}*/
+
+.btn:active {
+    background: #0e79ad;
+    border-color: #0e79ad;
+}
+
 .hidden {
     display: none;
 }
@@ -33,6 +29,10 @@ body:after{
 }
 
 /* Btn styles */
+.btn-outline-primary:focus {
+    box-shadow: none !important;
+}
+
 .btn-primary.btn-darker-blue {
     background-color: #1194d3;
     border-color: #1194d3;
@@ -91,7 +91,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 88px;
     position: absolute;
     top: -22px;
-    left: 50px;
     transition: all, 0.5s;
 }
 
@@ -99,7 +98,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 90px;
     position: absolute;
     top: -25px;
-    left: 50px;
 }
 
 .menu__toggle {
@@ -108,7 +106,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     padding: 10px 15px;
     border-radius: 4px;
     color: #fff;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     transition: all, 0.25s;
     opacity: 1;
     cursor: pointer;
@@ -142,11 +139,10 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     font-family: 'Roboto', sans-serif;
     position: absolute;
     right: -500px;
-    top: -25px;
+    top: 50px;
     bottom: 0;
-    background: #f0f0ff;
+    background: #fff;
     width: 100%;
-    box-shadow: 2px 0px 6px 2px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: all, 0.25s;
     z-index: 998;
@@ -191,7 +187,8 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .sidebar > ul.sidebar__menu > li.sidebar__item:hover {
     background: #a9d9ff;
 }
-.sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link{
+
+.sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link {
     text-transform: uppercase;
     color: #2196F3;
     text-decoration: none;
@@ -232,46 +229,98 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 
 /* Form */
 .form_register__policies {
-    padding: 15px;
+    margin-top: 25px;
 }
 
-.form_register__policies ul {
+.form_register__options ul {
     list-style-type: none;
     margin-left: -45px;
+    margin-bottom: 0;
+    margin-top: 15px;
 }
 
 /* Anime List */
 .anime__card {
     margin-bottom: 25px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
     border: none;
     position: relative;
     bottom: 0;
     transition: all, 0.25s;
-    height: 300px;
-}
-
-.anime__card:hover {
-    bottom: 5px;
-    box-shadow: 5px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    /*transform: rotate(2deg);*/
+    height: 200px;
+    overflow: hidden;
 }
 
 .card_img__wrapper {
-    height: 200px;
+    height: 100px;
     overflow: hidden;
     position: relative;
+    transition: all, 0.25s;
+    z-index: 1;
+}
+
+.anime__card:hover .card_body {
+    visibility: hidden;
+}
+
+.card_img_overlay {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.card_img_overlay_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+}
+.anime__card:hover .card_img_overlay {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+.anime__card:hover .card_img__wrapper {
+    height: 400px;
 }
 
 .card_img__wrapper img {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    transition: all, 0.25s;
 }
-.card_body h3{
-    font-size: 18px;
+
+.anime__card:hover .card_img__wrapper img {
+    transform: scale(1.5);
 }
-.card-body h4 {
+
+.card__title {
+    margin: 10px 0;
+}
+
+.anime__card_title {
+
+}
+
+.card_body {
+    padding: 10px;
+    transition: all, 0.2s;
+    height: 95px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.card_body h3 {
+    font-size: 21px;
+}
+
+.card_body h4 {
     font-size: 14px;
 }
 
@@ -287,14 +336,15 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .anime__link, .anime__link:hover {
     color: #355e7e;
 }
-.anime__list, .anime, .form_register, .form_login, .user{
+
+.anime__list, .anime, .form_register, .form_login, .user {
     background: #ffffffc9;
     padding: 20px;
     border-radius: 4px;
 }
 
-.anime__list, .anime, .form_register, .form_login {
-    margin: 150px 0;
+.anime__list, .anime, .form_register, .form_login, .user {
+    margin: 150px 0 60px 0;
 }
 
 .form_register__actions {
@@ -302,7 +352,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 }
 
 /* Anime Show */
-.anime, .form_register, .form_login, .user{
+.anime, .form_register, .form_login, .user {
     padding: 20px;
     background: #fff;
     border-radius: 4px;
@@ -311,6 +361,13 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 
 .anime__title {
     text-align: center;
+}
+.anime__tag {
+    background: #c7c7c7;
+    padding: 3px;
+    border-radius: 4px;
+    margin: 2px;
+    display: inline;
 }
 
 .anime__title__original {
@@ -338,6 +395,14 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     width: 100%;
 }
 
+.anime__comment_new, .anime__comment_show {
+    background: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
 .overlay {
     background: rgba(0, 0, 0, 0.75);
     position: fixed;
@@ -351,12 +416,31 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     display: none;
 }
 
-/* FOOTER */
+/* Register & login forms */
+.form_register__options .btn {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.form_register .col-sm-4 {
+    border-left: 1px solid #ccc;
+}
+
+/* User */
+.user__informations {
+
+}
+
+/* Footer */
 footer {
     padding: 20px 0;
     background: #fff;
     box-shadow: 0 0 7px 2px #000000a1;
     color: #355e7e;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer__title {

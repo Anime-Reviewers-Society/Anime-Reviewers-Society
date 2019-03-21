@@ -48,19 +48,27 @@ class Anime
      */
     private $resume;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Target", cascade={"persist", "remove"})
-     */
-    private $target;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="animes")
      */
     private $tag;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Target", inversedBy="animes")
+     */
+    private $target;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Review", mappedBy="anime")
+     */
+    private $review;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
+        $this->reviews = new ArrayCollection();
+        $this->review = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -140,18 +148,6 @@ class Anime
         return $this;
     }
 
-    public function getTarget(): ?Target
-    {
-        return $this->target;
-    }
-
-    public function setTarget(?Target $target): self
-    {
-        $this->target = $target;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Tag[]
      */
@@ -181,5 +177,48 @@ class Anime
     public function __toString(): string
     {
         return $this->originalTitle;
+    }
+
+    public function getTarget(): ?Target
+    {
+        return $this->target;
+    }
+
+    public function setTarget(?Target $target): self
+    {
+        $this->target = $target;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Review[]
+     */
+    public function getReview(): Collection
+    {
+        return $this->review;
+    }
+
+    public function addReview(Review $review): self
+    {
+        if (!$this->review->contains($review)) {
+            $this->review[] = $review;
+            $review->setAnime($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Review $review): self
+    {
+        if ($this->review->contains($review)) {
+            $this->review->removeElement($review);
+            // set the owning side to null (unless already changed)
+            if ($review->getAnime() === $this) {
+                $review->setAnime(null);
+            }
+        }
+
+        return $this;
     }
 }

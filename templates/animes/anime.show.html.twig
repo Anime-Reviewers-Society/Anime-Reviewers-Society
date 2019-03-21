@@ -6,19 +6,14 @@
             <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
             <div class="anime__actions">
-                <a href="#" class="btn btn-primary">Voir l'opening !</a>
-                <a href="#" class="btn btn-primary">Donner mon avis !</a>
+                <a href="#comment" class="btn btn-primary">Donner mon avis !</a>
             </div>
         </div>
         <hr />
         <div class="row">
             <div class="col-sm-12">
                 <div  class="anime__image__wrapper">
-                    {% if anime.image %}
-                    <img src="{{ asset('uploads/anime_image/' ~ anime.image) }}"  alt="{{ anime.originalTitle }}" class="anime__image"/>
-                    {% else %}
-                        <img src="https://via.placeholder.com/300x150" alt="{{ anime.originalTitle }}" />
-                    {% endif %}
+                    <img src="{{ anime.image }}"  alt="{{ anime.originalTitle }}" class="anime__image"/>
                 </div>
             </div>
         </div>
@@ -43,6 +38,31 @@
                         </div>
                     </div>
                 </div>
+                <div class="anime__informations">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="anime__informations__tag">
+                                {#{{ anime.tag }}#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="anime__comment" id="comment">
+            <div class="anime__comment_listing">
+                {% for r in reviews %}
+                    <div class="anime__comment_show">
+                        {{ r.comment }}
+                    </div>
+
+                {% endfor %}
+            </div>
+            <div class="anime__comment_new">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-success">Soumettre</button>
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
