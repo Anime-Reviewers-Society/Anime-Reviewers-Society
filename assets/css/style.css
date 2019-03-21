@@ -284,10 +284,12 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     font-size: 24px;
     color: #fff;
 }
+
 .anime__card:hover .card_img_overlay {
     background: rgba(0, 0, 0, 0.7);
     opacity: 1;
 }
+
 .anime__card:hover .card_img__wrapper {
     height: 400px;
 }
@@ -362,6 +364,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .anime__title {
     text-align: center;
 }
+
 .anime__tag {
     background: #c7c7c7;
     padding: 3px;
@@ -424,6 +427,8 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 10px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .anime__comment_show__author {
@@ -436,8 +441,65 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     display: inline;
 }
 
+.anime__comment_show_note {
+    position: absolute;
+    right: -15px;
+    transform: rotate(40deg);
+    top: -15px;
+    padding: 20px;
+    background: #7a7688;
+    color: #fff;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    box-shadow: 1px -17px 11px 20px rgba(0, 0, 0, 0.8);
+}
+
+.anime__comment_show_note:before {
+    content: "";
+    width: 35px;
+    height: 44px;
+    background: #7a7688;
+    position: absolute;
+    left: -30px;
+    top: 20px;
+}
+
+#review_note {
+    visibility: hidden;
+    margin-bottom: -90px;
+}
+
+.anime__comment_new label {
+    visibility: hidden;
+}
+
+.anime__comment_show_note:after {
+    content: "";
+    width: 35px;
+    height: 44px;
+    background: #7a7688;
+    position: absolute;
+    right: -30px;
+    top: 20px;
+}
+
+.anime__comment_show_note span {
+    color: #d6d107;
+}
+
 .anime__comment_show__content {
     margin-left: 20px;
+}
+
+.anime__rating {
+    font-size: 34px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.star__colored {
+    color: yellow;
 }
 
 .overlay {
@@ -468,6 +530,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     margin: 20px 0;
     font-weight: 500;
 }
+
 .user__informations span {
     display: block;
 }
@@ -490,6 +553,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .user__informations_bio {
     text-align: justify;
 }
+
 .user__actions {
     display: inline;
     position: absolute;

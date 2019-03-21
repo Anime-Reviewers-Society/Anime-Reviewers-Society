@@ -71,20 +71,25 @@
                                     <div class="anime__comment_show__author">
                                         {{ r.author }}
                                     </div>
-                                    <div class="anime__comment_show_note">
-                                        {{ r.note }}/10
-                                    </div>
                                     <div class="anime__comment_show_comment">
                                         {{ r.comment }}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="anime__comment_show_note">
+                            {{ r.note }} <span><i class="fas fa-star"></i></span>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
             {% if app.user != null %}
                 <div class="anime__comment_new">
+                    <div class="anime__rating">
+                        {% for i in 1..10 %}
+                            <span id="star-{{ i }}" class="anime__star"><i class="fas fa-star"></i></span>
+                        {% endfor %}
+                    </div>
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         <button class="btn btn-success">Soumettre</button>

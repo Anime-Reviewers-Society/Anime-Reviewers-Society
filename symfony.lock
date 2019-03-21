@@ -101,6 +101,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "kartik-v/bootstrap-star-rating": {
+        "version": "4.0.x-dev"
+    },
     "nikic/php-parser": {
         "version": "v4.2.0"
     },

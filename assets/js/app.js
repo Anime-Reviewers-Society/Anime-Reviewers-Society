@@ -5,6 +5,7 @@ require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 
 var $ = require("jquery");
+
 $(document).ready(function () {
     $(".menu__toggle, .overlay").on( "click", function () {
         console.log("clicked");
@@ -22,5 +23,19 @@ $(document).ready(function () {
         if($(this).has("sidebar__child_menu")) {
             $(".sidebar__child_menu").css("display", "block");
         }
-    })
+    });
+
+    $(".anime__star").on("mouseover", function () {
+        $(".anime__star").removeClass("star__colored");
+        let id = $(this).attr("id");
+        id = id.split("-");
+        id = parseInt(id[1]);
+        for(let i = 0; i < id; i++) {
+            $("#star-" + i).addClass("star__colored");
+        }
+        $("#star-" + id).addClass("star__colored");
+        $("#star-" + id).on("click", function () {
+            $("#review_note").val(id);
+        });
+    });
 });
