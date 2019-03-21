@@ -3,23 +3,32 @@
 {% block content %}
     <div class="anime">
         <div class="anime__title">
+            {% if anime.id != 1 %}
+                <a href="{{ path('anime.show', { 'id' : anime.id - 1}) }}" class="anime__title__arrow__left"><i
+                            class="fas fa-arrow-left"></i></a>
+                <a href="{{ path('anime.show', { 'id' : anime.id + 1}) }}" class="anime__title__arrow__right"><i
+                            class="fas fa-arrow-right"></i></a>
+            {% else %}
+                <a href="{{ path('anime.show', { 'id' : anime.id + 1}) }}" class="anime__title__arrow__right"><i
+                            class="fas fa-arrow-right"></i></a>
+            {% endif %}
             <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
             <div class="anime__actions">
                 <a href="#comment" class="btn btn-primary">Donner mon avis !</a>
             </div>
         </div>
-        <hr />
+        <hr/>
         <div class="row">
             <div class="col-sm-12">
-                <div  class="anime__image__wrapper">
-                    <img src="{{ anime.image }}"  alt="{{ anime.originalTitle }}" class="anime__image"/>
+                <div class="anime__image__wrapper">
+                    <img src="{{ anime.image }}" alt="{{ anime.originalTitle }}" class="anime__image"/>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8">
-                <div  class="anime__resume">
+                <div class="anime__resume">
                     <h2>Synopsis :</h2>
                     <p>
                         {{ anime.resume }}
@@ -54,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <hr />
+        <hr/>
         <div class="anime__notes">
             {{ reviews|length }} avis
         </div>
