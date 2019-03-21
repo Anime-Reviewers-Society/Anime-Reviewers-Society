@@ -54,6 +54,10 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     color: #fff;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
+
 /* Top bar */
 .anime__search_bar {
     position: fixed;
@@ -301,10 +305,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     margin: 10px 0;
 }
 
-.anime__card_title {
-
-}
-
 .card_body {
     padding: 10px;
     transition: all, 0.2s;
@@ -385,14 +385,37 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .anime__image__wrapper {
     overflow: hidden;
     text-align: center;
+    height: 300px;
+    position: relative;
+    border-radius: 4px;
 }
 
 .anime__resume, .anime__informations {
-    margin: 20px 0;
+    margin: 30px 0;
+    text-align: justify;
+}
+
+.anime__resume {
+    font-size: 18px;
+}
+
+.anime__resume h2 {
+    text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 .anime__image {
+    position: absolute;
     width: 100%;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.anime__notes {
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .anime__comment_new, .anime__comment_show {
@@ -401,6 +424,20 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 10px 0;
+}
+
+.anime__comment_show__author {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.anime__comment_show__author, .anime__comment_show_note {
+    display: inline;
+}
+
+.anime__comment_show__content {
+    margin-left: 20px;
 }
 
 .overlay {
@@ -428,7 +465,36 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 
 /* User */
 .user__informations {
+    margin: 20px 0;
+    font-weight: 500;
+}
+.user__informations span {
+    display: block;
+}
 
+.user h1 {
+    display: inline;
+    font-weight: 700;
+}
+
+.user__informations_title {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.user .col-sm-6 {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.user__informations_bio {
+    text-align: justify;
+}
+.user__actions {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 10px;
 }
 
 /* Footer */

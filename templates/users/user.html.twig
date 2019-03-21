@@ -2,11 +2,27 @@
 
 {% block content %}
     <div class="user">
-        <h1>{{ user.username }}</h1>
-        <div class="user__informations">
-            <p>{{ user.mail }}</p>
-            <p>{{ user.status }}</p>
-            <img src="{{ user.avatar }}">
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="{{ user.avatar }}" class="img-circle">
+                <div class="user__informations">
+                    <span>{{ user.mail }}</span>
+                    <span>{{ user.status }}</span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="user__informations_title">
+                    <h1>{{ user.username }}</h1>
+                    <div class="user__actions">
+                        <a href="{{ path("profil.edit") }}" class="btn btn-primary"><i class="fas fa-user-edit"></i> Modifier</a>
+                        <a href="{{ path("app_logout") }}" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                    </div>
+                </div>
+                <p class="user__informations_bio">{{ user.bio }}</p>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
         </div>
     </div>
 {% endblock %}

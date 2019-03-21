@@ -56,9 +56,9 @@ class AnimeController extends AbstractController
         }
 
         return $this->render('animes/anime.show.html.twig', [
-            'anime' => $anime,
-            'form' => $form->createView(),
-            'reviews' => $reviews
+                'anime' => $anime,
+                'form' => $form->createView(),
+                'reviews' => $reviews
             ]
         );
     }
