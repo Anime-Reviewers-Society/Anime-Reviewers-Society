@@ -21,6 +21,7 @@ class User implements UserInterface
         $this->status = false;
         $this->setAvatar('https://via.placeholder.com/150');
         $this->reviews = new ArrayCollection();
+        $this->badges = new ArrayCollection();
     }
 
     /**
@@ -70,6 +71,11 @@ class User implements UserInterface
      * @ORM\Column(type="text", nullable=true)
      */
     private $bio;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Badge", mappedBy="users")
+     */
+    private $badges;
 
     public function getId(): ?int
     {
@@ -224,6 +230,34 @@ class User implements UserInterface
     public function setBio(?string $bio): self
     {
         $this->bio = $bio;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Badge[]
+     */
+    public function getBadges(): Collection
+    {
+        return $this->badges;
+    }
+
+    public function addBadge(Badge $badge): self
+    {
+        if (!$this->badges->contains($badge)) {
+            $this->badges[] = $badge;
+            $badge->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBadge(Badge $badge): self
+    {
+        if ($this->badges->contains($badge)) {
+            $this->badges->removeElement($badge);
+            $badge->removeUser($this);
+        }
 
         return $this;
     }

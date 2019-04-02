@@ -68,6 +68,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     box-shadow: 0 0 7px 2px #000000a1;
     transition: all, 0.5s;
     padding: 25px;
+    overflow: hidden;
 }
 
 .anime__search_bar input[type="text"] {
@@ -99,9 +100,9 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 }
 
 .anime__search_bar.anime__search_bar .container .col-sm-4:first-child img {
-    width: 90px;
+    width: 248px;
     position: absolute;
-    top: -25px;
+    top: -41px;
 }
 
 .menu__toggle {
@@ -572,6 +573,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 999;
 }
 
 .footer__title {
@@ -738,7 +740,20 @@ ul.social-network {
     position: absolute;
     right: 10px;
     font-size: 21px
+}
 
+/* Badges */
+
+.badge--wrapper {
+    text-align: center;
+}
+
+.badge {
+    margin: 10px;
+}
+
+.badge img {
+    border-radius: 25px;
 }
 
 
