@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Repository\BadgeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +18,15 @@ class UserController extends AbstractController
      * @return Response
      * @Route("/profil", name="user.show")
      */
-    public function profil(): Response
+    public function profil(BadgeRepository $badgeRepository): Response
     {
         $user = $this->getUser();
-        return $this->render('users/user.html.twig', [ 'user' => $user]);
+        $badge = $badgeRepository->findAll();
+        return $this->render('users/user.html.twig', [ 
+            'user' => $user,
+            'badge' => $badge
+            ]
+        );
     }
 
     /**
