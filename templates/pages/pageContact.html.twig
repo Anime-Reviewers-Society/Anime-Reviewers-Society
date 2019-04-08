@@ -1,0 +1,27 @@
+{% extends 'front.base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="contact__content">
+            <form>
+                <h1>Si vous avez une question n'hésiter pas à nous contacter</h1>
+                <div class="contentform">
+                    {{ form_start(contact_form) }}
+                    <div class="form-group">
+                        {{ form_row(contact_form) }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_row(contact_form) }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_row(contact_form) }}
+                    </div>
+                </div>
+                <button type="submit" class="bouton-contact">Send</button>
+                {{ form_end(contact_form) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}
