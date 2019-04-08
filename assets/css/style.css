@@ -780,7 +780,7 @@ ul.social-network {
     max-width: 700px;
     width: 100%;
     margin: 5% auto;
-    background-color: #f9f9f9;
+    background-color: #fff;
     overflow: hidden;
 }
 
@@ -804,8 +804,8 @@ ul.social-network {
 }
 
 .contact__content input {
-    border-radius: 0 5px 5px 0;
-    border: 1px solid #eee;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
     margin-bottom: 10px;
     width: 100%;
     height: 40px;
@@ -820,8 +820,8 @@ ul.social-network {
 }
 
 .contact__content textarea {
-    border-radius: 0 5px 5px 0;
-    border: 1px solid #EEE;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
     margin: 0;
     width: 100%;
     height: 130px;
@@ -843,7 +843,7 @@ ul.social-network {
 }
 
 .contentform {
-    padding: 20px 30px;
+    padding: 15px 25px;
 }
 
 .bouton-contact {
@@ -853,7 +853,7 @@ ul.social-network {
     width: 100%;
     border: 0;
     padding: 17px 25px;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
 }
@@ -867,7 +867,7 @@ ul.social-network {
 }
 
 legend.col-form-label.required{
-    visibility: hidden;
+    display: none;
 }
 
 
