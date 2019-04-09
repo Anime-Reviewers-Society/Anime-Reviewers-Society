@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    background: url("https://cdn.allwallpaper.in/wallpapers/1920x1080/7406/dragons-flying-in-the-sky-1920x1080-wallpaper.jpg") no-repeat fixed center;
+    background: linear-gradient(to right, #03A9F4, #00BCD4);
 }
 
 /** Override Bootstrap **/
@@ -355,7 +355,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 }
 
 /* Anime Show */
-.anime, .form_register, .form_login, .user {
+.anime, .form_register, .form_login, .user, .ars__page, .gcu__page, .ln__page {
     padding: 20px;
     background: #fff;
     border-radius: 4px;
