@@ -16,7 +16,7 @@ class UserController extends AbstractController
 {
     /**
      * @return Response
-     * @Route("/profil", name="user.show")
+     * @Route("/profil", name="user.profil")
      */
     public function profil(BadgeRepository $badgeRepository): Response
     {
@@ -25,8 +25,24 @@ class UserController extends AbstractController
         return $this->render('users/user.html.twig', [ 
             'user' => $user,
             'badge' => $badge
-            ]
-        );
+        ]);
+    }
+
+    /**
+     * @param UserRepository $userRepository
+     * @param int $id
+     * @return Response
+     *
+     * @Route("/user/{id}", name="user.show")
+     */
+    public function publicProfil(BadgeRepository $badgeRepository, UserRepository $userRepository, int $id): Response
+    {
+        $user = $userRepository->find($id);
+        $badge = $badgeRepository->findAll();
+        return $this->render('users/user.profil.html.twig', [
+            'user' => $user,
+            'badge' => $badge
+        ]);
     }
 
     /**

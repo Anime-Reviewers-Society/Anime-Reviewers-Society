@@ -4,6 +4,30 @@ body {
     background: url("https://zupimages.net/up/19/15/6zmv.png") no-repeat fixed center;
 }
 
+main {
+    min-height: 57vh;
+}
+
+#scroll_to_top {
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    z-index: 999;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+}
+
+#scroll_to_top svg {
+    top: 15%;
+    position: relative;
+}
+
 /** Override Bootstrap **/
 .btn {
     position: relative;
@@ -36,22 +60,42 @@ body {
 .btn-primary.btn-darker-blue {
     background-color: #1194d3;
     border-color: #1194d3;
+    border-bottom: 3px solid #006da0;
 }
 
-.btn-primary.btn-darker-blue:hover {
-    background-color: #099cd3;
-    border-color: #099cd3;
+.btn-primary.btn-darker-blue:hover, .btn-primary.btn-darker-blue:active {
+    background-color: #22C0D3;
+    border-color: #22c0d3;
+    border-bottom: 3px solid #006da0;
 }
 
-btn-outline-primary.btn-darker-outline-blue {
-    border-color: #1194d3;
+.btn-primary.btn-darker-blue:focus {
+    background-color: #27a5ff !important;
+    border-color: #27a5ff !important;
+    border-bottom: 3px solid #006da0 !important;
+    box-shadow: none !important;
+}
+
+.btn-outline-primary.btn-darker-outline-blue {
     color: #1194d3;
+    border-color: #1194d3;
 }
 
-btn-outline-primary.btn-darker-outline-blue:hover {
-    border-color: #099cd3;
-    background-color: #099cd3;
+.btn-outline-primary.btn-darker-outline-blue:hover {
+    border-color: #1194d3;
+    background-color: #1194d3;
     color: #fff;
+}
+
+.btn-outline-primary.btn-darker-outline-blue:active {
+    border-color: #17c4d3;
+    background-color: #17c4d3;
+    color: #fff;
+}
+
+.btn-success, .btn-success:focus, .btn-success:active {
+    border-bottom: 3px solid #015201 !important;
+    box-shadow: none !important;
 }
 
 .img-circle {
@@ -75,9 +119,20 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     padding: 6px 20px;
     border-radius: 4px;
     border: none;
-    border: 1px solid #ccc;
+    border: 1px solid #e2e2e2;
     width: 100%;
     font-size: 18px;
+}
+
+.anime__search_bar input[type="text"]:hover {
+    background: #f1f1f1;
+}
+
+.anime__search_bar input[type="text"]:focus {
+    border: 1px solid #e4e4e4;
+    background: #f1f1f1;
+    box-shadow: 0px 2px 4px 0px #00000085;
+    outline: none !important;
 }
 
 .anime__search_bar .anime__search_bar input[type="text"]:hover {
@@ -253,6 +308,8 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     transition: all, 0.25s;
     height: 200px;
     overflow: hidden;
+    box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.5);
+    border: none !important;
 }
 
 .card_img__wrapper {
@@ -367,12 +424,35 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     position: relative;
 }
 
+.anime__content {
+    position: relative;
+    height: 150px;
+}
+
+.anime__content_inner {
+    position: absolute;
+    top: -50px;
+    background: #fff;
+    left: 50px;
+    right: 50px;
+    border-radius: 4px;
+    padding: 0 20px;
+    box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.35);
+}
+
 .anime__tag {
     background: #c7c7c7;
-    padding: 3px;
+    padding: 5px 10px;
     border-radius: 4px;
     margin: 2px;
-    display: inline;
+    display: inline-block;
+}
+
+.anime__tag_icone {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 600;
+    content: '\f067';
+    font-size: 13px;
 }
 
 .anime__title__original {
@@ -423,6 +503,10 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     font-size: 18px;
 }
 
+.anime__comment a:hover {
+    text-decoration: none;
+}
+
 .anime__comment_new, .anime__comment_show {
     background: #f1f1f1;
     padding: 20px;
@@ -446,7 +530,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 .anime__comment_show_note {
     position: absolute;
     right: -15px;
-    transform: rotate(40deg);
+    transform: rotate(42deg);
     top: -15px;
     padding: 20px;
     background: #7a7688;
@@ -454,7 +538,6 @@ btn-outline-primary.btn-darker-outline-blue:hover {
     font-weight: 700;
     padding-top: 30px;
     padding-bottom: 10px;
-    box-shadow: 1px -17px 11px 20px rgba(0, 0, 0, 0.8);
 }
 
 .anime__comment_show_note:before {
@@ -733,13 +816,21 @@ ul.social-network {
 .anime__title__arrow__left {
     position: absolute;
     left: 10px;
-    font-size: 21px
+    font-size: 21px;
+    padding: 8px 17px 10px 17px;
+    border-radius: 4px;
 }
 
 .anime__title__arrow__right {
     position: absolute;
     right: 10px;
-    font-size: 21px
+    font-size: 21px;
+    padding: 8px 17px 10px 17px;
+    border-radius: 4px;
+}
+
+.anime__title__arrow__right:hover, .anime__title__arrow__left:hover {
+    background: rgba(0, 187, 212, 0.5);
 }
 
 /* Badges */

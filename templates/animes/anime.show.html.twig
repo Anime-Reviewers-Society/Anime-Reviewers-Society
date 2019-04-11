@@ -15,7 +15,7 @@
             <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
             <div class="anime__actions">
-                <a href="#comment" class="btn btn-primary">Donner mon avis !</a>
+                <a href="#comment" class="btn btn-primary btn-darker-blue">Donner mon avis !</a>
             </div>
         </div>
         <hr/>
@@ -26,37 +26,40 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="anime__resume">
-                    <h2>Synopsis :</h2>
-                    <p>
-                        {{ anime.resume }}
-                    </p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="anime__informations">
-                    <div class="row">
-                        <div class="col-sm-12">
+        <div class="anime__content">
+            <div class="anime__content_inner">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="anime__resume">
+                            <p>
+                                {{ anime.resume }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="anime__informations">
+                            <div class="row">
+                                <div class="col-sm-12">
                          <span class="release_date__label">
                              Date de sortie :
                          </span>
-                            <div class="release_date__date">
-                                {{ anime.releaseDate.date|date("d/m/Y") }}
+                                    <div class="release_date__date">
+                                        {{ anime.releaseDate.date|date("d/m/Y") }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="anime__informations">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="anime__informations__tag">
-                                {% for tag in anime.tag %}
-                                    <div class="anime__tag">
-                                        {{ tag.label }}
+                        <div class="anime__informations">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="anime__informations__tag">
+                                        {% for tag in anime.tag %}
+                                            <div class="anime__tag" style="background: {{ tag.color }}; color: #fff">
+                                                <i class="{{ tag.icone }}"></i> {{ tag.label }}
+                                            </div>
+                                        {% endfor %}
                                     </div>
-                                {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -78,7 +81,7 @@
                             <div class="col-sm-11">
                                 <div class="anime__comment_show__content">
                                     <div class="anime__comment_show__author">
-                                        {{ r.author }}
+                                        <a href="{{ path('user.show', {'id' : r.author.id}) }}">{{ r.author }}</a>
                                     </div>
                                     <div class="anime__comment_show_comment">
                                         {{ r.comment }}
@@ -99,10 +102,10 @@
                             <span id="star-{{ i }}" class="anime__star"><i class="fas fa-star"></i></span>
                         {% endfor %}
                     </div>
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        <button class="btn btn-success">Soumettre</button>
-                        {{ form_end(form) }}
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success">Soumettre</button>
+                    {{ form_end(form) }}
                 </div>
             {% endif %}
         </div>
