@@ -1,5 +1,5 @@
 {% extends 'front.base.html.twig' %}
-
+{% block title %}ARS | Profil{% endblock %}
 {% block content %}
 <div class="user">
     <div class="row">
@@ -28,7 +28,6 @@
                 <a class="badge" title="{{ b.label }}"><img src="{{ b.image }}" width="50" height="50"></a>
                 {% endfor %}
             </div>
-
         </div>
     </div>
 </div>

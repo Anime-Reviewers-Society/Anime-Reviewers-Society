@@ -26,8 +26,8 @@
                                     <div class="col-sm-6">
                                         <span class="anime__card__anime__tag">
                                             {% for t in a.tag %}
-                                                <div class="anime__tag">
-                                                    {{ t }}
+                                                <div class="anime__tag" style="background: {{ t.color }}; color: #fff">
+                                                    <i class="{{ t.icone }}"></i> {{ t }}
                                                 </div>
                                             {% endfor %}
 

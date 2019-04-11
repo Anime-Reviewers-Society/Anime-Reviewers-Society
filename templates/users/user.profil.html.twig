@@ -1,0 +1,28 @@
+{% extends 'front.base.html.twig' %}
+{% block title %}ARS | Profil{% endblock %}
+{% block content %}
+    <div class="user">
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="{{ user.avatar }}" class="img-circle">
+                <div class="user__informations">
+                    <span>{{ user.mail }}</span>
+                    <span>{{ user.status }}</span>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="user__informations_title">
+                    <h1>{{ user.username }}</h1>
+                </div>
+                <p class="user__informations_bio">{{ user.bio }}</p>
+            </div>
+            <div class="col-sm-3">
+                <div class="badge--wrapper">
+                    {% for b in badge %}
+                        <a class="badge" title="{{ b.label }}"><img src="{{ b.image }}" width="50" height="50"></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -5,3 +5,5 @@ easy_admin:
       form:
         fields:
         - {property: 'label'}
+        - {property: 'icone'}
+        - {property: 'color'}

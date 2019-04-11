@@ -29,6 +29,16 @@ class Tag
      */
     private $animes;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $icone;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $color;
+
     public function __construct()
     {
         $this->animes = new ArrayCollection();
@@ -82,5 +92,29 @@ class Tag
     public function __toString(): string
     {
         return $this->label;
+    }
+
+    public function getIcone(): ?string
+    {
+        return $this->icone;
+    }
+
+    public function setIcone(?string $icone): self
+    {
+        $this->icone = $icone;
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(?string $color): self
+    {
+        $this->color = $color;
+
+        return $this;
     }
 }
