@@ -355,7 +355,7 @@ btn-outline-primary.btn-darker-outline-blue:hover {
 }
 
 /* Anime Show */
-.anime, .form_register, .form_login, .user {
+.anime, .form_register, .form_login, .user, .ars__page, .gcu__page, .ln__page {
     padding: 20px;
     background: #fff;
     border-radius: 4px;
