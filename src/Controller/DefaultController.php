@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
@@ -36,6 +39,7 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+
     /**
      * @Route("/ars", name="ars")
      */
@@ -43,6 +47,18 @@ class DefaultController extends AbstractController
     {
         return $this->render('pages/pageArs.html.twig', [
             'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        $form = $this->createForm(ContactType::class);
+
+        return $this->render('pages/pageContact.html.twig', [
+            'contact_form' => $form->createView(),
         ]);
     }
 }
