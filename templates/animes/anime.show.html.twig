@@ -22,6 +22,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="anime__image__wrapper">
+                    <button class="btn btn-primary btn-darker-blue youtube"><i class="far fa-eye"></i> Opening</button>
                     <img src="{{ anime.image }}" alt="{{ anime.originalTitle }}" class="anime__image"/>
                 </div>
             </div>
@@ -55,7 +56,9 @@
                                     <div class="anime__informations__tag">
                                         {% for tag in anime.tag %}
                                             <div class="anime__tag" style="background: {{ tag.color }}; color: #fff">
-                                                <i class="{{ tag.icone }}"></i> {{ tag.label }}
+                                                <span>
+                                                    <i class="{{ tag.icone }}"></i> {{ tag.label }}
+                                                </span>
                                             </div>
                                         {% endfor %}
                                     </div>
@@ -108,6 +111,17 @@
                     {{ form_end(form) }}
                 </div>
             {% endif %}
+        </div>
+    </div>
+    <div class="anime__overlay_embed">
+        <div class="anime__overlay_content">
+            <iframe width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/{{ anime.opening }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
         </div>
     </div>
 {% endblock %}

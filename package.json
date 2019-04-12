@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "jquery": "^3.3.1",
+        "jquery-colorbox": "^1.6.4",
         "sass-loader": "^7.1.0"
     }
 }
