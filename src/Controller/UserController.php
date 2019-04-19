@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class UserController extends AbstractController
 {
@@ -46,21 +46,23 @@ class UserController extends AbstractController
     }
 
     /**
-     * @param Request $request
      * @return RedirectResponse
      *
      * @Route("/profil/edit", name="profil.edit")
      */
-    public function edit(Request $request): Response
+    public function edit(Request $request, UserRepository $userRepository): Response
     {
-        $user = $this->getUser();
+        $user = $userRepository->find($this->getUser());
         $form = $this->createForm(UserType::class);
+        $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $user->setAvatar($form->get("avatar")->getData());
+            $user->setBio($form->get("bio")->getData());
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('user.show');
+            return $this->redirectToRoute('user.profil');
         }
 
         return $this->render('users/user.edit.html.twig', [

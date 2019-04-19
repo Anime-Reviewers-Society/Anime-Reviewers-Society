@@ -64,6 +64,11 @@ class Anime
      */
     private $review;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $opening;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
@@ -218,6 +223,18 @@ class Anime
                 $review->setAnime(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getOpening(): ?string
+    {
+        return $this->opening;
+    }
+
+    public function setOpening(?string $opening): self
+    {
+        $this->opening = $opening;
 
         return $this;
     }

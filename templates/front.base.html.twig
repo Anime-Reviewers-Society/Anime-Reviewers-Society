@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <a href="{{ path('anime.index') }}">
-                        <img src="{{ asset('/img/md/logo_md.png') }}">
+                        <img class="navbar__img" src="{{ asset('/img/md/logo_md.png') }}">
                     </a>
                 </div>
                 <div class="col-sm-4">
@@ -14,30 +14,6 @@
                 </div>
                 <div class="col-sm-4">
                     {% if  app.user != null %}
-                        <div class="sidebar">
-                            <div class="sidebar__img">
-                                <img src="{{ app.user.avatar }}">
-                            </div>
-                            <ul class="sidebar__menu">
-                                {% if app.user.roles.0 == 'ROLE_ADMIN' %}
-                                    <li class="sidebar__item">
-                                        <a href="{{ path('dashboard') }}" class="sidebar__link">
-                                            <span class="sidebar__item__space"><i class="fas fa-cogs"></i></span>
-                                            Administration
-                                        </a>
-                                    </li>
-                                {% endif %}
-                                <li class="sidebar__item">
-                                    <a href="{{ path("user.profil") }}" class="sidebar__link">
-                                        <span class="sidebar__item__space"><i class="fas fa-user"></i></span> Mon compte
-                                    </a></li>
-                                <li class="sidebar__item"><a href="#" class="sidebar__link">Link 2</a></li>
-                                <li class="sidebar__item"><a href="#" class="sidebar__link">Link 3</a></li>
-                                <li class="sidebar__item">
-                                    <a href="{{ path("app_logout") }}" class="sidebar__link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
-                                </li>
-                            </ul>
-                        </div>
                         <button class="menu__toggle">
                             <i class="fas fa-bars"></i>
                         </button>
@@ -55,6 +31,20 @@
         </div>
         <div class="overlay"></div>
     </main>
+    {% if app.user %}
+        <aside>
+            <div class="sidebar">
+                <div class="sidebar__img">
+                    <img src="{{ app.user.avatar }}">
+                </div>
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item"><a href="{{ path("user.profil") }}" class="sidebar__link"><i class="far fa-user"></i> Mon compte</a></li>
+                    <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="far fa-comment-dots"></i> Mes reviews</a></li>
+                    <li class="sidebar__item"><a href="{{ path("app_logout") }}" class="sidebar__link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                </ul>
+            </div>
+        </aside>
+    {% endif %}
     <div id='scroll_to_top' class='opacity'>
         <i class="fas fa-chevron-up"></i>
     </div>

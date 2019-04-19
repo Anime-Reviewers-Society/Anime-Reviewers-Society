@@ -3,28 +3,12 @@ require('../css/style.css');
 require('bootstrap/dist/css/bootstrap.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
+var test = require('jquery-colorbox/jquery.colorbox-min.js');
 
 var $ = require("jquery");
+$ = jQuery.noConflict();
 
-$(document).ready(function () {
-    $(".menu__toggle, .overlay").on( "click", function () {
-        console.log("clicked");
-        if($(".sidebar").hasClass("sidebar__toggle")) {
-            $(".overlay").css("display", "none");
-            $(".sidebar").removeClass("sidebar__toggle");
-            $("main .container").css("right", "0");
-        } else {
-            $(".sidebar").addClass("sidebar__toggle");
-            $(".overlay").css("display", "block");
-            $("main .container").css("right", "150px");
-        }
-    });
-    $(".sidebar__item").on("click", function () {
-        if($(this).has("sidebar__child_menu")) {
-            $(".sidebar__child_menu").css("display", "block");
-        }
-    });
-
+$(document).ready( function () {
     $(".anime__star").on("mouseover", function () {
         $(".anime__star").removeClass("star__colored");
         let id = $(this).attr("id");
@@ -38,6 +22,19 @@ $(document).ready(function () {
             $("#review_note").val(id);
         });
     });
+});
+
+$(document).ready( function () {
+    $(".menu__toggle").on("click", function () {
+        $(".sidebar").addClass("sidebar__toggle");
+        $(".overlay").css("display", "block");
+        $("body").css("overflow", "hidden");
+    });
+    $(".overlay").on("click", function () {
+        $(".sidebar").removeClass("sidebar__toggle");
+        $(".overlay").css("display", "none");
+        $("body").css("overflow", "visible");
+    })
 });
 
 let acc = document.getElementsByClassName("faq-list");
@@ -62,11 +59,26 @@ $(document).ready(function() {
         });
         $(window).scroll(function(){
             if($(window).scrollTop()<150){
+                $(".anime__search_bar").css("padding", "25px");
+                $(".navbar__img").removeClass("rotate_off");
                 $(div).fadeOut();
             } else{
+                $(".anime__search_bar").css("padding", "5px");
+                $(".navbar__img").addClass("rotate_off");
                 $(div).fadeIn();
             }
         });
     }
     scroll_to_top("#scroll_to_top");
+});
+
+console.log(test);
+
+$(document).ready( function () {
+    $(".youtube").on("click", function () {
+        $(".anime__overlay_embed").addClass("visible__overlay")
+    });
+    $(".anime__overlay_embed").on("click", function () {
+        $(this).removeClass("visible__overlay");
+    });
 });
