@@ -15,9 +15,7 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return $this->render('pages/pageFaq.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return $this->render('pages/pageFaq.html.twig');
     }
 
     /**
@@ -25,9 +23,7 @@ class DefaultController extends AbstractController
      */
     public function pageGCU()
     {
-        return $this->render('pages/pageGcu.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return $this->render('pages/pageGcu.html.twig');
     }
 
     /**
@@ -35,9 +31,7 @@ class DefaultController extends AbstractController
      */
     public function pageLegalNotice()
     {
-        return $this->render('pages/pageLegalNotice.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return $this->render('pages/pageLegalNotice.html.twig');
     }
 
     /**
@@ -45,9 +39,7 @@ class DefaultController extends AbstractController
      */
     public function pageARS()
     {
-        return $this->render('pages/pageArs.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return $this->render('pages/pageArs.html.twig');
     }
 
     /**

@@ -24,6 +24,24 @@ class AnimeController extends AbstractController
         return $this->render('animes/anime.index.html.twig', ['anime' => $anime]);
     }
 
+
+    /**
+     * @param AnimeRepository $animeRepository
+     * @param string $title
+     * @return Response
+     *
+     * @Route("/test/{title}", name="test.result")
+     */
+    public function searchResult(AnimeRepository $animeRepository, string $title): Response
+    {
+        print_r($title);
+        $anime = $animeRepository->findByStartingTitle($title);
+
+        return $this->render('animes/test.result.html.twig',  [
+            'anime' => $anime
+        ]);
+    }
+
     /**
      * @param AnimeRepository $animeRepository
      * @param int $id

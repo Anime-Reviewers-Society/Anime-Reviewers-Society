@@ -10,7 +10,9 @@
                     </a>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" placeholder="Titre d'anime, genre, etc...">
+                    {{ render(controller(
+                        'App\\Controller\\SearchController::searchBar'
+                    )) }}
                 </div>
                 <div class="col-sm-4">
                     {% if  app.user != null %}
