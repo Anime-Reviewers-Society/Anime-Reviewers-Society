@@ -37,7 +37,8 @@ class UserFixtures extends Fixture
                 ->setPassword($this->passwordEncoder->encodePassword($user, $faker->password))
                 ->setBio($faker->text)
                 ->setMail($faker->email)
-                ->setStatus($faker->boolean);
+                ->setStatus($faker->boolean)
+                ->setUpdatedAt($faker->dateTime);
 
             $this->addReference('user-' . $index, $user);
             $manager->persist($user);

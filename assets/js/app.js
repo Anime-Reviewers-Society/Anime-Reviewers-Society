@@ -3,7 +3,6 @@ require('../css/style.css');
 require('bootstrap/dist/css/bootstrap.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
-var test = require('jquery-colorbox/jquery.colorbox-min.js');
 
 var $ = require("jquery");
 $ = jQuery.noConflict();
@@ -71,8 +70,6 @@ $(document).ready(function() {
     }
     scroll_to_top("#scroll_to_top");
 });
-
-console.log(test);
 
 $(document).ready( function () {
     $(".youtube").on("click", function () {

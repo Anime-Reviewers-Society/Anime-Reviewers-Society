@@ -14,7 +14,11 @@ class ReviewType extends AbstractType
     {
         $builder
             ->add('note')
-            ->add('comment', TextareaType::class, ['attr' => ['placeholder' => 'Votre avis ici...']])
+            ->add('comment', TextareaType::class, ['attr' => [
+                    'placeholder' => 'Votre avis ici...',
+                    'class' => 'ckeditor'
+                ]
+            ])
         ;
     }
 

@@ -639,6 +639,11 @@ main {
     cursor: pointer;
 }
 
+.ck.ck-toolbar {
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+}
+
 .star__colored {
     color: yellow;
 }

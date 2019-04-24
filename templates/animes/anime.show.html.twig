@@ -79,7 +79,7 @@
                     <div class="anime__comment_show">
                         <div class="row">
                             <div class="col-sm-1">
-                                <img src="http://lorempixel.com/75/75/abstract/" class="img-circle">
+                                <img src="{{ asset('uploads/user_avatar/' ~ r.author.avatar) }}" width="75" height="75" class="img-circle">
                             </div>
                             <div class="col-sm-11">
                                 <div class="anime__comment_show__content">
@@ -87,7 +87,7 @@
                                         <a href="{{ path('user.show', {'id' : r.author.id}) }}">{{ r.author }}</a>
                                     </div>
                                     <div class="anime__comment_show_comment">
-                                        {{ r.comment }}
+                                        {{ r.comment|raw }}
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                             <span id="star-{{ i }}" class="anime__star"><i class="fas fa-star"></i></span>
                         {% endfor %}
                     </div>
-                    {{ form_start(form) }}
+                    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
                     {{ form_widget(form) }}
                     <button class="btn btn-success">Soumettre</button>
                     {{ form_end(form) }}

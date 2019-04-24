@@ -4,7 +4,7 @@
 <div class="user">
     <div class="row">
         <div class="col-sm-2">
-            <img src="{{ user.avatar }}" class="img-circle">
+            <img src="{{ asset('uploads/user_avatar/' ~ user.avatar) }}" class="img-circle" width="150">
             <div class="user__informations">
             </div>
         </div>
@@ -18,18 +18,9 @@
                         Déconnexion</a>
                 </div>
             </div>
-            <p class="user__informations_bio">{{ user.bio }}</p>
+            <p class="user__informations_bio">{{ user.bio|raw }}</p>
         </div>
     </div>
-    <hr />
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="badge__wrapper">
-                {% for b in badge %}
-                    <a class="badge" title="{{ b.label }}"><img src="{{ b.image }}" width="50" height="50"></a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+    {# Here will come badges system #}
 </div>
 {% endblock %}
