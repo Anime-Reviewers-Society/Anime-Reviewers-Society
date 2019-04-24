@@ -122,6 +122,17 @@ main {
     overflow: hidden;
 }
 
+.anime__search_bar form {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    height: 40px;
+}
+
+.anime__search_bar form button {
+    margin-left: 10px;
+    height: 41px;
+}
+
 .anime__search_bar input[type="text"] {
     padding: 6px 20px;
     border-radius: 4px;
