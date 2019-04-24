@@ -35,7 +35,7 @@
         <aside>
             <div class="sidebar">
                 <div class="sidebar__img">
-                    <img src="{{ app.user.avatar }}">
+                    <img src="{{ asset('uploads/user_avatar/' ~ app.user.avatar) }}">
                 </div>
                 <ul class="sidebar__menu">
                     <li class="sidebar__item"><a href="{{ path("user.profil") }}" class="sidebar__link"><i class="far fa-user"></i> Mon compte</a></li>

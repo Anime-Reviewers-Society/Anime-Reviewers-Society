@@ -23,6 +23,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
+            $user->setUpdatedAt(New \DateTimeImmutable());
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,

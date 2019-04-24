@@ -21,15 +21,6 @@
                 <p class="user__informations_bio">{{ user.bio }}</p>
             </div>
         </div>
-        <hr />
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="badge__wrapper">
-                    {% for b in badge %}
-                        <a class="badge" title="{{ b.label }}"><img src="{{ b.image }}"></a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+        {# Here will come badges system #}
     </div>
 {% endblock %}
