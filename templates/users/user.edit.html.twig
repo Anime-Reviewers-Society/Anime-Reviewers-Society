@@ -1,0 +1,10 @@
+{% extends 'front.base.html.twig' %}
+
+{% block content %}
+    <div class="user">
+        {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-success" type="submit">Terminé</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

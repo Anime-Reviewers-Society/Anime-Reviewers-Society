@@ -1,0 +1,66 @@
+{% extends 'front.base.html.twig' %}
+
+{% block title %}ARS | Inscription{% endblock %}
+
+{% block content %}
+    <div class="form_register">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="hidden" class="form_register__title">Inscription</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{ form_start(registrationForm) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{ form_row(registrationForm.username) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.mail.first) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.mail.second) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.plainPassword.first) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.plainPassword.second) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form_register__actions">
+                            <button class="btn btn-success">Inscription</button>
+                            {{ form_end(registrationForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form_register__policies">
+                    <p>
+                        En cliquant sur "Inscription", vous reconnaissez avoir lu nos <a href="#">conditions d'utilisation</a> mises à jour,
+                        la <a href="#">politique de confidentialité</a> et la <a href="#">politique de cookie</a>, et que votre utilisation continue du site Web est soumise à ces politiques.
+                    </p>
+                </div>
+                <div class="form_register__options">
+                    <a href="#" class="btn btn-primary disabled"><i class="fab fa-google"></i> M'inscrire avec Google</a>
+                    <ul>
+                        <li><a href="{{ path('app_login') }}">J'ai déjà un compte</a></li>
+                        <li><a href="#">J'ai oublié mon mot de passe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

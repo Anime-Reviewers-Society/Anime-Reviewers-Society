@@ -1,6 +1,51 @@
-# Anime-Reviewers-Society
+<p align="center">
+<img src="https://cdn.discordapp.com/attachments/530753204703592459/542471532828557350/Logopit_1549405629063.png" width="200">
+
+<h1 align="center">Anime Reviewers Society</h1>
+<h4 align="center">A website grouping all come out of opinion on Japanese anime</h4>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![Build Status](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society.svg?branch=master)](https://travis-ci.org/Anime-Reviewers-Society/Anime-Reviewers-Society)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3b4748e8cdda4996a9c5f0d2cbc1e382)](https://www.codacy.com/app/legars.florian/Anime-Reviewers-Society?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Anime-Reviewers-Society/Anime-Reviewers-Society&amp;utm_campaign=Badge_Grade)
+[![Discord](https://img.shields.io/discord/530659599301345291.svg?logo=discord)](https://discord.gg/DZhbSdz)
+
+</p>
+
+## Pre-requirements
+You will need Docker to build the application, find more informations on [the docker installation documentation](https://docs.docker.com/install/)
 
 ## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
+To contribute :
+```bash
+# Clone the application
+git clone https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society.git
+cd Anime-Reviewers-Society
+
+# Build and initialize the project
+make install
+```
+If you don't have make (or don't want to download it)
+```bash
+# Execute in order these commands
+docker-compose up -d
+docker-compose run composer install
+npm install
+yarn install
+yarn encore dev --watch
+php bin/console doctrine:database:drop --force
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --force
+php bin/console doctrine:fixtures:load
+```
+🔥 Coding ! 😈
+
+## License
+This project is under [MIT License](https://choosealicense.com/licenses/mit/)
 
 ## Collaborators
 | [<img src="https://avatars3.githubusercontent.com/u/17853732?s=460&v=4" height="150"><br /><span>Dmansuy</span>](https://github.com/Dmansuy) | 

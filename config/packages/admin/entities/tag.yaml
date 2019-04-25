@@ -1,0 +1,9 @@
+easy_admin:
+  entities:
+    Tag:
+      class: App\Entity\Tag
+      form:
+        fields:
+        - {property: 'label'}
+        - {property: 'icone'}
+        - {property: 'color'}

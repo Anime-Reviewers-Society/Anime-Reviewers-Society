@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="anime__search_bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{{ path('anime.index') }}">
+                        <img class="navbar__img" src="{{ asset('/img/md/logo_md.png') }}">
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    {{ render(controller(
+                        'App\\Controller\\SearchController::searchBar'
+                    )) }}
+                </div>
+                <div class="col-sm-4">
+                    {% if  app.user != null %}
+                        <button class="menu__toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
+                        <a href="{{ path('app_register') }}" class="btn btn-primary btn-darker-blue">Inscription</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="overlay"></div>
+    </main>
+    {% if app.user %}
+        <aside>
+            <div class="sidebar">
+                {% if app.user.avatar %}
+                    <div class="sidebar__img">
+                        <img src="{{ asset('uploads/user_avatar/' ~ app.user.avatar) }}">
+                    </div>
+                {% endif %}
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item"><a href="{{ path("user.profil") }}" class="sidebar__link"><i class="far fa-user"></i> Mon compte</a></li>
+                    <!--<li class="sidebar__item"><a href="#" class="sidebar__link"><i class="far fa-comment-dots"></i> Mes reviews</a></li>-->
+                    <li class="sidebar__item"><a href="{{ path("app_logout") }}" class="sidebar__link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+                </ul>
+            </div>
+        </aside>
+    {% endif %}
+    <div id='scroll_to_top' class='opacity'>
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p class="footer__title">Vous avez des questions ?</p>
+                    <p>Vous trouverez une <a href="{{ path('faq') }}">FAQ</a> complète des questions récurrentes.
+                        Vous pouvez également utiliser notre <a href="{{ path('contact') }}">formulaire de contact</a>.</p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="footer__title">ARS</p>
+                    <p><a href="{{ path('ars') }}"> Qui sommes-nous ?</a></p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="footer__title">Légale</p>
+                    <p><a href="{{ path('gcu') }}"> Conditions générales d'utilisation </a></p>
+                    <p><a href="{{ path('legalNotice') }}"> Mentions Légales </a></p>
+                    <p>©2019 ARS</p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="footer__title">Suivez-nous !</p>
+                    <div class="col-md-12">
+                        <ul class="social-network">
+                            <li><a href="https://github.com/Anime-Reviewers-Society/Anime-Reviewers-Society"
+                                   class="icon">
+                                    <i class="fab fa-github-alt"></i></a></li>
+                            <li><a href="https://discordapp.com/invite/Hk3V7JP" class="icon">
+                                    <i class="fab fa-discord"></i></a></li>
+                            <li><a href="https://twitter.com/AnimeReviewersS?s=09" class="icon">
+                                    <i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
