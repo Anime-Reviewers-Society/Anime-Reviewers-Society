@@ -2,15 +2,13 @@
 
 ## Before submitting a pull request
 
-> Ask contributors to ensure that any install or build dependencies are removed before the end of the layer when doing a build.
+Be ensure to remove all the install or build dependencies before the end of the layer when doing a build.
 
 ## General steps for completing this pull request
 
 Please review the [guidelines for contributing](CONTRIBUTING.md) to this repository.
 
 ### Checklist
-
-> Does your project contributions have steps to follow before being approved? Tests, documentation changing, etc?
 
 Ensure that your `pull request` has followed all the steps below:
 
@@ -21,15 +19,13 @@ Ensure that your `pull request` has followed all the steps below:
 
 ### Description
 
-> Ask the contributor to describe his `pull request`.
+Please, describe your `pull request` for more understanding.
 
 ## Proposed changes
 
-> Ask contributors about why you (or your project maintainers) would accept the pull request. If it solves a previous request, also ask to link to that issue.
+Please describe why our project maintainers would accept the pull request. If it solves a previous request, please join link to that issue.
 
 ### Types of changes
-
-> Show in a checkbox-style, the expected types of changes your project is supposed to have:
 
 - [ ] New feature
 - [ ] Bugfix
