@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\AnimeRepository;
+use Knp\Component\Pager\PaginatorInterface;
 
 class AnimeController extends AbstractController
 {
@@ -18,9 +19,13 @@ class AnimeController extends AbstractController
      *
      * @Route("/", name="anime.index")
      */
-    public function index(AnimeRepository $animeRepository): Response
+    public function index(AnimeRepository $animeRepository, Request $request, PaginatorInterface $paginator): Response
     {
-        $anime = $animeRepository->findAll();
+        $anime = $paginator->paginate(
+            $animeRepository->findAll(),
+            $request->query->getInt('page', 1),
+            20
+        );
         return $this->render('animes/anime.index.html.twig', ['anime' => $anime]);
     }
 
@@ -30,14 +35,19 @@ class AnimeController extends AbstractController
      * @param string $title
      * @return Response
      *
-     * @Route("/test/{title}", name="test.result")
+     * @Route("/search", name="anime.search")
      */
-    public function searchResult(AnimeRepository $animeRepository, string $title): Response
+    public function searchResult(AnimeRepository $animeRepository, Request $request, PaginatorInterface $paginator): Response
     {
-        print_r($title);
-        $anime = $animeRepository->findByStartingTitle($title);
 
-        return $this->render('animes/test.result.html.twig',  [
+        $data = $request->query->get("search");
+        $anime = $paginator->paginate(
+            $animeRepository->findByStartingTitle($data['query']),
+            $request->query->getInt('page', 1),
+            20
+        );
+
+        return $this->render('animes/anime.result.html.twig',  [
             'anime' => $anime
         ]);
     }

@@ -24,7 +24,7 @@ class AnimeRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.originalTitle LIKE :title')
-            ->setParameter('title', '%title')
+            ->setParameter('title', '%' . $title . '%')
             ->orderBy('a.id', 'ASC')
             ->getQuery()
             ->getResult()
