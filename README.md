@@ -17,6 +17,9 @@
 You will need Docker to build the application, find more informations on [the docker installation documentation](https://docs.docker.com/install/)
 
 ## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
 To contribute :
 ```bash
 # Clone the application
