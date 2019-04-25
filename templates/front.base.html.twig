@@ -36,12 +36,14 @@
     {% if app.user %}
         <aside>
             <div class="sidebar">
-                <div class="sidebar__img">
-                    <img src="{{ asset('uploads/user_avatar/' ~ app.user.avatar) }}">
-                </div>
+                {% if app.user.avatar %}
+                    <div class="sidebar__img">
+                        <img src="{{ asset('uploads/user_avatar/' ~ app.user.avatar) }}">
+                    </div>
+                {% endif %}
                 <ul class="sidebar__menu">
                     <li class="sidebar__item"><a href="{{ path("user.profil") }}" class="sidebar__link"><i class="far fa-user"></i> Mon compte</a></li>
-                    <li class="sidebar__item"><a href="#" class="sidebar__link"><i class="far fa-comment-dots"></i> Mes reviews</a></li>
+                    <!--<li class="sidebar__item"><a href="#" class="sidebar__link"><i class="far fa-comment-dots"></i> Mes reviews</a></li>-->
                     <li class="sidebar__item"><a href="{{ path("app_logout") }}" class="sidebar__link"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
                 </ul>
             </div>

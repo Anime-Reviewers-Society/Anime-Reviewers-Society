@@ -19,7 +19,7 @@ class User implements UserInterface
     {
         $this->roles = array('ROLE_USER');
         $this->status = false;
-        $this->setAvatar('https://via.placeholder.com/150');
+        $this->avatar = 'default.png';
         $this->reviews = new ArrayCollection();
         $this->badges = new ArrayCollection();
     }

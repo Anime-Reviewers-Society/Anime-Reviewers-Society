@@ -14,6 +14,8 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->setAction("/search?query=")
+            ->setMethod("GET")
             ->add('query', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Titre, genre, etc...'
