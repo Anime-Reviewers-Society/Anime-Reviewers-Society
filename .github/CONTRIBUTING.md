@@ -4,7 +4,7 @@ Thank for the future contributors who will work with our on this project.
 
 # How to contribute
 
-If you need further guidance, you can find our team on the [Discord channel](https://discord.gg/DZhbSdz) or in Twitter : @AnimeReviewersS
+If you need further guidance, you can find our team on the [Discord channel](https://discord.gg/DZhbSdz) or in [Twitter](https://twitter.com/AnimeReSociety?s=09)
 
 Please note we have a [code of conduct](#code-of-conduct), please follow it in all your interactions with the project.
 
