@@ -16,7 +16,7 @@ class AnimeFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
-        for ($index = 0; $index < 20; $index++) {
+        for ($index = 0; $index < 60; $index++) {
             $anime = new Anime();
             $anime->setOriginalTitle($faker->sentence(2, false))
                 ->setTranslatedTitle($faker->sentence(2, false))

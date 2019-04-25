@@ -9,6 +9,7 @@
         "easycorp/easyadmin-bundle": "^2.1",
         "friendsofsymfony/rest-bundle": "^2.5",
         "kartik-v/bootstrap-star-rating": "@dev",
+        "knplabs/knp-paginator-bundle": "^3.0",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",

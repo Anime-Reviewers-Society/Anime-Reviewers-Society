@@ -104,6 +104,12 @@
     "kartik-v/bootstrap-star-rating": {
         "version": "4.0.x-dev"
     },
+    "knplabs/knp-components": {
+        "version": "v1.3.10"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v3.0.0"
+    },
     "nikic/php-parser": {
         "version": "v4.2.0"
     },
