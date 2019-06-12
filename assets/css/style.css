@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    background: url("https://zupimages.net/up/19/15/6zmv.png") no-repeat fixed center;
+    background: #f7f7f7 !important;
 }
 
 main {
     min-height: 57vh;
+}
+
+.btn {
+    border-radius: 2px;
 }
 
 #scroll_to_top {
@@ -16,7 +20,7 @@ main {
     right: 15px;
     display: none;
     background: rgba(0, 0, 0, 0.75);
-    border-radius: 4px;
+    border-radius: 2px;
     z-index: 999;
     cursor: pointer;
     text-align: center;
@@ -51,6 +55,10 @@ main {
     transition: all, 0.25s;
 }
 
+.container.security__page {
+    width: 1200px !important;
+}
+
 @media (min-width: 1200px)
 {
     .container {
@@ -60,8 +68,56 @@ main {
 
 
 /* Btn styles */
+
+.btn-primary {
+    color: #fff;
+    background: #1194d3 !important;
+    border-color: #1194d3 !important;
+    border-radius: 2px !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:hover {
+    background: #39bfff !important;
+    border-color: #39bfff !important;
+}
+
+.btn-primary:focus {
+    box-shadow: none !important;
+    background: #0087c7 !important;
+    border-color: #0087c7 !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
 .btn-outline-primary:focus {
     box-shadow: none !important;
+}
+
+.btn-outline-primary {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.btn-outline-primary:hover {
+    background: transparent !important;
+}
+
+.btn-outline-primary:before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    bottom: -50px;
+    right: 100px;
+    background: #1194d3;
+    transition: all, 0.5s linear;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+.btn-outline-primary:hover:before {
+    right: -100px;
 }
 
 .btn-primary.btn-darker-blue {
@@ -71,8 +127,6 @@ main {
 }
 
 .btn-primary.btn-darker-blue:hover, .btn-primary.btn-darker-blue:active {
-    background-color: #22C0D3;
-    border-color: #22c0d3;
     border-bottom: 3px solid #006da0;
 }
 
@@ -86,6 +140,8 @@ main {
 .btn-outline-primary.btn-darker-outline-blue {
     color: #1194d3;
     border-color: #1194d3;
+    background: transparent;
+    border-radius: 2px;
 }
 
 .btn-outline-primary.btn-darker-outline-blue:hover {
@@ -124,8 +180,6 @@ ul.pagination {
 
 .page-item.active .page-link {
     background-color: #1194d3 !important;
-    border-color: #1194d3 !important;
-    border-bottom: 3px solid #006da0 !important;
     color: #fff !important;
 }
 
@@ -146,7 +200,7 @@ ul.pagination {
     width: 100%;
     z-index: 998;
     background: #fff;
-    box-shadow: 0 0 7px 2px #000000a1;
+    box-shadow: 0px 2px 2px 0 #00000054;
     transition: all, 0.5s;
     padding: 25px;
     overflow: hidden;
@@ -165,7 +219,7 @@ ul.pagination {
 
 .anime__search_bar input[type="text"] {
     padding: 6px 20px;
-    border-radius: 4px;
+    border-radius: 2px;
     border: none;
     border: 1px solid #e2e2e2;
     width: 100%;
@@ -187,39 +241,43 @@ ul.pagination {
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
-.anime__search_bar .container .col-sm-4:last-child {
+.anime__search_bar .container-fluid .col-sm-4:last-child {
     text-align: right;
 }
 
-.anime__search_bar .container .col-sm-4:first-child {
+.anime__search_bar .container-fluid .col-sm-4:first-child {
     text-align: left;
 }
 
-.anime__search_bar.anime__search_bar .navbar__img {
-    width: 140px;
-    position: absolute;
-    top: -50px;
-    transform: rotate(-10deg);
-    transition: all, 0.25s;
+.anime__search_bar .search_bar__wrapper {
+    width: 100%;
+    text-align: center;
 }
 
-.rotate_off {
-    transform: rotate(0deg) !important;
-    width: 115px !important;
+.anime__search_bar.anime__search_bar .navbar__img {
+    width: 250px;
+    position: absolute;
+    top: -74px;
+    transition: all, 0.25s;
+    visibility: visible;
+}
+
+.reduce_logo {
+    width: 200px !important;
+    top: -55px !important;
 }
 
 .menu__toggle {
-    background: #419ae0;
+    background: transparent;
     border: none;
     padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #fff;
     transition: all, 0.25s;
     opacity: 1;
     cursor: pointer;
     margin-left: 15px;
     z-index: 999;
-    border-bottom: 3px solid #006da0;
 }
 
 .menu__hidden {
@@ -230,14 +288,6 @@ ul.pagination {
 
 .menu__hidden:hover:after {
     -webkit-text-stroke: 3px #5454bb;
-}
-
-.menu__toggle:hover {
-    background: #54c7fd;
-}
-
-.menu__toggle:active {
-    background: #279cfd;
 }
 
 .menu__toggle:focus {
@@ -286,7 +336,7 @@ ul.pagination {
     list-style-type: none;
     padding: 15px 0;
     transition: all, 0.25s;
-    border-radius: 4px;
+    border-radius: 2px;
     text-align: left;
     font-weight: 500;
 }
@@ -355,8 +405,25 @@ ul.pagination {
     transition: all, 0.25s;
     height: 200px;
     overflow: hidden;
-    box-shadow: 0px 5px 7px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px !important;
+    box-shadow: 0px 2px 3px 0 #00000054;
     border: none !important;
+    background: transparent;
+}
+
+.anime__card:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #355e7e, #1194d3);
+    height: 3px;
+    opacity: 0;
+}
+
+.anime__card:hover:after {
+    opacity: 1;
 }
 
 .card_img__wrapper {
@@ -437,25 +504,67 @@ ul.pagination {
 }
 
 .anime__list, .anime, .form_register, .form_login, .user {
-    background: #ffffffc9;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
-.anime__list, .anime, .form_register, .form_login, .user {
-    margin: 150px 0 60px 0;
+.anime__list {
+    margin-top: 100px;
 }
 
-.form_register__actions {
+.anime, .form_login, .user {
+    margin-top: 110px;
+    margin-bottom: 20px;
+}
+
+.form_register {
+    position: relative;
+    z-index: 999;
+    margin-top: 250px;
+}
+
+
+.form_register__actions, .form_login {
     text-align: center;
+}
+
+.logo_wrapper {
+    position: relative;
+    height: 50px;
+}
+
+.logo_wrapper img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.form_login {
+    margin: 250px;
+    z-index: 999;
+    position: relative;
+}
+
+.form_login a.back__button {
+    font-weight: 500;
+    color: #0e79ad;
+}
+
+.form_login form {
+    margin-top: 30px;
+}
+
+.form_register .row:first-child {
+    margin-top: 30px;
 }
 
 /* Anime Show */
 .anime, .form_register, .form_login, .user, .ars__page, .gcu__page, .ln__page {
     padding: 20px;
     background: #fff;
-    border-radius: 4px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.20);
 }
 
 .anime__title {
@@ -474,7 +583,7 @@ ul.pagination {
     right: 10px;
     background: #f73939;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #fff;
     font-weight: 600;
 }
@@ -483,7 +592,7 @@ ul.pagination {
     position: relative;
     top: -50px;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 20px;
     margin: 0 50px;
     box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.35);
@@ -492,7 +601,7 @@ ul.pagination {
 .anime__tag {
     background: #c7c7c7;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 2px;
     margin: 2px;
     display: inline-block;
 }
@@ -521,7 +630,7 @@ ul.pagination {
     text-align: center;
     height: 300px;
     position: relative;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .anime__image__wrapper .btn-primary {
@@ -600,7 +709,7 @@ ul.pagination {
 .anime__comment_new, .anime__comment_show {
     background: #f1f1f1;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
     margin: 10px 0;
     position: relative;
     overflow: hidden;
@@ -674,8 +783,8 @@ ul.pagination {
 }
 
 .ck.ck-toolbar {
-    border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important;
+    border-top-left-radius: 2px !important;
+    border-top-right-radius: 2px !important;
 }
 
 .star__colored {
@@ -746,13 +855,26 @@ ul.pagination {
 footer {
     padding: 20px 0;
     background: #fff;
-    box-shadow: 0 0 7px 2px #000000a1;
     color: #355e7e;
     position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 997;
+}
+
+footer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #355e7e, #1194d3);
+    height: 2px;
+}
+
+footer .container-fluid .col-sm-3 {
+    text-align: center;
 }
 
 .footer__title {
@@ -814,7 +936,7 @@ ul.social-network {
     margin: 150px 0;
     background: white;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .faq__title, .gcu__title, .ln__title, .ars__title {
@@ -879,7 +1001,7 @@ ul.social-network {
     margin: 150px 0;
     background: white;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .gcu__content, .ln__content, .ars__content {
@@ -909,7 +1031,7 @@ ul.social-network {
     left: 10px;
     font-size: 21px;
     padding: 8px 17px 10px 17px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .anime__title__arrow__right {
@@ -917,7 +1039,7 @@ ul.social-network {
     right: 10px;
     font-size: 21px;
     padding: 8px 17px 10px 17px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .anime__title__arrow__right:hover, .anime__title__arrow__left:hover {
@@ -1048,6 +1170,20 @@ ul.social-network {
 
 legend.col-form-label.required{
     display: none;
+}
+
+.page-item:first-child .page-link {
+    border-bottom-left-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+}
+
+.page-item:last-child .page-link {
+    border-bottom-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+}
+
+.page-link {
+    border: none !important;
 }
 
 

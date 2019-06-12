@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\DBAL\Types\DateType;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReviewRepository")
@@ -34,6 +35,7 @@ class Review
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      */
     private $note;
 
