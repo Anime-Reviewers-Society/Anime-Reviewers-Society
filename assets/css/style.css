@@ -142,6 +142,7 @@ main {
     border-color: #1194d3;
     background: transparent;
     border-radius: 2px;
+    color: #fff;
 }
 
 .btn-outline-primary.btn-darker-outline-blue:hover {
@@ -515,6 +516,19 @@ ul.pagination {
 .anime, .form_login, .user {
     margin-top: 110px;
     margin-bottom: 20px;
+}
+
+.page-load-status {
+    width: 100%;
+}
+
+.infinite-scroll-request {
+    text-align: center;
+    width: 100%;
+}
+
+.loader {
+    width: 100px;
 }
 
 .form_register {
