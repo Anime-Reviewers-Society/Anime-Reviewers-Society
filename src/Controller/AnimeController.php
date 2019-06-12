@@ -17,7 +17,7 @@ class AnimeController extends AbstractController
      * @param AnimeRepository $animeRepository
      * @return Response
      *
-     * @Route("/", name="anime.index")
+     * @Route("/", name="anime.index", methods={"GET"})
      */
     public function index(AnimeRepository $animeRepository, Request $request, PaginatorInterface $paginator): Response
     {

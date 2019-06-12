@@ -1,8 +1,10 @@
 //Requires
 require('../css/style.css');
+require('../css/column.css');
 require('bootstrap/dist/css/bootstrap.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
+require('infinite-scroll');
 
 var $ = require("jquery");
 $ = jQuery.noConflict();
@@ -57,13 +59,19 @@ $(document).ready(function() {
             $('html,body').animate({scrollTop: 0}, 'slow');
         });
         $(window).scroll(function(){
-            if($(window).scrollTop()<150){
-                $(".anime__search_bar").css("padding", "25px");
-                $(".navbar__img").removeClass("rotate_off");
+            if($(window).scrollTop() < 1){
+                $(".anime__search_bar").css({
+                    "background" : "#fff",
+                    "padding" : "25px"
+                });
+                $(".navbar__img").removeClass("reduce_logo");
                 $(div).fadeOut();
             } else{
-                $(".anime__search_bar").css("padding", "5px");
-                $(".navbar__img").addClass("rotate_off");
+                $(".anime__search_bar").css({
+                    "background" : "#355e7e",
+                    "padding" : "10px"
+                });
+                $(".navbar__img").addClass("reduce_logo");
                 $(div).fadeIn();
             }
         });
@@ -77,5 +85,15 @@ $(document).ready( function () {
     });
     $(".anime__overlay_embed").on("click", function () {
         $(this).removeClass("visible__overlay");
+    });
+});
+
+
+$(document).ready( function  () {
+    new InfiniteScroll( '.anime__list', {
+        path: '.page-item:last-child .page-link',
+        append: '.anime__list > .row',
+        history: false,
+        hideNav: '.pagination'
     });
 });

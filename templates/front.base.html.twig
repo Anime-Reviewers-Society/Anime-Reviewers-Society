@@ -2,33 +2,39 @@
 
 {% block body %}
     <div class="anime__search_bar">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="{{ path('anime.index') }}">
-                        <img class="navbar__img" src="{{ asset('/img/md/logo_md.png') }}">
-                    </a>
+                    <div class="logo__wrapper">
+                        <a href="{{ path('anime.index') }}">
+                            <img class="navbar__img" src="{{ asset('/img/md/logo_transparent.png') }}">
+                        </a>
+                    </div>
                 </div>
                 <div class="col-sm-4">
-                    {{ render(controller(
-                        'App\\Controller\\SearchController::searchBar'
-                    )) }}
+                    <div class="search_bar__wrapper">
+                        {{ render(controller(
+                            'App\\Controller\\SearchController::searchBar'
+                        )) }}
+                    </div>
                 </div>
                 <div class="col-sm-4">
-                    {% if  app.user != null %}
-                        <button class="menu__toggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    {% else %}
-                        <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
-                        <a href="{{ path('app_register') }}" class="btn btn-primary btn-darker-blue">Inscription</a>
-                    {% endif %}
+                    <div class="action__wrapper">
+                        {% if  app.user != null %}
+                            <button class="menu__toggle">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        {% else %}
+                            <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
+                            <a href="{{ path('app_register') }}" class="btn btn-primary btn-darker-blue">Inscription</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <main>
-        <div class="container">
+        <div class="container-fluid">
             {% block content %}{% endblock %}
         </div>
         <div class="overlay"></div>
@@ -53,7 +59,7 @@
         <i class="fas fa-chevron-up"></i>
     </div>
     <footer>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3">
                     <p class="footer__title">Vous avez des questions ?</p>
