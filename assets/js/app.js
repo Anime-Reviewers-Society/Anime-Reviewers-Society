@@ -1,10 +1,13 @@
 //Requires
-require('../css/style.css');
-require('../css/column.css');
 require('bootstrap/dist/css/bootstrap.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 require('infinite-scroll');
+require('../../public/javascript/slick/slick/slick-theme.css');
+require('../../public/javascript/slick/slick/slick.css');
+require('../../public/javascript/slick/slick/slick');
+require('../css/style.css');
+require('../css/column.css');
 
 var $ = require("jquery");
 $ = jQuery.noConflict();
@@ -61,7 +64,7 @@ $(document).ready(function() {
         $(window).scroll(function(){
             if($(window).scrollTop() < 1){
                 $(".anime__search_bar").css({
-                    "background" : "#fff",
+                    "background" : "#355e7e",
                     "padding" : "25px"
                 });
                 $(".navbar__img").removeClass("reduce_logo");
@@ -96,5 +99,10 @@ $(document).ready( function  () {
         history: false,
         hideNav: '.pagination',
         status: '.page-load-status'
+    });
+
+    $('.anime__trends__list').slick({
+        dots : true,
+        cssEase : "ease-in-out"
     });
 });

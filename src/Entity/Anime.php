@@ -184,6 +184,7 @@ class Anime
     public function __toString(): string
     {
         return $this->originalTitle;
+        return $this->image;
     }
 
     public function getTarget(): ?Target
