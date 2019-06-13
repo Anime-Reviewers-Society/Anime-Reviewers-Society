@@ -8,6 +8,10 @@ main {
     min-height: 57vh;
 }
 
+aside {
+    position: relative;
+}
+
 .btn {
     border-radius: 2px;
 }
@@ -200,7 +204,7 @@ ul.pagination {
     top: 0;
     width: 100%;
     z-index: 998;
-    background: #fff;
+    background: #355e7e;
     box-shadow: 0px 2px 2px 0 #00000054;
     transition: all, 0.5s;
     padding: 25px;
@@ -225,6 +229,7 @@ ul.pagination {
     border: 1px solid #e2e2e2;
     width: 100%;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .anime__search_bar input[type="text"]:hover {
@@ -306,6 +311,15 @@ ul.pagination {
     opacity: 0;
     transition: all, 0.25s;
     z-index: 999;
+}
+
+.sidebar:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #355e7e, #1194d3);
 }
 
 .sidebar__toggle {
@@ -398,6 +412,84 @@ ul.pagination {
 }
 
 /* Anime List */
+.anime__trends__container {
+    position: relative;
+    margin-top: 90px;
+    text-align: center;
+    height: 200px;
+    margin-bottom: 120px;
+    z-index: 0;
+}
+
+.anime__trends__container .slick-dots {
+    z-index: 999;
+    transform: skewY(-5deg);
+    bottom: 100px;
+    right: -40%;
+    border-radius: 0;
+}
+
+.anime__trends__container .slick-dots li {
+    background: #1194d3;
+    height: 10px;
+    width: 30px;
+    border-radius: 2px;
+}
+
+.anime__trends__container .slick-dots li:hover {
+    background: #39bfff;
+}
+
+.anime__trends__container .slick-dots li button:before {
+    content: none;
+}
+
+.anime__trends__wrapper {
+    position: absolute;
+    left: -15px;
+    right: -15px;
+    bottom: 0;
+    top: 0;
+}
+
+.anime__trends__wrapper:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #355e7e, #1194d3);
+    z-index: 999;
+    bottom: -30px;
+    transform: skewY(-5deg);
+}
+
+.anime__trends__wrapper:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 140px;
+    z-index: 999;
+    bottom: -170px;
+    background: #f7f7f7;
+    z-index: 998;
+    transform: skewY(-5deg);
+}
+
+.anime__trends__list {
+    position: relative;
+}
+
+.anime__trends {
+    width: 100%;
+}
+
+.anime__trends img {
+    width: 100%;
+    height: 300px;
+}
+
 .anime__card {
     margin-bottom: 25px;
     border: none;
@@ -510,7 +602,7 @@ ul.pagination {
 }
 
 .anime__list {
-    margin-top: 100px;
+    z-index: 1;
 }
 
 .anime, .form_login, .user {
@@ -806,13 +898,13 @@ ul.pagination {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(255, 255, 255, 0.5);
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    cursor: w-resize;
+    cursor: pointer;
     z-index: 0;
     transition: all, 0.25s;
     display: none;
