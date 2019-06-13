@@ -40,6 +40,14 @@
                     </a>
                 </div>
             {% endfor %}
+
+            <div class="page-load-status">
+                <p class="infinite-scroll-request">
+                    <img class="loader" src="{{ asset('/img/loader.svg') }}">
+                </p>
+                <p class="infinite-scroll-last">Oh, il n'y a plus rien à afficher</p>
+                <p class="infinite-scroll-error">Plus d'animes supplémentaires</p>
+            </div>
         </div>
         <div class="navigation">
             {{ knp_pagination_render(anime) }}

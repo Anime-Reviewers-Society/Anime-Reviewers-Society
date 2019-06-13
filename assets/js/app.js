@@ -94,6 +94,7 @@ $(document).ready( function  () {
         path: '.page-item:last-child .page-link',
         append: '.anime__list > .row',
         history: false,
-        hideNav: '.pagination'
+        hideNav: '.pagination',
+        status: '.page-load-status'
     });
 });
