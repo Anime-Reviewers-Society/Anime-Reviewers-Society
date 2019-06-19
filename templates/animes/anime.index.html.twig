@@ -1,71 +1,58 @@
 {% extends 'front.base.html.twig' %}
 
 {% block content %}
-    <div class="anime__trends__container">
-        <div class="anime__trends__wrapper">
-            <div class="anime__trends__list">
-                <div class="anime__trends">
-                    <img src="https://via.placeholder.com/450x200">
-                </div>
-                <div class="anime__trends">
-                    <img src="https://via.placeholder.com/450x200">
-                </div>
-                <div class="anime__trends">
-                    <img src="https://via.placeholder.com/450x200">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="anime__list">
-        <div class="row">
-            {% for a in anime %}
-                <div class="col-md-5ths">
-                    <a href="{{ path('anime.show', { 'id' : a.id }) }}" class="anime__link">
-                        <div class="card anime__card">
-                            <div class="card_img__wrapper">
-                                <img class="card-img-top" src="{{ a.image }}" alt="{{ a.originalTitle }}">
-                                <div class="card_img_overlay">
-                                    <div class="card_img_overlay_content">
-                                        <div class="anime__card__anime__tag">
-                                            {% for t in a.tag %}
-                                                <div class="anime__tag" style="background: {{ t.color }}; color: #fff">
-                                                    <i class="{{ t.icone }}"></i> {{ t }}
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card_body">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="anime__card_title">
-                                            <h3>{{ a.originalTitle }}</h3>
-                                            <h4><em>{{ a.translatedTitle }}</em></h4>
-                                        </div>
-                                        {% if a.target %}
-                                            <div class="anime__card_target">
-                                                <span>{{ a.target }}</span>
+    <div class="container-fluid">
+        <div class="anime__list">
+            <div class="row">
+                {% for a in anime %}
+                    <div class="col-md-5ths col-sm-3 col-xs-1">
+                        <a href="{{ path('anime.show', { 'id' : a.id }) }}" class="anime__link">
+                            <div class="card anime__card">
+                                <div class="card_img__wrapper">
+                                    <img class="card-img-top" src="{{ a.image }}" alt="{{ a.originalTitle }}">
+                                    <div class="card_img_overlay">
+                                        <div class="card_img_overlay_content">
+                                            <div class="anime__card__anime__tag">
+                                                {% for t in a.tag %}
+                                                    <div class="anime__tag" style="background: {{ t.color }}; color: #fff">
+                                                        <i class="{{ t.icone }}"></i> {{ t }}
+                                                    </div>
+                                                {% endfor %}
                                             </div>
-                                        {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card_body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="anime__card_title">
+                                                <h3>{{ a.originalTitle }}</h3>
+                                                <h4><em>{{ a.translatedTitle }}</em></h4>
+                                            </div>
+                                            {% if a.target %}
+                                                <div class="anime__card_target">
+                                                    <span>{{ a.target }}</span>
+                                                </div>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
+                        </a>
+                    </div>
+                {% endfor %}
 
-            <div class="page-load-status">
-                <p class="infinite-scroll-request">
-                    <img class="loader" src="{{ asset('/img/loader.svg') }}">
-                </p>
-                <p class="infinite-scroll-last">Oh, il n'y a plus rien à afficher</p>
-                <p class="infinite-scroll-error">Plus d'animes supplémentaires</p>
+                <div class="page-load-status">
+                    <p class="infinite-scroll-request">
+                        <img class="loader" src="{{ asset('/img/loader.svg') }}">
+                    </p>
+                    <p class="infinite-scroll-last">Oh, il n'y a plus rien à afficher</p>
+                    <p class="infinite-scroll-error">Plus d'animes supplémentaires</p>
+                </div>
             </div>
-        </div>
-        <div class="navigation">
-            {{ knp_pagination_render(anime) }}
+            <div class="navigation">
+                {{ knp_pagination_render(anime) }}
+            </div>
         </div>
     </div>
 {% endblock %}

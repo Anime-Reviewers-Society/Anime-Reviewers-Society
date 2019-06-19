@@ -1,16 +1,13 @@
 //Requires
-require('bootstrap/dist/css/bootstrap.css');
+require('bootstrap/dist/css/bootstrap.min.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 require('infinite-scroll');
-require('../../public/javascript/slick/slick/slick-theme.css');
-require('../../public/javascript/slick/slick/slick.css');
-require('../../public/javascript/slick/slick/slick');
 require('../css/style.css');
 require('../css/column.css');
+require("jquery");
 
-var $ = require("jquery");
-$ = jQuery.noConflict();
+var $ = jQuery.noConflict();
 
 $(document).ready( function () {
     $(".anime__star").on("mouseover", function () {
@@ -30,21 +27,22 @@ $(document).ready( function () {
 
 $(document).ready( function () {
     $(".menu__toggle").on("click", function () {
-        $(".sidebar").addClass("sidebar__toggle");
-        $(".overlay").css("display", "block");
-        $("body").css("overflow", "hidden");
+        if($(".sidebar").hasClass("sidebar__toggle")) {
+            $(".sidebar").removeClass("sidebar__toggle");
+            $(".anime__search_bar__content").removeClass("sidebar__enabled");
+            $("main").removeClass("sidebar__enabled");
+            $(".overlay").css("display", "none");
+        } else {
+            $(".sidebar").addClass("sidebar__toggle");
+            $(".anime__search_bar__content").addClass("sidebar__enabled");
+            $("main").addClass("sidebar__enabled");
+            $(".overlay").css("display", "block");
+        }
     });
-    $(".overlay").on("click", function () {
-        $(".sidebar").removeClass("sidebar__toggle");
-        $(".overlay").css("display", "none");
-        $("body").css("overflow", "visible");
-    })
 });
 
 let acc = document.getElementsByClassName("faq-list");
-let i;
-
-for (i = 0; i < acc.length; i++) {
+for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
         this.classList.toggle("active__faq");
         var panel = this.nextElementSibling;
@@ -100,9 +98,40 @@ $(document).ready( function  () {
         hideNav: '.pagination',
         status: '.page-load-status'
     });
+});
 
-    $('.anime__trends__list').slick({
-        dots : true,
-        cssEase : "ease-in-out"
+//Autocomplete
+
+$(document).ready( function () {
+    var input = $("#search_query");
+    input.on("keyup change", function () {
+        if(input.val() != "") {
+            $(".search_recommandation_wrapper").css("display", "block");
+            $(".anime__list").css("filter", "blur(5px)");
+        } else {
+            $(".search_recommandation_wrapper").css("display", "none");
+            $(".anime__list").css("filter", "none");
+        }
+        $.ajax({
+            url: "http://192.168.99.100:8080/api/animes",
+            /*complete: function(){
+                $('.loading-image').hide();
+            }*/
+        }).done( function (response) {
+            $(".search_recommandation").html(" ");
+            response.forEach((data, index) => {
+                if(data.original_title.indexOf(input.val()) != -1) {
+                    let className = (index & 1) ? 'odd' : 'even';
+                    let id = "/anime/" + data.id;
+                    $(".search_recommandation").append("<li class=" + className + "><a href=" + id + "><img width='100' src=" + data.image + "><span>" + data.original_title + "</span></a></li>");
+                    index++;
+                }
+            })
+        })
+    });
+    $(".search_bar__wrapper").after().on("click", function () {
+        input.val("");
     });
 });
+
+

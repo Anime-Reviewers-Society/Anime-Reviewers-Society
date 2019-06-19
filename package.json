@@ -17,8 +17,11 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^12.1.0",
+        "autocomplete-js": "^2.7.1",
         "infinite-scroll": "^3.0.6",
         "jquery": ">=3.4.0",
-        "sass-loader": "^7.1.0"
+        "jquery-ui": "^1.12.1",
+        "sass-loader": "^7.1.0",
+        "swup": "^2.0.4"
     }
 }
