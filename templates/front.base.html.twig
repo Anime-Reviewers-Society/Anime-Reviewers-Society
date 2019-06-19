@@ -2,42 +2,46 @@
 
 {% block body %}
     <div class="anime__search_bar">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="logo__wrapper">
-                        <a href="{{ path('anime.index') }}">
-                            <img class="navbar__img" src="{{ asset('/img/md/logo_transparent.png') }}">
-                        </a>
+        <div class="anime__search_bar__content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo__wrapper">
+                            <a href="{{ path('anime.index') }}">
+                                <img class="navbar__img" src="{{ asset('/img/md/logo_transparent.png') }}">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="search_bar__wrapper">
-                        {{ render(controller(
-                            'App\\Controller\\SearchController::searchBar'
-                        )) }}
+                    <div class="col-sm-4">
+                        <div class="search_bar__wrapper">
+                            {{ render(controller(
+                                'App\\Controller\\SearchController::searchBar'
+                            )) }}
+                            <div class="search_recommandation_wrapper">
+                                <!--<img class="loading-image" src="{{ asset('/img/loader.svg') }}">-->
+                                <ul class='search_recommandation'>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="action__wrapper">
-                        {% if  app.user != null %}
-                            <button class="menu__toggle">
-                                <i class="fas fa-bars"></i>
-                            </button>
-                        {% else %}
-                            <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
-                            <a href="{{ path('app_register') }}" class="btn btn-primary btn-darker-blue">Inscription</a>
-                        {% endif %}
+                    <div class="col-sm-4">
+                        <div class="action__wrapper">
+                            {% if  app.user != null %}
+                                <button class="menu__toggle">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            {% else %}
+                                <a href="{{ path('app_login') }}" class="btn btn-outline-primary btn-darker-outline-blue">Connexion</a>
+                                <a href="{{ path('app_register') }}" class="btn btn-primary btn-darker-blue">Inscription</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <main>
-        <div class="container-fluid">
-            {% block content %}{% endblock %}
-        </div>
-        <div class="overlay"></div>
+    <main class="transition-fade">
+        {% block content %}{% endblock %}
     </main>
     {% if app.user %}
         <aside>

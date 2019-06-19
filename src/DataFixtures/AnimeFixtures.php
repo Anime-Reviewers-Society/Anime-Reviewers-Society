@@ -20,7 +20,7 @@ class AnimeFixtures extends Fixture
             $anime = new Anime();
             $anime->setOriginalTitle($faker->sentence(2, false))
                 ->setTranslatedTitle($faker->sentence(2, false))
-                ->setImage($faker->imageUrl())
+                ->setImage('https://bleachmx.fr/wp-content/uploads/DpeNMQbU8AUQRwx1.jpg')
                 ->setResume($faker->text)
                 ->setReleaseDate($faker->dateTime)
                 ->setMatureAudience($faker->boolean);
