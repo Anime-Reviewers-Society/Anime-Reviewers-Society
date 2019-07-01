@@ -11,6 +11,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Review
 {
+
+    public function __construct(int $vote = 0)
+    {
+        $this->vote = $vote;
+    }
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -45,7 +51,7 @@ class Review
     private $anime;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $vote;
 

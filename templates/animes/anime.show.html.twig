@@ -29,6 +29,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        {% for t in anime.tag %}
+                                            <div class="anime__tag" style="background: {{ t.color }}; color: #fff">
+                                                <i class="{{ t.icone }}"></i> {{ t }}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
