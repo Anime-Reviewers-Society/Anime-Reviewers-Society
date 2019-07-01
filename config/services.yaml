@@ -6,6 +6,7 @@
 parameters:
     locale: 'en'
     user_avatar: '%kernel.project_dir%/public/uploads/user_avatar'
+    app.path.anime_images: /uploads/images/anime_images
 services:
     # default configuration for services in *this* file
     _defaults:

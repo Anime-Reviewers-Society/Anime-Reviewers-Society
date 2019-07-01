@@ -2,7 +2,7 @@
 {% block title %}ARS | {{ anime.originalTitle }}{% endblock %}
 {% block content %}
     <div class="anime__banner">
-        <img class="anime__banner__img" src="{{ anime.image }}">
+        <img class="anime__banner__img" src="{{ asset('/uploads/images/anime_images/' ~ anime.image) }}">
     </div>
     <div class="container">
         <div class="anime">
@@ -14,7 +14,7 @@
                     <div class="col-sm-6">
                         <div class="anime__image__wrapper">
                             <button class="btn btn-primary btn-darker-blue youtube"><i class="far fa-eye"></i> Opening</button>
-                            <img src="{{ anime.image }}" alt="{{ anime.originalTitle }}" class="anime__image"/>
+                            <img src="{{ asset('/uploads/images/anime_images/' ~ anime.image) }}" alt="{{ anime.originalTitle }}" class="anime__image"/>
                         </div>
                     </div>
                     <div class="col-sm-6">

@@ -9,7 +9,11 @@ require("jquery");
 
 var $ = jQuery.noConflict();
 
+import Swup from 'swup';
+const swup = new Swup();
+
 $(document).ready( function () {
+
     $(".anime__star").on("mouseover", function () {
         $(".anime__star").removeClass("star__colored");
         let id = $(this).attr("id");
@@ -89,8 +93,8 @@ $(document).ready( function () {
     });
 });
 
-
-$(document).ready( function  () {
+//Infinite scroll [Disabled]
+/*$(document).ready( function  () {
     new InfiniteScroll( '.anime__list', {
         path: '.page-item:last-child .page-link',
         append: '.anime__list > .row',
@@ -98,7 +102,7 @@ $(document).ready( function  () {
         hideNav: '.pagination',
         status: '.page-load-status'
     });
-});
+});*/
 
 //Autocomplete
 
@@ -114,23 +118,16 @@ $(document).ready( function () {
         }
         $.ajax({
             url: "http://192.168.99.100:8080/api/animes",
-            /*complete: function(){
-                $('.loading-image').hide();
-            }*/
         }).done( function (response) {
             $(".search_recommandation").html(" ");
             response.forEach((data, index) => {
                 if(data.original_title.indexOf(input.val()) != -1) {
                     let className = (index & 1) ? 'odd' : 'even';
                     let id = "/anime/" + data.id;
-                    $(".search_recommandation").append("<li class=" + className + "><a href=" + id + "><img width='100' src=" + data.image + "><span>" + data.original_title + "</span></a></li>");
-                    index++;
+                    $(".search_recommandation").append("<li class=" + className + "><a href=" + id + "><img width='100' src='/uploads/images/anime_images/" + data.image + "'><span>" + data.original_title + "</span></a></li>");
                 }
             })
         })
-    });
-    $(".search_bar__wrapper").after().on("click", function () {
-        input.val("");
     });
 });
 
