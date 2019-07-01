@@ -9,7 +9,7 @@
                         <a href="{{ path('anime.show', { 'id' : a.id }) }}" class="anime__link">
                             <div class="card anime__card">
                                 <div class="card_img__wrapper">
-                                    <img class="card-img-top" src="{{ a.image }}" alt="{{ a.originalTitle }}">
+                                    <img class="card-img-top" src="{{ asset('/uploads/images/anime_images/' ~ a.image) }}" alt="{{ a.originalTitle }}">
                                     <div class="card_img_overlay">
                                         <div class="card_img_overlay_content">
                                             <div class="anime__card__anime__tag">
@@ -41,14 +41,13 @@
                         </a>
                     </div>
                 {% endfor %}
-
-                <div class="page-load-status">
+                <!-- <div class="page-load-status">
                     <p class="infinite-scroll-request">
                         <img class="loader" src="{{ asset('/img/loader.svg') }}">
                     </p>
                     <p class="infinite-scroll-last">Oh, il n'y a plus rien à afficher</p>
                     <p class="infinite-scroll-error">Plus d'animes supplémentaires</p>
-                </div>
+                </div>-->
             </div>
             <div class="navigation">
                 {{ knp_pagination_render(anime) }}

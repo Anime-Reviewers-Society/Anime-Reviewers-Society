@@ -2,3 +2,20 @@ easy_admin:
   entities:
     Anime:
       class: App\Entity\Anime
+      list:
+        fields:
+        - { property: 'image', type: 'image', base_path: '%app.path.anime_images%' }
+
+      show:
+        fields:
+        - { property: 'image', type: 'image', base_path: '%app.path.anime_images%' }
+
+      form:
+        fields:
+        - { property: 'originalTitle' }
+        - { property: 'translatedTitle' }
+        - { property: 'imageFile', type: 'vich_image' }
+        - { property: 'matureAudience' }
+        - { property: 'resume' }
+        - { property: 'tag' }
+        - { property: 'target' }

@@ -942,11 +942,6 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-autocomplete-js@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/autocomplete-js/-/autocomplete-js-2.7.1.tgz#a954e909e55d8062ad08064ae1a5c82a99caec8e"
-  integrity sha512-F+1Sj13zbfpbkprKjtyYiaHgBo6YODzNzWgJjgo/p312AeiZVEn3W+NaRRzVZYqMI0Bm7/W36uanp995eNDy+A==
-
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -3200,11 +3195,6 @@ isobject@^3.0.0, isobject@^3.0.1:
 isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
-
-jquery-ui@^1.12.1:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
-  integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
 
 jquery@>=3.4.0:
   version "3.4.0"
@@ -5565,7 +5555,6 @@ svgo@^1.0.0:
 swup@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/swup/-/swup-2.0.4.tgz#d293ae546b8909cbf0addc4cdb75dde80f2a29e9"
-  integrity sha512-0ugk90RVB3EdC8iO3RK/jjGN+/Lv4Npc6I2kT6sV7kb/qlPCzZjx+L9aMMDcPgJC+RhjU1wJ53WC1CuHuuUdmg==
   dependencies:
     delegate "3.1.3"
 
