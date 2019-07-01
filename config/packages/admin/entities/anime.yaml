@@ -4,10 +4,14 @@ easy_admin:
       class: App\Entity\Anime
       list:
         fields:
+        - { property: 'originalTitle' }
+        - { property: 'translatedTitle' }
         - { property: 'image', type: 'image', base_path: '%app.path.anime_images%' }
 
       show:
         fields:
+        - { property: 'originalTitle' }
+        - { property: 'translatedTitle' }
         - { property: 'image', type: 'image', base_path: '%app.path.anime_images%' }
 
       form:
