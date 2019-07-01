@@ -18,7 +18,8 @@ class SearchType extends AbstractType
             ->setMethod("GET")
             ->add('query', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Titre, genre, etc...'
+                    'placeholder' => 'Titre, genre, etc...',
+                    'autocomplete' => 'no'
                 ],
                 'label' => false
             ])

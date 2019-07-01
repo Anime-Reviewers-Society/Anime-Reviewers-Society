@@ -9,7 +9,8 @@ body {
 }
 
 .transition-fade {
-    transition: 0.4s;
+    position: relative;
+    transition: 0.2s;
     opacity: 1;
 }
 
@@ -1227,11 +1228,12 @@ ul.social-network {
     content: "\f068";
 }
 
-.gcu__page, .ln__page, .ars__page {
-    margin: 150px 0;
-    background: white;
+.gcu__page, .ln__page, .ars__page, .faq__list {
+    margin: 85px 0;
+    background: transparent !important;
     padding: 20px;
     border-radius: 2px;
+    box-shadow: none !important;
 }
 
 .gcu__content, .ln__content, .ars__content {

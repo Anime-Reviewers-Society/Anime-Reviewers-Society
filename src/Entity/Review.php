@@ -44,6 +44,11 @@ class Review
      */
     private $anime;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $vote;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -111,6 +116,18 @@ class Review
 
     public function __toString()
     {
-        return $this->getAuthor() . '';
+        return $this->getAuthor() . '/' . $this->getAnime();
+    }
+
+    public function getVote(): ?int
+    {
+        return $this->vote;
+    }
+
+    public function setVote(int $vote): self
+    {
+        $this->vote = $vote;
+
+        return $this;
     }
 }
