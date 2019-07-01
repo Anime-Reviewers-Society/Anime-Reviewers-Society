@@ -22,6 +22,7 @@ class ReviewFixtures extends Fixture implements DependentFixtureInterface
             $review
                 ->setComment($faker->text)
                 ->setNote(4)
+                ->setVote($faker->randomNumber())
                 ->setAnime($anime)
                 ->setDate($faker->dateTime)
                 ->setAuthor($author);

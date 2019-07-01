@@ -17,7 +17,7 @@ class AnimeController extends AbstractFOSRestController {
      *
      * @Rest\Get("/animes")
      */
-    public function getAnimes(AnimeRepository $animeRepository): View
+    public function getAnimesAction(AnimeRepository $animeRepository): View
     {
         $animes = $animeRepository->findAll();
         return new View($animes, Response::HTTP_OK);
@@ -29,7 +29,7 @@ class AnimeController extends AbstractFOSRestController {
      *
      * @Rest\Get("/anime/{id}")
      */
-    public function getAnime(AnimeRepository $animeRepository, int $id): View
+    public function getAnimeAction(AnimeRepository $animeRepository, int $id): View
     {
         $anime = $animeRepository->find($id);
         return new View($anime, Response::HTTP_OK);
