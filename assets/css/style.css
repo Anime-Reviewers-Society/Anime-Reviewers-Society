@@ -9,7 +9,8 @@ body {
 }
 
 .transition-fade {
-    transition: 0.4s;
+    position: relative;
+    transition: 0.2s;
     opacity: 1;
 }
 

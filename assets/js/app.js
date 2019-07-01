@@ -3,6 +3,7 @@ require('bootstrap/dist/css/bootstrap.min.css');
 require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 require('infinite-scroll');
+const axios = require('axios');
 require('../css/style.css');
 require('../css/column.css');
 require("jquery");
@@ -107,6 +108,10 @@ $(document).ready( function () {
 //Autocomplete
 
 $(document).ready( function () {
+    setTimeout(function(){
+        $("#search_query").attr('readonly', false);
+        $("#search_query").focus();
+    },500);
     var input = $("#search_query");
     input.on("keyup change", function () {
         if(input.val() != "") {
@@ -117,7 +122,7 @@ $(document).ready( function () {
             $(".anime__list").css("filter", "none");
         }
         $.ajax({
-            url: "http://192.168.99.100:8080/api/animes",
+            url: "http://127.0.0.1:8080/api/animes",
         }).done( function (response) {
             $(".search_recommandation").html(" ");
             response.forEach((data, index) => {
@@ -129,6 +134,26 @@ $(document).ready( function () {
             })
         })
     });
+
+    //Note on reviews
+    $(".anime__comment__thumbs_top, .anime__comment__thumbs_down").on("click", function (e) {
+        var target = $(e.target);
+        var reviewId = $(".anime__comment__score").attr("id");
+        var vote = parseInt($(`#${reviewId}.anime__comment__score span`).text());
+        var newVote = (target.is(".anime__comment__thumbs_down")) ? vote - 1 : vote + 1;
+        axios.post(`/api/review/${reviewId}`, {
+            vote: newVote,
+        })
+            .then( function (response) {
+                axios.get(`/api/review/${reviewId}`)
+                    .then( function (response) {
+                        console.log(response);
+                        $(`#${reviewId}.anime__comment__score span`).text(response.data.vote);
+                    });
+            }).catch( function (response) {
+            console.error(response);
+        });
+    })
 });
 
 
