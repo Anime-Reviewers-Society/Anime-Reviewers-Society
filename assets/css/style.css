@@ -1,11 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    background: url("https://zupimages.net/up/19/15/6zmv.png") no-repeat fixed center;
+    background: #f7f7f7 !important;
+    position: relative;
+    right: 0;
+    left: 0;
+    transition: all, 0.25s;
+}
+
+.transition-fade {
+    position: relative;
+    transition: 0.2s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
 }
 
 main {
     min-height: 57vh;
+    transition: all, 0.25s;
+}
+
+.sidebar__enabled {
+    margin-right: 280px !important;
+}
+
+aside {
+    position: relative;
+}
+
+.btn {
+    border-radius: 2px;
 }
 
 #scroll_to_top {
@@ -16,7 +43,7 @@ main {
     right: 15px;
     display: none;
     background: rgba(0, 0, 0, 0.75);
-    border-radius: 4px;
+    border-radius: 2px;
     z-index: 999;
     cursor: pointer;
     text-align: center;
@@ -36,6 +63,10 @@ main {
     top: 0;
 }
 
+.btn.disabled {
+    cursor: not-allowed;
+}
+
 .btn:active {
     background: #0e79ad;
     border-color: #0e79ad;
@@ -51,6 +82,15 @@ main {
     transition: all, 0.25s;
 }
 
+.container.security__page {
+    width: 1200px !important;
+}
+
+.security__page .logo_wrapper img {
+    width: 250px;
+    top: 100%;
+}
+
 @media (min-width: 1200px)
 {
     .container {
@@ -60,38 +100,67 @@ main {
 
 
 /* Btn styles */
+
+.btn-primary {
+    color: #fff;
+    background: #1194d3 !important;
+    border-color: #1194d3 !important;
+    border-radius: 2px !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:hover {
+    background: #39bfff !important;
+    border-color: #39bfff !important;
+}
+
+.btn-primary:focus {
+    box-shadow: none !important;
+    background: #0087c7 !important;
+    border-color: #0087c7 !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
 .btn-outline-primary:focus {
     box-shadow: none !important;
+}
+
+.btn-outline-primary {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.btn-outline-primary:hover {
+    background: transparent !important;
 }
 
 .btn-primary.btn-darker-blue {
     background-color: #1194d3;
     border-color: #1194d3;
-    border-bottom: 3px solid #006da0;
-}
-
-.btn-primary.btn-darker-blue:hover, .btn-primary.btn-darker-blue:active {
-    background-color: #22C0D3;
-    border-color: #22c0d3;
-    border-bottom: 3px solid #006da0;
+    height: 41px;
+    padding-top: 8px;
 }
 
 .btn-primary.btn-darker-blue:focus {
     background-color: #27a5ff !important;
     border-color: #27a5ff !important;
-    border-bottom: 3px solid #006da0 !important;
-    box-shadow: none !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btn-outline-primary.btn-darker-outline-blue {
     color: #1194d3;
     border-color: #1194d3;
+    background: transparent;
+    border-radius: 2px;
+    color: #fff;
 }
 
 .btn-outline-primary.btn-darker-outline-blue:hover {
     border-color: #1194d3;
     background-color: #1194d3;
     color: #fff;
+    text-decoration: underline;
 }
 
 .btn-outline-primary.btn-darker-outline-blue:active {
@@ -101,12 +170,23 @@ main {
 }
 
 .btn-success, .btn-success:focus, .btn-success:active {
-    border-bottom: 3px solid #015201 !important;
-    box-shadow: none !important;
+    border-color: #28a745 !important;
+    background: #28a745 !important;
+    border-radius: 2px !important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btn-danger {
-    border-bottom: 3px solid #a20505 !important;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    height: 41px;
+    padding-top: 8px;
+    transition: all, 0.25s;
+}
+
+.btn-danger:hover {
+    background: #ff4949;
+    border-color: #ff4949;
 }
 
 .btn-danger:active, .btn-danger:focus {
@@ -124,8 +204,6 @@ ul.pagination {
 
 .page-item.active .page-link {
     background-color: #1194d3 !important;
-    border-color: #1194d3 !important;
-    border-bottom: 3px solid #006da0 !important;
     color: #fff !important;
 }
 
@@ -145,11 +223,98 @@ ul.pagination {
     top: 0;
     width: 100%;
     z-index: 998;
-    background: #fff;
-    box-shadow: 0 0 7px 2px #000000a1;
-    transition: all, 0.5s;
+    background: #355e7e;
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.20);
+    transition: all, 0.25s;
     padding: 25px;
-    overflow: hidden;
+    right: 0;
+}
+
+.anime__search_bar__content {
+    position: relative;
+    transition: all, 0.25s;
+}
+
+.search_recommandation_wrapper {
+    display: none;
+    position: absolute;
+    left: 40px;
+    right: 0;
+    top: 60px;
+    background: #fff;
+    height: 400px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.20);
+    overflow-y: scroll;
+}
+
+.search_recommandation:before {
+    content: "\f0de";
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.search_recommandation {
+    list-style-type: none;
+    border-right: 2px;
+}
+
+.search_recommandation_wrapper::-webkit-scrollbar {
+    width: 10px;
+}
+
+.search_recommandation_wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.search_recommandation_wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.search_recommandation li {
+    margin-left: -40px;
+    text-align: left;
+    position: relative;
+    height: 60px;
+    right: 0;
+}
+
+.search_recommandation li.even {
+    background: #f1f1f1;
+}
+
+.search_recommandation li.odd {
+    background: #fff;
+}
+
+.search_recommandation li a {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    bottom: 2px;
+    left: 4px;
+    transition: all, 0.25s;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #355e7e;
+}
+
+.search_recommandation li:hover {
+    background: #ccc;
+}
+
+.search_recommandation li:hover a {
+    text-decoration: none;
+}
+
+.search_recommandation li a span {
+    margin-left: 10px;
 }
 
 .anime__search_bar form {
@@ -165,12 +330,14 @@ ul.pagination {
 
 .anime__search_bar input[type="text"] {
     padding: 6px 20px;
-    border-radius: 4px;
+    border-radius: 2px;
     border: none;
     border: 1px solid #e2e2e2;
     width: 100%;
     font-size: 18px;
+    font-weight: 600;
 }
+
 
 .anime__search_bar input[type="text"]:hover {
     background: #f1f1f1;
@@ -187,39 +354,44 @@ ul.pagination {
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
-.anime__search_bar .container .col-sm-4:last-child {
+.anime__search_bar .container-fluid .col-sm-4:last-child {
     text-align: right;
 }
 
-.anime__search_bar .container .col-sm-4:first-child {
+.anime__search_bar .container-fluid .col-sm-4:first-child {
     text-align: left;
 }
 
-.anime__search_bar.anime__search_bar .navbar__img {
-    width: 140px;
-    position: absolute;
-    top: -50px;
-    transform: rotate(-10deg);
-    transition: all, 0.25s;
+.anime__search_bar .search_bar__wrapper {
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
-.rotate_off {
-    transform: rotate(0deg) !important;
-    width: 115px !important;
+.anime__search_bar.anime__search_bar .navbar__img {
+    width: 125px;
+    position: absolute;
+    top: -45px;
+    transition: all, 0.25s;
+    visibility: visible;
+}
+
+.reduce_logo {
+    width: 100px !important;
+    top: -30px !important;
 }
 
 .menu__toggle {
-    background: #419ae0;
+    background: transparent;
     border: none;
     padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #fff;
     transition: all, 0.25s;
     opacity: 1;
     cursor: pointer;
     margin-left: 15px;
     z-index: 999;
-    border-bottom: 3px solid #006da0;
 }
 
 .menu__hidden {
@@ -232,14 +404,6 @@ ul.pagination {
     -webkit-text-stroke: 3px #5454bb;
 }
 
-.menu__toggle:hover {
-    background: #54c7fd;
-}
-
-.menu__toggle:active {
-    background: #279cfd;
-}
-
 .menu__toggle:focus {
     outline: none;
 }
@@ -247,29 +411,39 @@ ul.pagination {
 .sidebar {
     font-family: 'Roboto', sans-serif;
     position: fixed;
-    right: -325px;
+    right: -285px;
     top: 0;
     bottom: 0;
     background: #fff;
-    width: 325px;
+    width: 285px;
     opacity: 0;
     transition: all, 0.25s;
     z-index: 999;
 }
 
+.sidebar:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #355e7e, #1194d3);
+}
+
 .sidebar__toggle {
     right: 0;
     opacity: 1;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .sidebar > .sidebar__img {
-    text-align: center;
+    text-align: center ;
     width: 100%;
     margin-top: 20px;
 }
 
 .sidebar > .sidebar__img img {
-    border-radius: 100px;
+    border-radius: 2px;
     width: 200px;
 }
 
@@ -284,22 +458,44 @@ ul.pagination {
 
 .sidebar > ul.sidebar__menu > li.sidebar__item {
     list-style-type: none;
-    padding: 15px 0;
     transition: all, 0.25s;
-    border-radius: 4px;
+    border-radius: 2px;
     text-align: left;
     font-weight: 500;
+    list-style-type: none;
+    transition: all, 0.25s;
+    border-radius: 2px;
+    text-align: left;
+    font-weight: 500;
+    width: 100%;
+    position: relative;
+    height: 40px;
+    line-height: 2.5em;
+    margin-bottom: 2px;
 }
 
 .sidebar > ul.sidebar__menu > li.sidebar__item:hover {
-    background: #a9d9ff;
+    background: #355e7e;
 }
 
 .sidebar > ul.sidebar__menu > li.sidebar__item > a.sidebar__link {
     text-transform: uppercase;
-    color: #2196F3;
+    color: #355e7e;
     text-decoration: none;
     margin: 0 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar > ul.sidebar__menu > li.sidebar__item:hover > a.sidebar__link {
+    color: #fff;
 }
 
 .sidebar > ul.sidebar__menu > li.sidebar__item .sidebar__item__space {
@@ -347,6 +543,7 @@ ul.pagination {
 }
 
 /* Anime List */
+
 .anime__card {
     margin-bottom: 25px;
     border: none;
@@ -355,8 +552,25 @@ ul.pagination {
     transition: all, 0.25s;
     height: 200px;
     overflow: hidden;
-    box-shadow: 0px 5px 7px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px !important;
+    box-shadow: 0px 2px 3px 0 #00000054;
     border: none !important;
+    background: transparent;
+}
+
+.anime__card:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #355e7e, #1194d3);
+    height: 3px;
+    opacity: 0;
+}
+
+.anime__card:hover:after {
+    opacity: 1;
 }
 
 .card_img__wrapper {
@@ -393,11 +607,11 @@ ul.pagination {
 
 .card_img__wrapper img {
     position: absolute;
-    transition: all, 10s;
+    transition: all, 0.25s;
 }
 
 .anime__card:hover .card_img__wrapper img {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 .card__title {
@@ -437,30 +651,141 @@ ul.pagination {
 }
 
 .anime__list, .anime, .form_register, .form_login, .user {
-    background: #ffffffc9;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
-.anime__list, .anime, .form_register, .form_login, .user {
-    margin: 150px 0 60px 0;
+.user {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
-.form_register__actions {
+.user h2 {
+    margin: 15px 0 20px 0;
+}
+
+.user .review_caption {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: all, 0.25s;
+}
+
+.user .review_caption {
+    opacity: 1;
+}
+
+.anime__list {
+    margin-top: 110px;
+    transition: all, 0.25s;
+}
+
+.form_login, .user {
+    margin-top: 110px;
+    margin-bottom: 20px;
+}
+
+.page-load-status {
+    width: 100%;
+}
+
+.infinite-scroll-request {
+    text-align: center;
+    width: 100%;
+}
+
+.loader {
+    width: 100px;
+}
+
+.form_register {
+    position: relative;
+    z-index: 999;
+    margin-top: 250px;
+}
+
+
+.form_register__actions, .form_login {
     text-align: center;
 }
 
-/* Anime Show */
+.logo_wrapper {
+    position: relative;
+    height: 50px;
+}
+
+.logo_wrapper img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.form_login {
+    margin: 250px;
+    z-index: 999;
+    position: relative;
+}
+
+.form_login a.back__button {
+    font-weight: 500;
+    color: #0e79ad;
+}
+
+.form_login form {
+    margin-top: 30px;
+}
+
+.form_register .row:first-child {
+    margin-top: 30px;
+}
+
 .anime, .form_register, .form_login, .user, .ars__page, .gcu__page, .ln__page {
     padding: 20px;
     background: #fff;
-    border-radius: 4px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.20);
+}
+
+.anime {
+    background: none;
+    position: relative;
+    z-index: 2;
+    top: 100px;
+    box-shadow: none;
+    margin-bottom: 110px;
+}
+
+.anime__banner {
+    position: absolute;
+    text-align: center;
+    height: 350px;
+    margin-top: 90px;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    filter: brightness(50%);
+}
+
+.anime__banner__img {
+    width: 100%;
 }
 
 .anime__title {
     text-align: center;
     position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.anime__main {
+    margin: 10px 0;
+    background: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.20);
 }
 
 .anime__content {
@@ -474,25 +799,21 @@ ul.pagination {
     right: 10px;
     background: #f73939;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #fff;
     font-weight: 600;
 }
 
 .anime__content_inner {
     position: relative;
-    top: -50px;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 20px;
-    margin: 0 50px;
-    box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.35);
 }
 
 .anime__tag {
-    background: #c7c7c7;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 2px;
     margin: 2px;
     display: inline-block;
 }
@@ -512,16 +833,16 @@ ul.pagination {
     font-size: 21px;
 }
 
-.anime__actions {
-    margin: 20px 0;
-}
-
 .anime__image__wrapper {
     overflow: hidden;
     text-align: center;
-    height: 300px;
     position: relative;
-    border-radius: 4px;
+    border-radius: 2px;
+}
+
+.anime__image__wrapper .youtube {
+    height: initial;
+    padding-top: 4px;
 }
 
 .anime__image__wrapper .btn-primary {
@@ -539,7 +860,6 @@ ul.pagination {
 }
 
 .anime__resume, .anime__informations {
-    margin: 30px 0;
     text-align: justify;
 }
 
@@ -557,12 +877,9 @@ ul.pagination {
 }
 
 .anime__image {
-    position: absolute;
     width: 100%;
     left: 0;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .anime__overlay_embed {
@@ -591,6 +908,8 @@ ul.pagination {
 .anime__notes {
     font-weight: 600;
     font-size: 18px;
+    margin: 20px 0;
+    text-transform: uppercase;
 }
 
 .anime__comment a:hover {
@@ -598,13 +917,50 @@ ul.pagination {
 }
 
 .anime__comment_new, .anime__comment_show {
-    background: #f1f1f1;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
     margin: 10px 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.20);
+}
+
+.anime__comment_show a {
+    color: #1194d3;
+}
+
+#review_comment {
+    height: 200px;
+    border: none;
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.anime__comment__score span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.ck-editor {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.20);
+}
+
+.ck.ck-editor__main>.ck-editor__editable {
+    height: 150px;
+    border: none;
+}
+
+.ck.ck-editor__main {
+    outline: none;
+}
+
+.ck-focused {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.ck.ck-toolbar {
+    border: none !important;
 }
 
 .anime__comment_show__author {
@@ -623,7 +979,7 @@ ul.pagination {
     transform: rotate(42deg);
     top: -15px;
     padding: 20px;
-    background: #7a7688;
+    background: #1194d3;
     color: #fff;
     font-weight: 700;
     padding-top: 30px;
@@ -634,7 +990,7 @@ ul.pagination {
     content: "";
     width: 35px;
     height: 44px;
-    background: #7a7688;
+    background: #1194d3;
     position: absolute;
     left: -30px;
     top: 20px;
@@ -653,7 +1009,7 @@ ul.pagination {
     content: "";
     width: 35px;
     height: 44px;
-    background: #7a7688;
+    background: #1194d3;
     position: absolute;
     right: -30px;
     top: 20px;
@@ -673,9 +1029,37 @@ ul.pagination {
     cursor: pointer;
 }
 
+.anime__comment__thumbs {
+     text-align: center;
+    display: block;
+ }
+
+.anime__comment__thumbs a {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.anime__comment__thumbs_top {
+    color: cornflowerblue;
+    display: block;
+}
+
+.anime__comment__thumbs_down {
+    color: darkred;
+}
+
+.anime__comment__rules__list {
+    text-align: justify;
+    display: block;
+}
+
+.anime__comment__rules__list li {
+    margin-bottom: 10px;
+}
+
 .ck.ck-toolbar {
-    border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important;
+    border-top-left-radius: 2px !important;
+    border-top-right-radius: 2px !important;
 }
 
 .star__colored {
@@ -683,13 +1067,13 @@ ul.pagination {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(255, 255, 255, 0.5);
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    cursor: w-resize;
+    cursor: url("https://www.materialui.co/materialIcons/navigation/chevron_right_grey_192x192.png"), auto;
     z-index: 0;
     transition: all, 0.25s;
     display: none;
@@ -745,14 +1129,28 @@ ul.pagination {
 /* Footer */
 footer {
     padding: 20px 0;
-    background: #fff;
-    box-shadow: 0 0 7px 2px #000000a1;
-    color: #355e7e;
+    background: #355e7e;
+    color: #ffffff;
     position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 997;
+    box-shadow: 0px -2px 2px 0 rgba(0, 0, 0, 0.20)
+}
+
+footer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #355e7e, #1194d3);
+    height: 2px;
+}
+
+footer .container-fluid .col-sm-3 {
+    text-align: center;
 }
 
 .footer__title {
@@ -812,9 +1210,9 @@ ul.social-network {
 
 .faq__list {
     margin: 150px 0;
-    background: white;
+    background: transparent;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .faq__title, .gcu__title, .ln__title, .ars__title {
@@ -845,7 +1243,7 @@ ul.social-network {
 
 .faq-list-content {
     margin: 0 15px 15px;
-    background: #a9dcff57;
+    background: #fff;
     color: #1e1e1e;
     padding: 0 18px;
     width: 100%;
@@ -875,11 +1273,12 @@ ul.social-network {
     content: "\f068";
 }
 
-.gcu__page, .ln__page, .ars__page {
-    margin: 150px 0;
-    background: white;
+.gcu__page, .ln__page, .ars__page, .faq__list {
+    margin-top: 95px;
+    background: transparent;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
+    box-shadow: none;
 }
 
 .gcu__content, .ln__content, .ars__content {
@@ -909,7 +1308,7 @@ ul.social-network {
     left: 10px;
     font-size: 21px;
     padding: 8px 17px 10px 17px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .anime__title__arrow__right {
@@ -917,7 +1316,7 @@ ul.social-network {
     right: 10px;
     font-size: 21px;
     padding: 8px 17px 10px 17px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .anime__title__arrow__right:hover, .anime__title__arrow__left:hover {
@@ -941,7 +1340,10 @@ ul.social-network {
     color: #355e7e;
     padding: 0 18px;
     width: 100%;
-    text-align: center;
+}
+
+.contact__content label {
+    display: none;
 }
 
 .contact__content form h1 {
@@ -1012,6 +1414,11 @@ ul.social-network {
 
 }
 
+.contact__content .form-control:focus {
+    box-shadow: none !important;
+    border-color: #1194d3 !important;
+}
+
 .contact__content .form-group {
     overflow: hidden;
     clear: both;
@@ -1027,15 +1434,16 @@ ul.social-network {
 }
 
 .bouton-contact {
-    background-color: #6fd1f3;
+    background-color: #1194d3;
     color: #FFF;
     text-align: center;
     width: 100%;
     border: 0;
-    padding: 17px 25px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 2px;
     cursor: pointer;
     font-size: 18px;
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.4);
 }
 
 .validation {
@@ -1048,6 +1456,20 @@ ul.social-network {
 
 legend.col-form-label.required{
     display: none;
+}
+
+.page-item:first-child .page-link {
+    border-bottom-left-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+}
+
+.page-item:last-child .page-link {
+    border-bottom-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+}
+
+.page-link {
+    border: none !important;
 }
 
 

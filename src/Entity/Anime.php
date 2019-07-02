@@ -4,10 +4,14 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnimeRepository")
+ * @Vich\Uploadable
  */
 class Anime
 {
@@ -34,9 +38,22 @@ class Anime
     private $matureAudience;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="anime_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -117,16 +134,28 @@ class Anime
         return $this;
     }
 
-    public function getImage(): ?string
+    public function setImageFile(File $image = null)
     {
-        return $this->image;
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function setImage(?string $image): self
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImage($image)
     {
         $this->image = $image;
+    }
 
-        return $this;
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function getReleaseDate(): ?\DateTimeInterface
@@ -182,6 +211,7 @@ class Anime
     public function __toString(): string
     {
         return $this->originalTitle;
+        return $this->image;
     }
 
     public function getTarget(): ?Target

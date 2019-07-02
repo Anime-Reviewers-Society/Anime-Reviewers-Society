@@ -21,6 +21,32 @@
             <p class="user__informations_bio">{{ user.bio|raw }}</p>
         </div>
     </div>
-    {# Here will come badges system #}
+    <hr />
+    <h2>Mes reviews</h2>
+    <div class="user__reviews">
+        {% for r in user.reviews %}
+                <div class="anime__comment_show">
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <img src="{{ asset('uploads/user_avatar/' ~ r.author.avatar) }}" width="75" height="75" class="img-circle">
+                        </div>
+                        <div class="col-sm-11">
+                            <div class="anime__comment_show__content">
+                                <div class="anime__comment_show__author">
+                                    <a href="{{ path('user.show', {'id' : r.author.id}) }}">{{ r.author }}</a>
+                                </div>
+                                <div class="anime__comment_show_comment">
+                                    {{ r.comment|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anime__comment_show_note">
+                        {{ r.note }} <span><i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            <a href="#" class="review_caption"></a>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

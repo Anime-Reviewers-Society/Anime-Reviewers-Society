@@ -4,12 +4,19 @@ namespace App\Entity;
 
 use Doctrine\DBAL\Types\DateType;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReviewRepository")
  */
 class Review
 {
+
+    public function __construct(int $vote = 0)
+    {
+        $this->vote = $vote;
+    }
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -34,6 +41,7 @@ class Review
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      */
     private $note;
 
@@ -41,6 +49,11 @@ class Review
      * @ORM\ManyToOne(targetEntity="App\Entity\Anime", inversedBy="review")
      */
     private $anime;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $vote;
 
     public function getId(): ?int
     {
@@ -109,6 +122,18 @@ class Review
 
     public function __toString()
     {
-        return $this->getAuthor() . '';
+        return $this->getAuthor() . '/' . $this->getAnime();
+    }
+
+    public function getVote(): ?int
+    {
+        return $this->vote;
+    }
+
+    public function setVote(int $vote): self
+    {
+        $this->vote = $vote;
+
+        return $this;
     }
 }

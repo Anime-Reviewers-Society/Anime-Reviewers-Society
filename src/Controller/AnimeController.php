@@ -15,9 +15,11 @@ class AnimeController extends AbstractController
 {
     /**
      * @param AnimeRepository $animeRepository
+     * @param Request $request
+     * @param PaginatorInterface $paginator
      * @return Response
      *
-     * @Route("/", name="anime.index")
+     * @Route("/", name="anime.index", methods={"GET"})
      */
     public function index(AnimeRepository $animeRepository, Request $request, PaginatorInterface $paginator): Response
     {
@@ -29,13 +31,13 @@ class AnimeController extends AbstractController
         return $this->render('animes/anime.index.html.twig', ['anime' => $anime]);
     }
 
-
     /**
      * @param AnimeRepository $animeRepository
-     * @param string $title
+     * @param Request $request
+     * @param PaginatorInterface $paginator
      * @return Response
      *
-     * @Route("/search", name="anime.search")
+     * * @Route("/search", name="anime.search")
      */
     public function searchResult(AnimeRepository $animeRepository, Request $request, PaginatorInterface $paginator): Response
     {
@@ -58,6 +60,7 @@ class AnimeController extends AbstractController
      * @return Response
      *
      * @Route("/anime/{id}", name="anime.show")
+     * @throws \Exception
      */
     public function show(AnimeRepository $animeRepository, int $id, Request $request): Response
     {

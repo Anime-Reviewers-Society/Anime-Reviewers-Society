@@ -1,39 +1,53 @@
-{% extends 'front.base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}ARS | Connexion{% endblock %}
 
-{% block content %}
-    <div class="form_login">
-        <div class="row">
-            <div class="col-sm-6">
-                <form method="post">
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-                    <div class="col-sm-6">
+{% block body %}
+    <div class="container security__page">
+        <div class="logo_wrapper">
+            <a href="{{ path('anime.index') }}">
+                <img src="{{ asset('/img/md/logo_transparent.png') }}" width="500">
+            </a>
+        </div>
+        <div class="form_login">
+            <a href="{{ path('anime.index') }}" class="back__button"><i class="fas fa-arrow-left"></i> Retour</a>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="inputUsername" class="sr-only">Nom d'utilisateur</label>
+                            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Nom d'utilisateur..." required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="sr-only">Mot de passe</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe..." required>
+                        </div>
 
+                        <input type="hidden" name="_csrf_token"
+                               value="{{ csrf_token('authenticate') }}">
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" name="_remember_me"> Se souvenir de moi
+                            </label>
+                        </div>
+                        <button class="btn btn-success" type="submit">
+                            Connexion
+                        </button>
+                        <a href="#" class="btn btn-primary disabled"><i class="fab fa-google"></i> M'inscrire avec Google</a>
+                    </form>
+                    <div class="form_register__options">
+                        <ul>
+                            <li><a href="{{ path('app_register') }}">Je n'ai pas de compte</a></li>
+                            <li><a href="#">J'ai oublié mon mot de passe</a></li>
+                        </ul>
                     </div>
-                    <div class="form-group">
-                        <label for="inputUsername" class="sr-only">Nom d'utilisateur</label>
-                        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Nom d'utilisateur..." required autofocus>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword" class="sr-only">Mot de passe</label>
-                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe..." required>
-                    </div>
-
-                    <input type="hidden" name="_csrf_token"
-                           value="{{ csrf_token('authenticate') }}">
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" name="_remember_me"> Se souvenir de moi
-                        </label>
-                    </div>
-                    <button class="btn btn-success" type="submit">
-                        Sign in
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
+
+
 {% endblock %}

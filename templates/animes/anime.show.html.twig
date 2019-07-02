@@ -1,64 +1,39 @@
 {% extends 'front.base.html.twig' %}
 {% block title %}ARS | {{ anime.originalTitle }}{% endblock %}
 {% block content %}
-    <div class="anime">
-        <div class="anime__title">
-            {% if anime.id != 1 %}
-                <a href="{{ path('anime.show', { 'id' : anime.id - 1}) }}" class="anime__title__arrow__left"><i
-                            class="fas fa-arrow-left"></i></a>
-                <a href="{{ path('anime.show', { 'id' : anime.id + 1}) }}" class="anime__title__arrow__right"><i
-                            class="fas fa-arrow-right"></i></a>
-            {% else %}
-                <a href="{{ path('anime.show', { 'id' : anime.id + 1}) }}" class="anime__title__arrow__right"><i
-                            class="fas fa-arrow-right"></i></a>
-            {% endif %}
-            <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
-            <h2 class="anime__title__translated">({{ anime.translatedTitle }})</h2>
-            <div class="anime__actions">
-                <a href="#comment" class="btn btn-primary btn-darker-blue">Donner mon avis !</a>
+    <div class="anime__banner">
+        <img class="anime__banner__img" src="{{ asset('/uploads/images/anime_images/' ~ anime.image) }}">
+    </div>
+    <div class="container">
+        <div class="anime">
+            <div class="anime__title">
+                <h1 class="anime__title__original">{{ anime.originalTitle }}</h1>
             </div>
-        </div>
-        <hr/>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="anime__image__wrapper">
-                    <button class="btn btn-primary btn-darker-blue youtube"><i class="far fa-eye"></i> Opening</button>
-                    <img src="{{ anime.image }}" alt="{{ anime.originalTitle }}" class="anime__image"/>
-                </div>
-            </div>
-        </div>
-        <div class="anime__content">
-            <div class="anime__content_inner">
+            <div class="anime__main">
                 <div class="row">
-                    <div class="col-sm-8">
-                        <div class="anime__resume">
-                            <p>
-                                {{ anime.resume }}
-                            </p>
+                    <div class="col-sm-6">
+                        <div class="anime__image__wrapper">
+                            <button class="btn btn-primary btn-darker-blue youtube"><i class="far fa-eye"></i> Opening</button>
+                            <img src="{{ asset('/uploads/images/anime_images/' ~ anime.image) }}" alt="{{ anime.originalTitle }}" class="anime__image"/>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="anime__informations">
-                            <div class="row">
-                                <div class="col-sm-12">
-                         <span class="release_date__label">
-                             Date de sortie :
-                         </span>
-                                    <div class="release_date__date">
-                                        {{ anime.releaseDate.date|date("d/m/Y") }}
+                    <div class="col-sm-6">
+                        <div class="anime__content">
+                            <div class="anime__content_inner">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="anime__resume">
+                                            <p>
+                                                {{ anime.resume }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="anime__informations">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="anime__informations__tag">
-                                        {% for tag in anime.tag %}
-                                            <div class="anime__tag" style="background: {{ tag.color }}; color: #fff">
-                                                <span>
-                                                    <i class="{{ tag.icone }}"></i> {{ tag.label }}
-                                                </span>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        {% for t in anime.tag %}
+                                            <div class="anime__tag" style="background: {{ t.color }}; color: #fff">
+                                                <i class="{{ t.icone }}"></i> {{ t }}
                                             </div>
                                         {% endfor %}
                                     </div>
@@ -68,60 +43,92 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <hr/>
-        <div class="anime__notes">
-            {{ reviews|length }} avis
-        </div>
-        <div class="anime__comment" id="comment">
-            <div class="anime__comment_listing">
-                {% for r in reviews %}
-                    <div class="anime__comment_show">
-                        <div class="row">
-                            <div class="col-sm-1">
-                                <img src="{{ asset('uploads/user_avatar/' ~ r.author.avatar) }}" width="75" height="75" class="img-circle">
-                            </div>
-                            <div class="col-sm-11">
-                                <div class="anime__comment_show__content">
-                                    <div class="anime__comment_show__author">
-                                        <a href="{{ path('user.show', {'id' : r.author.id}) }}">{{ r.author }}</a>
+
+
+            <div class="anime__notes">
+                {{ reviews|length }} avis
+            </div>
+            <div class="anime__comment" id="comment">
+                <div class="anime__comment_listing">
+                    {% for r in reviews %}
+                        <div class="anime__comment_show">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <div class="anime__comment__thumbs">
+                                        <div class="anime__comment__thumbs_top">
+                                            <a href="#">
+                                                <i class="fas fa-chevron-up"></i>
+                                            </a>
+                                        </div>
+                                        <div id="{{ r.id }}" class="anime__comment__score">
+                                            <span>{{ r.vote }}</span>
+                                        </div>
+                                        <div class="anime__comment__thumbs_down">
+                                            <a href="#">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="anime__comment_show_comment">
-                                        {{ r.comment|raw }}
+                                </div>
+                                <div class="col-sm-1">
+                                    <img src="{{ asset('uploads/user_avatar/' ~ r.author.avatar) }}" width="75" height="75" class="img-circle">
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="anime__comment_show__content">
+                                        <div class="anime__comment_show__author">
+                                            <a href="{{ path('user.show', {'id' : r.author.id}) }}">{{ r.author }}</a>
+                                        </div>
+                                        <div class="anime__comment_show_comment">
+                                            {{ r.comment|raw }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="anime__comment_show_note">
+                                {{ r.note }} <span><i class="fas fa-star"></i></span>
+                            </div>
                         </div>
-                        <div class="anime__comment_show_note">
-                            {{ r.note }} <span><i class="fas fa-star"></i></span>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            {% if app.user != null %}
-                <div class="anime__comment_new">
-                    <div class="anime__rating">
-                        {% for i in 1..10 %}
-                            <span id="star-{{ i }}" class="anime__star"><i class="fas fa-star"></i></span>
-                        {% endfor %}
-                    </div>
-                    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
-                    {{ form_widget(form) }}
-                    <button class="btn btn-success">Soumettre</button>
-                    {{ form_end(form) }}
+                    {% endfor %}
                 </div>
-            {% endif %}
+                {% if app.user != null %}
+                    <div class="anime__comment_new">
+                    <div class="row">
+                        <div class="col-sm-8">
+                                <div class="anime__rating">
+                                    {% for i in 1..10 %}
+                                        <span id="star-{{ i }}" class="anime__star"><i class="fas fa-star"></i></span>
+                                    {% endfor %}
+                                </div>
+                                {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+                                {{ form_widget(form) }}
+                                <button class="btn btn-success">Soumettre</button>
+                                {{ form_end(form) }}
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="anime__comment__rules">
+                                <ul class="anime__comment__rules__list">
+                                    <li>Modérez votre langage, ne soyez pas offensant, alternativement <b>votre commentaire sera supprimé</b>.</li>
+                                    <li>Le contenu à caractère <b>pédophile, pornographique, politique, propagande, raciste où religieux</b> n’est pas accepté.</li>
+                                    <li>Les <b>informations personnelles</b> ne concernent vous et que vous, ne diffusez pas <b>votre mot de passe ou vos informations personnelles</b>. Nous ne sommes <b>pas responsables</b> de leurs diffusion.</li>
+                                    <li>Le spam, la provocation, le troll, la pub, le spoil et le flood ne sont pas appréciés, abstenez-vous donc.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                {% endif %}
+            </div>
         </div>
-    </div>
-    <div class="anime__overlay_embed">
-        <div class="anime__overlay_content">
-            <iframe width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/{{ anime.opening }}"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
+        <div class="anime__overlay_embed">
+            <div class="anime__overlay_content">
+                <iframe width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/{{ anime.opening }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
 {% endblock %}

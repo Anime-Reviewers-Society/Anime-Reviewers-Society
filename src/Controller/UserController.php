@@ -58,14 +58,11 @@ class UserController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $file = $form->get('avatar')->getData();
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
-            try {
-                $file->move(
-                    $this->getParameter('user_avatar'),
-                    $fileName
-                );
-            } catch (FileException $e) {
-            }
+            $fileName = $this->generateUniqueFileName().'.png';
+            $file->move(
+                $this->getParameter('user_avatar'),
+                $fileName
+            );
             $user->setAvatar($fileName);
             $user->setBio($form->get("bio")->getData());
             $entityManager->persist($user);
