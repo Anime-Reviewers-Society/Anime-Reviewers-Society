@@ -25,7 +25,11 @@
         "symfony/validator": "4.2.*",
         "symfony/webpack-encore-bundle": "^1.1",
         "symfony/yaml": "4.2.*",
-        "vich/uploader-bundle": "^1.9"
+        "vich/uploader-bundle": "^1.9",
+        "symfony/maker-bundle": "^1.11",
+        "symfony/profiler-pack": "^1.0",
+        "symfony/web-server-bundle": "4.2.*",
+        "fzaninotto/faker": "^1.8"
     },
     "config": {
         "preferred-install": {
@@ -71,11 +75,5 @@
             "allow-contrib": false,
             "require": "4.2.*"
         }
-    },
-    "require-dev": {
-        "symfony/maker-bundle": "^1.11",
-        "symfony/profiler-pack": "^1.0",
-        "symfony/web-server-bundle": "4.2.*",
-        "fzaninotto/faker": "^1.8"
     }
 }
